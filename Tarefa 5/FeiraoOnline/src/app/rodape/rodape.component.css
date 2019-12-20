@@ -1,0 +1,17 @@
+
+#footer
+{
+    background-color: aqua;
+}
+
+#masterCard{
+    width: 32px;
+    height: 20px;
+}
+#formasPag{
+    padding-top: 3%;
+    margin-left: 2%; 
+}
+#pag{
+    text-align: center;
+}

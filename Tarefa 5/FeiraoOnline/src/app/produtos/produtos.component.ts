@@ -29,6 +29,8 @@ export class ProdutosComponent implements OnInit {
       this.prod.listarProdutosId(this.idProduto).subscribe((res: Produto) => {
         this.listaUnica = res;
       })
+    }else{
+      this.listaUnica = null;
     }
     console.log(this.listaUnica);
   }

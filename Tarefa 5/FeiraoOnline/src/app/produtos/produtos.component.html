@@ -1,19 +1,21 @@
-
 <div class="row margem">
-    <div class="form-inline my-2 my-lg-0 row">
-      <input class="form-control mr-sm-2" type="number" placeholder="Pesquisar Produto" aria-label="Pesquisar"
+  <div class="form-inline row alinhapesquisa">
+    <div class="botao">
+      <input class="form-control" type="number" placeholder="Pesquisar Produto" aria-label="Pesquisar"
         [(ngModel)]="idProduto" [ngModelOptions]="{standalone: true}">
-      <button class="btn btn-outline-success my-2 my-sm-0" id="pesquisa" (click)="pesquisarId();"
-        type="number">Pesquisar</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" id="pesquisa" (click)="mostrarTudo();" type="number">Mostrar
+      <button class="btn btn-outline-success " (click)="pesquisarId();" type="number">Pesquisar</button>
+
+      <button class="btn btn-outline-success " (click)="mostrarTudo();" type="number">Mostrar
         Tudo</button>
     </div>
   </div>
-  
+</div>
+
   <div *ngIf="isLista == true">
-    <div class="row ">
+    <div class="row d-flex justify-content-center">
+
       <div *ngFor="let _prod of listaDeProdutos">
-        <div class="card" style="width: 18rem;">
+        <div class="card mx-2 mb-3" style="width: 18rem;">
           <img class="card-img-top" src={{_prod.linkfoto}} alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{_prod.titulo}}</h5>
@@ -29,10 +31,11 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
-  
-  <div class="row">
+
+  <div class="row d-flex justify-content-center">
     <div *ngIf="isLista == false && listaUnica != null">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src={{listaUnica.linkfoto}} alt="Card image cap">
@@ -50,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="listaUnica == undefined">
+    <div *ngIf="listaUnica == null && !isLista">
       <h3>Não foi possivel encontar o produto</h3>
     </div>
   </div>
