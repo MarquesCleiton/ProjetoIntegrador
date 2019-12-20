@@ -18,7 +18,6 @@ export class MenuComponent implements OnInit {
   public botao(){
     console.log(this.barraPesquisa);
     var pgProduto:ProdutosComponent;
-    pgProduto.setMsg(this.barraPesquisa);
   }
 
 }
