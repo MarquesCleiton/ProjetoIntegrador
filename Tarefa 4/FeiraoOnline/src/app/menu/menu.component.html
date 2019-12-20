@@ -1,0 +1,31 @@
+<!--MENU-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"><img src="../../assets/images/logo.jfif" alt="Logo" id="logo"></a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="menu">
+            <li class="nav-item  mx-3">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link " href="#">Produtos</a>
+            </li>
+            <li class="nav-item active mx-3">
+                <a class="nav-link" [routerLink]="'/quemsomos'">Quem Somos</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link " [routerLink]="'/contato'">Contato</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link ">Cadastro</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link ">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--FIM DO MENU-->
