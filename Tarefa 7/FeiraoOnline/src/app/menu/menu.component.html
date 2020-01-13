@@ -26,29 +26,37 @@
                 <a class="nav-link active"[routerLink]="'/listagem'">Listagem</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link active" data-toggle="modal" data-target="#modalExemplo">Login</a>
+                <a class="nav-link active" data-toggle="modal" data-target="#modal" [routerLink]="">Login</a>
             </li>
         </ul>
     </div>
 </nav>
-<!-- Modal -->
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div id="modal" class="modal fade" tabindex="-1" role="dialog"><!-- Início do código da janela modal -->
+  <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary">Salvar mudanças</button>
-        </div>
+          <div class="modal-header"><!-- Header do modal -->
+              <h4 class="modal-title">Login</h4><!-- Título -->
+          </div>
+          <div class="modal-body"><!-- Corpo do modal -->
+              <form action=""><!-- Início do Formulário -->
+                  <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Digite seu email">
+                  </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" placeholder="Digite sua senha">
+                  </div>
+                  <button class="btn btn-block btn-info">Enviar</button>
+              </form>
+          </div>
+          <div class="modal-footer"> <!-- Footer do Modal -->
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Fechar <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </button>    
+              <button type="button" class="btn btn-default"x>
+                  Cadastre-se 
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </button>          
+          </div>
       </div>
-    </div>
   </div>
-<!--FIM DO MENU-->
+</div>
