@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutosComponent } from '../produtos/produtos.component';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
-
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -16,11 +15,13 @@ export class MenuComponent implements OnInit {
   private email: string;
   private senha: string;
   private usuario: Usuario = new Usuario();
-  
-  constructor(private srv: UsuarioService) { }
+  router: Router;
+
+  constructor(router: Router, private srv: UsuarioService) { 
+    this.router = router;
+  }
 
   ngOnInit() {
-    
   }
 
   public enviar(){
@@ -34,12 +35,12 @@ export class MenuComponent implements OnInit {
         alert("Login realizado com sucesso");
         this.email = "";
         this.senha = "";
-
+        this.router.navigate(['/home']);
       },
       err => {
         alert ("Erro ao realizar Login");
+
       }
     )
   }
-
 }
