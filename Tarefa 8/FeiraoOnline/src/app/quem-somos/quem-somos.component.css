@@ -1,0 +1,47 @@
+
+#quemSomos
+{
+    text-align: center;
+    padding-top: 10%;
+   background-image: url(../../assets/images/frutaFundo.jpg);
+   color: white;
+}
+
+#img-circle
+{
+
+    border-radius: 60%;
+    margin: 10%;
+}
+
+.bio
+{
+    margin-top: 5%;
+}
+
+#titulo
+{
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom:5% ;
+  
+}
+
+#nossoTime
+{
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 2%;
+} 
+
+#parallax
+{
+    margin-top: 7%;
+    background-image: url(../../assets/images/fundoPassando.jfif);
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
