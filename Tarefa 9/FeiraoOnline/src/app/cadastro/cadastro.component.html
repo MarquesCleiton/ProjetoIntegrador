@@ -32,7 +32,7 @@
                     <label for="E-mail">E-mail*</label>
                     <input type="email" class="form-control" id="email" placeholder="feirao@gmail.com" required
                         [(ngModel)]="email">
-                        <div class="erro">{{msgEmail}}</div>
+                    <div class="erro">{{msgEmail}}</div>
                 </div>
 
                 <div class="col-md-4">
@@ -41,7 +41,7 @@
                         placeholder="(65) 91811-5159" name="contact[telephone]" id="telefone_contato" required
                         [(ngModel)]="telefone" (keypress)="formataTelefone($event);" (keyup)="verificanumero();"
                         restrict-input="^[0-9-]*$">
-                        <div class="erro">{{msgTelefone}}</div>
+                    <div class="erro">{{msgTelefone}}</div>
                     <div class="col-md-2"></div>
                 </div>
             </div>
@@ -51,18 +51,18 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <label for="Senha">Senha*</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" 
-                        required [(ngModel)]="senha" (keypress) = "vs();" (keyup) = "vs();">
-                        <div class="erro">{{msgSenha}}</div>
+                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required
+                        [(ngModel)]="senha" (keypress)="vs();" (keyup)="vs();">
+                    <div class="erro">{{msgSenha}}</div>
 
                 </div>
 
                 <div class="col-md-4">
                     <label for="Senha">Confirmar Senha*</label>
-                    <input type="password" class="form-control" id="telefone"
-                        placeholder="Digite sua senha" id="senhaDois" required [(ngModel)]="confirmaSenha"
-                        (keypress) = "verificaConfirmaSenha()" (keyup) = "verificaConfirmaSenha()">
-                        <div class="erro">{{msgConfirmaSenha}}</div>
+                    <input type="password" class="form-control" id="telefone" placeholder="Digite sua senha"
+                        id="senhaDois" required [(ngModel)]="confirmaSenha" (keypress)="verificaConfirmaSenha()"
+                        (keyup)="verificaConfirmaSenha()">
+                    <div class="erro">{{msgConfirmaSenha}}</div>
                     <div class="col-md-2"></div>
                 </div>
 

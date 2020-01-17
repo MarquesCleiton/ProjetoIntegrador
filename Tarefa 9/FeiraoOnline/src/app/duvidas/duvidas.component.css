@@ -1,11 +1,17 @@
+#titulo{
+    text-align: center;
+}
 #imagem{
     text-align:center;
+    margin-top: 20%;
 }
 #accordion{
     margin-bottom: 20%;
 }
 #cards{
     text-align: center;
-    margin-left: 1%;
-    position: relative;
+}
+#formDuvidas{
+    padding-top: 2%;
+    padding-left: 25%;
 }
