@@ -16,7 +16,7 @@ private usuario: Usuario;
   ngOnInit() {
     this.usuario = Globals.USUARIO;
     if (!this.usuario){
-      this.router.navigate(['/home']); 
+      this.router.navigate(['/home']);
     }
     else {
       this.usuario = Globals.USUARIO;
