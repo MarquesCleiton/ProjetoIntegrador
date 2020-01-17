@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 private usuario: Usuario;
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
+
     this.usuario = Globals.USUARIO;
     if (!this.usuario){
       this.router.navigate(['/home']);
