@@ -46,8 +46,7 @@ export class MenuComponent implements OnInit{
         Globals.USUARIO = res;
 
         this.router.navigate(['login']);
-        $('#modal').hide();
-        $('.modal-backdrop').hide();   
+        $('#fechar').click();
       },
       err => {
         alert ("Erro ao realizar Login");
