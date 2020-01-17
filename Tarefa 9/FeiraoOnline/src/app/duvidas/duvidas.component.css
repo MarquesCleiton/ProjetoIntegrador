@@ -1,9 +1,11 @@
-#titulo{
-    text-align: center;
-}
 #imagem{
     text-align:center;
 }
 #accordion{
     margin-bottom: 20%;
+}
+#cards{
+    text-align: center;
+    margin-left: 1%;
+    position: relative;
 }
