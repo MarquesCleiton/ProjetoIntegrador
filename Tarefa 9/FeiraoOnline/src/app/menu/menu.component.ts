@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutosComponent } from '../produtos/produtos.component';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
+import { Router } from '@angular/router';
+import { Globals } from '../model/Global';
 
 
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
+  providers: [ Globals ]
 })
 export class MenuComponent implements OnInit {
   
@@ -17,7 +19,7 @@ export class MenuComponent implements OnInit {
   private senha: string;
   private usuario: Usuario = new Usuario();
   
-  constructor(private srv: UsuarioService) { }
+  constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
     
@@ -30,10 +32,13 @@ export class MenuComponent implements OnInit {
     console.log(this.senha);
 
     this.srv.login(this.usuario).subscribe(
-      res => {
+      (res: Usuario) => {
         alert("Login realizado com sucesso");
         this.email = "";
         this.senha = "";
+        Globals.USUARIO = res;
+
+        this.router.navigate(['login']);
 
       },
       err => {
