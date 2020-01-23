@@ -15,7 +15,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
-import { DuvidasComponent } from './duvidas/duvidas.component'
+import { DuvidasComponent } from './duvidas/duvidas.component';
+import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
+import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { DuvidasComponent } from './duvidas/duvidas.component'
     ListagemComponent,
     EditarComponent,
     LoginComponent,
-    DuvidasComponent
+    DuvidasComponent,
+    CadastroProdutosComponent,
+    ListagemProdutosComponent,
+    EditarProdutoComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,9 @@ import { ListagemComponent } from './listagem/listagem.component';
 import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
 import { DuvidasComponent } from './duvidas/duvidas.component';
+import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
+import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
@@ -20,6 +23,9 @@ const routes: Routes = [
   {path:'listagem', component:ListagemComponent},
   {path:'editar/:id', component: EditarComponent},
   {path: 'login', component: LoginComponent},
+  {path:'cadastroprodutos', component: CadastroProdutosComponent},
+  {path:'listagemprodutos', component: ListagemProdutosComponent},
+  {path:'editaprodutos', component: EditarProdutoComponent},
   {path: 'duvidas', component: DuvidasComponent}
   
 ];
