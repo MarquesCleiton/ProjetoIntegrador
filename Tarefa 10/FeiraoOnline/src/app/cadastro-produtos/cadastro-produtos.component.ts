@@ -15,29 +15,30 @@ export class CadastroProdutosComponent implements OnInit {
   private descricao: string;
   private estoque:   number;
   private preco:     number;
-
+  private linkFoto:  string;
+  private produto: Produto = new Produto();
 
   constructor(private srv: ProdutoService) { }
-
-  
 
   ngOnInit() {
   }
 
   public enviarProduto(){
-    var produto: Produto;
-    produto = new Produto();
-    produto.titulo = this.titulo;
-    produto.idProduto = this.id;
-    produto.detalhes = this.descricao;
-    produto.qtdEstoque = this.estoque;
-    produto.preco = this.preco;
 
-    this.srv.inseriProdutos(produto).subscribe(res =>{
+    this.produto.idProduto = this.id;
+    this.produto.titulo = this.titulo;
+    this.produto.detalhes = this.descricao;
+    this.produto.linkFoto = this.linkFoto;
+    this.produto.qtdEstoque = this.estoque;
+    this.produto.preco = this.preco;
+
+    this.srv.inseriProdutos(this.produto).subscribe(res =>{
+      console.log(this.produto);
       alert("Cadastro realizado com sucesso!!!");
           this.titulo = "";
-          produto.idProduto = produto.idProduto + 1;
+          this.id = null;
           this.descricao = "";
+          this.linkFoto = "";
           this.estoque = null;
           this.preco = null;
     },

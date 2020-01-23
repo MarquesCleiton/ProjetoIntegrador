@@ -18,7 +18,7 @@ export class ProdutosComponent implements OnInit {
   constructor(private prod: ProdutoService) { }
 
   ngOnInit() {
-    this.prod.listarProdutos().subscribe((res: Produto[]) => {
+    this.prod.exibirTodosProdutos().subscribe((res: Produto[]) => {
       this.listaDeProdutos = res;
     })
   }
@@ -37,7 +37,7 @@ export class ProdutosComponent implements OnInit {
   
   mostrarTudo() {
     this.isLista = true;
-    this.prod.listarProdutos().subscribe((res: Produto[]) => {
+    this.prod.exibirTodosProdutos().subscribe((res: Produto[]) => {
       this.listaDeProdutos = res;
     })
   }

@@ -7,16 +7,17 @@
         <th scope="col" >Estoque</th>
         <th scope="col" >Preço</th>
         <th scope="col" >Editar</th>
+        
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let user of usuario'>
-        <th scope="row" >{{user.id}}</th>
-        <td>{{user.titulo}}</td>
-        <td>{{user.descricao}}</td>
-        <td>{{user.estoque}}</td>
-        <td>{{user.preco}}</td>
-        <td><a [routerLink]="['/editarProduto']"> <button type="button" class="btn btn-success">editar</button> </a></td>
+      <tr *ngFor='let p of produto'>
+        <th scope="row" >{{p.idProduto}}</th>
+        <td>{{p.titulo}}</td>
+        <td>{{p.detalhes}}</td>
+        <td>{{p.qtdEstoque}}</td>
+        <td>{{p.preco}}</td>
+        <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success">editar</button> </a></td>
       </tr>
     </tbody>
   </table>

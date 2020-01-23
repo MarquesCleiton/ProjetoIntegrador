@@ -9,26 +9,23 @@ export class ProdutoService {
 
   constructor( private http:HttpClient) { }
 
-  public listarProdutos(){
-    return this.http.get("http://localhost:8088/produtos/todos");
-  }
 
   public listarProdutosId(idProduto: number){
-    return this.http.get("http:localhost:8088/produtos/"+idProduto);
+    return this.http.get("http://localhost:8080/produto/"+idProduto);
   }
 
   public inseriProdutos(produto: Produto){
     console.log(produto);
-    return this.http.post("https://localhost:8080/produto/novo", produto);
+    return this.http.post("http://localhost:8080/produto/novo", produto);
   }
 
   public exibirTodosProdutos(){
     console.log("chegooou exibir")
-    return this.http.get("http://localhost:8088/produtos/todos");
+    return this.http.get("http://localhost:8080/produto/todos");
   }
 
   public atualiza(produto:Produto){
     console.log(produto);
-    return this.http.put("http://localhost:8080/produto/", produto);
+    return this.http.put("http://localhost:8080/produto/atualizar", produto);
   }
 }

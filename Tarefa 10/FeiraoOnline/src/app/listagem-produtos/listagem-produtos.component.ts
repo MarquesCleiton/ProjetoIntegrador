@@ -21,7 +21,6 @@ export class ListagemProdutosComponent implements OnInit {
     }),
     (err =>{
       alert("deu errado")
-
     });
   }
 
