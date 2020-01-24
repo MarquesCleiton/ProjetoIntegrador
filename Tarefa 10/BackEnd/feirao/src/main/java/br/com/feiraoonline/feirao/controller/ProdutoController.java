@@ -50,9 +50,9 @@ public class ProdutoController {
 
 	// UPDATE
 	@PutMapping("/produto/atualizar")
-	public ResponseEntity<String> atualiza(@RequestBody Produto produto) {
+	public ResponseEntity<Produto> atualiza(@RequestBody Produto produto) {
 		if (bd.atualizar(produto)) {
-			return ResponseEntity.ok("ATUALIZADO");
+			return ResponseEntity.ok(produto);
 		} else {
 			return ResponseEntity.notFound().build();
 		}
@@ -60,9 +60,11 @@ public class ProdutoController {
 	
 	//DELETE
 	@DeleteMapping("/produto/apagar/{id}")
-	public ResponseEntity<String> apagar(@PathVariable int id) {
+	public ResponseEntity<Produto> apagar(@PathVariable int id) {
+		Produto p = new Produto();
 		if(bd.apagar(id)) {
-			return ResponseEntity.ok("APAGADO");
+			p = bd.buscar(id);
+			return ResponseEntity.ok(p);
 		}
 		return ResponseEntity.notFound().build();
 	}
