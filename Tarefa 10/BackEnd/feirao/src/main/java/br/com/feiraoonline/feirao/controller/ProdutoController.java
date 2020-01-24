@@ -50,9 +50,9 @@ public class ProdutoController {
 
 	// UPDATE
 	@PutMapping("/produto/atualizar")
-	public ResponseEntity<String> atualiza(@RequestBody Produto produto) {
+	public ResponseEntity<Produto> atualiza(@RequestBody Produto produto) {
 		if (bd.atualizar(produto)) {
-			return ResponseEntity.ok("ATUALIZADO");
+			return ResponseEntity.ok(produto);
 		} else {
 			return ResponseEntity.notFound().build();
 		}
