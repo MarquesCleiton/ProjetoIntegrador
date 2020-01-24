@@ -12,6 +12,7 @@ import { DuvidasComponent } from './duvidas/duvidas.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { CompraComponent } from './compra/compra.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'cadastroprodutos', component: CadastroProdutosComponent},
   {path:'listagemprodutos', component: ListagemProdutosComponent},
   {path:'editarproduto/:id', component: EditarProdutoComponent},
-  {path: 'duvidas', component: DuvidasComponent}
+  {path: 'duvidas', component: DuvidasComponent},
+  {path: 'produto/compra', component: CompraComponent}
   
 ];
 

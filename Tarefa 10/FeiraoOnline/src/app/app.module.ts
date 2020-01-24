@@ -18,7 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { DuvidasComponent } from './duvidas/duvidas.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
-import { EditarProdutoComponent } from './editar-produto/editar-produto.component'
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { CompraComponent } from './compra/compra.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     DuvidasComponent,
     CadastroProdutosComponent,
     ListagemProdutosComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    CompraComponent
   ],
   imports: [
     BrowserModule,
