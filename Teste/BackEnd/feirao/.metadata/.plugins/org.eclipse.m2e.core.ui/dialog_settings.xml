@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+<<<<<<< HEAD
+			<item value="C:\Users\Generation\Desktop\ProjetoIntegrador\Tarefa 10\BackEnd\feirao"/>
+=======
+>>>>>>> 18329282614ea25cd9dc6ef268650cbec62c7833
+			<item value="C:\Users\Generation\Desktop\ProjetoIntegrador\Tarefa 10\BackEnd"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

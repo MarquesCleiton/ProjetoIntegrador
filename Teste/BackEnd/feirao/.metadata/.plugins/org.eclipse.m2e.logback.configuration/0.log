@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+2020-01-24 08:56:18,355 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+=======
+2020-01-24 08:52:13,958 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+>>>>>>> 18329282614ea25cd9dc6ef268650cbec62c7833

@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="form-inline row alinhapesquisa">
+    <div class="botao">
+      <input class="form-control" type="number" placeholder="Pesquisar Produto" aria-label="Pesquisar"
+        [(ngModel)]="idProduto" [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-outline-success " (click)="pesquisarId();" type="number">Pesquisar</button>
+
+      <button class="btn btn-outline-success " (click)="mostrarTudo();" type="number">Mostrar
+        Tudo</button>
+    </div>
+  </div>
+</div>
+
+  <div *ngIf="isLista == true">
+    <div class="row d-flex justify-content-center">
+
+      <div *ngFor="let _prod of listaDeProdutos">
+        <div class="card mx-2 mb-3" style="width: 18rem;">
+          <img class="card-img-top" src={{_prod.linkFoto}} alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{_prod.titulo}}</h5>
+            <p class="card-text">{{_prod.detalhes}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Preco: </strong>{{_prod.preco}}</li>
+            <li class="list-group-item"><strong>Estoque: </strong>{{_prod.qtdEstoque}}</li>
+            <li class="list-group-item"><strong>Id do Produto: </strong>{{_prod.idProduto}}</li>
+          </ul>
+          <div class="card-body">
+            <a [routerLink]="['/produtos/compra', _prod.idProduto]" class="card-link">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div *ngIf="isLista == false && listaUnica != null">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src={{listaUnica.linkFoto}} alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{listaUnica.titulo}}</h5>
+          <p class="card-text">{{listaUnica.detalhes}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Preco: </strong>{{listaUnica.preco}}</li>
+          <li class="list-group-item"><strong>Estoque: </strong>{{listaUnica.qtdEstoque}}</li>
+          <li class="list-group-item"><strong>Id do Produto: </strong>{{listaUnica.idProduto}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Comprar</a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="listaUnica == null && !isLista">
+      <h3>Não foi possivel encontar o produto</h3>
+    </div>
+  </div>
