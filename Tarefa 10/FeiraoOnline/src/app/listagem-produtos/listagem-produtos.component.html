@@ -7,6 +7,7 @@
         <th scope="col" >Estoque</th>
         <th scope="col" >Preço</th>
         <th scope="col" >Editar</th>
+        <th scope="col" >Apagar</th>
         
       </tr>
     </thead>
@@ -17,7 +18,8 @@
         <td>{{p.detalhes}}</td>
         <td>{{p.qtdEstoque}}</td>
         <td>{{p.preco}}</td>
-        <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success">editar</button> </a></td>
+        <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success">Editar</button> </a></td>
+        <td><a (click) = "apagar(p.idProduto,p.titulo,p.detalhes,p.qtdEstoque,p.preco);"> <button type="button" class="btn btn-success">Apagar</button> </a></td>
       </tr>
     </tbody>
   </table>
