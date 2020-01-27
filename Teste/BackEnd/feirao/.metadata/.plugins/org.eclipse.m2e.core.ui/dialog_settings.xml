@@ -2,11 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-<<<<<<< HEAD
-			<item value="C:\Users\Generation\Desktop\ProjetoIntegrador\Tarefa 10\BackEnd\feirao"/>
-=======
->>>>>>> 18329282614ea25cd9dc6ef268650cbec62c7833
-			<item value="C:\Users\Generation\Desktop\ProjetoIntegrador\Tarefa 10\BackEnd"/>
+			<item value="C:\Users\Generation\Desktop\ProjetoIntegrador\Teste\BackEnd"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

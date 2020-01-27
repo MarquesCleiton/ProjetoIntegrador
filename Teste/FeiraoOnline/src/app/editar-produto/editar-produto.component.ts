@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
 import { ActivatedRoute } from '@angular/router';
-import { StringifyOptions } from 'querystring';
 
 @Component({
   selector: 'app-editar-produto',
@@ -32,7 +31,7 @@ export class EditarProdutoComponent implements OnInit {
       this.titulo = this.produto.titulo;
       this.descricao = this.produto.detalhes;
       this.preco = this.produto.preco;
-      this.estoque = this.produto.qtdEstoque
+      this.estoque = this.produto.qtdEstoque;
     },(err) => {
 
       alert ("deu ruim");

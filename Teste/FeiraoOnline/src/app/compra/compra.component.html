@@ -6,32 +6,33 @@
 
         <div class="col-md-4">
             <div class="py-3">
-                <img src="../../assets/images/verduras.png" width="100%">
+                <img src="{{prod.linkFoto}}" width="100%">
             </div>       
         </div>
 
         <div class="col-md-4">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col">
-                    <h2>Título da do Produto</h2>
+                    <h2>{{prod.titulo}}</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <h3>R$ PREÇO</h3>
+                    <h3>R$ {{prod.preco}}</h3>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-1">
                 <div class="col">
-                    (QTD) disponíveis
+                    <p><strong>Disponiveis: </strong>  {{prod.qtdEstoque}}</p>
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mb-3 mt-8">
                 <div class="col">
-                     Descrição: Uma pequena informação descrevendo o produto
+                    <p><strong>Detalhes:</strong>  {{prod.detalhes}}</p>
+                   
                 </div>
             </div>
 
