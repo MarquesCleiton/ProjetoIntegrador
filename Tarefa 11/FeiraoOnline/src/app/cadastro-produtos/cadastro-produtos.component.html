@@ -12,17 +12,17 @@
         </div>
 
     </div>
-    <div id="formContato">
+    <div id="formCadasProd">
 
         <div class="row">
             <div class="col-md-2"></div>
             <div class="form-group col-md-4">
-                <label for="text">Titulo*</label><br>
+                <label for="text" class="required">Titulo</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite o titulo do produto" required
                     [(ngModel)]="titulo">
             </div>
             <div class="col-md-4">
-                <label for="number" >Estoque*</label>
+                <label for="number" class="required" >Estoque</label>
                 <input type="number"  class="form-control" id="Estoque" maxlength="5"
                    required [(ngModel)]="estoque">
                 <div class="col-md-2"></div>
@@ -33,12 +33,12 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="text">Descrição*</label>
+                    <label for="text" class="required">Descrição</label>
                     <input type="text" class="form-control" id="descricao" placeholder="produto hiper, mega, blasster doce" required
                         [(ngModel)]="descricao">
                 </div>
                 <div class="col-md-4">
-                    <label for="text">Id*</label>
+                    <label for="text" class="required">Id</label>
                     <input type="number" class="form-control" id="Id" placeholder="digite o id do produto" required
                         [(ngModel)]="id">
                 </div>
@@ -50,13 +50,13 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="Senha">Link da foto*</label>
+                    <label for="Senha" class="required">Link da foto</label>
                     <input type="text" class="form-control" id="linkFoto" placeholder="Digite o link da foto" required
                         [(ngModel)]="linkFoto">
                 </div>
 
                 <div class="col-md-4">
-                    <label >Preço*</label>
+                    <label  class="required">Preço</label>
                     <input type="number" class="form-control" id="preco" placeholder="Digite o preço do produto" required [(ngModel)]="preco">
                     <div class="col-md-2"></div>
                 </div>
@@ -67,11 +67,11 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <button type="submit" id="btnEnviarContato" class="btn btn-primary mt-3"
+                <button type="submit" id="btnEnviarContato" class="btn btn-success"
                     (click)='enviarProduto();'>Enviar</button>
             </div>
             <div class="col-md-2"></div>
         </div>
     </div>
 
-</div>
+</div> 
