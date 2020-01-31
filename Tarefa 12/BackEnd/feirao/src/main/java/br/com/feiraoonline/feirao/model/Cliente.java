@@ -8,10 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-<<<<<<< HEAD
+
 import javax.persistence.ManyToOne;
-=======
->>>>>>> 078e79080b87bd776008e2d8190d27ab4ac4ff19
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,10 +38,7 @@ public class Cliente {
 	private String senha;
 	@Column(name = "telefone", length = 15)
 	private String telefone;
-<<<<<<< HEAD
-=======
-	
->>>>>>> 078e79080b87bd776008e2d8190d27ab4ac4ff19
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente")
 	private List<Pedido> pedido;
 	

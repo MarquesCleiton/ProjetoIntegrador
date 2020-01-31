@@ -27,22 +27,14 @@ public class Pedido {
 	
 	@ManyToOne
 	private Cliente idCliente;
-<<<<<<< HEAD
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
 	private List<Produto> idProduto;
-	@ManyToOne
-	private Entrega idEntrega;
-	
-	
-=======
-	
 	@ManyToOne
 	private Entrega idEntrega;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
 	private List<Itens> idItens;
 
->>>>>>> 078e79080b87bd776008e2d8190d27ab4ac4ff19
 	public int getIdPedido() {
 		return idPedido;
 	}
