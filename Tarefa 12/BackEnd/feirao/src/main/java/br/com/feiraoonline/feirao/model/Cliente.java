@@ -2,12 +2,14 @@ package br.com.feiraoonline.feirao.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -35,7 +37,7 @@ public class Cliente {
 	private String senha;
 	@Column(name = "telefone", length = 15)
 	private String telefone;
-	@ManyToOne
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente")
 	private List<Pedido> pedido;
 	
 	public List<Pedido> getPedido() {
