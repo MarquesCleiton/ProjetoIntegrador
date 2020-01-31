@@ -25,38 +25,20 @@ public class Pedido {
 	@Column(name = "dtpedido")
 	private String dtpedido;
 	
-	@OneToMany (cascade = CascadeType.ALL, mappedBy = "idCliente")
+	@ManyToOne
 	private Cliente idCliente;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
-	private List<Produto> idProduto;
-	
-	@OneToMany	(cascade = CascadeType.ALL, mappedBy = "idEntrega")
+	@ManyToOne
 	private Entrega idEntrega;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
+	private List<Itens> idItens;
+
 	public int getIdPedido() {
 		return idPedido;
 	}
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
-	}
-	public List<Produto> getIdProduto() {
-		return idProduto;
-	}
-	public void setIdProduto(List<Produto> idProduto) {
-		this.idProduto = idProduto;
-	}
-	public Entrega getIdEntrega() {
-		return idEntrega;
-	}
-	public void setIdEntrega(Entrega idEntrega) {
-		this.idEntrega = idEntrega;
-	}
-	public int getIdpedido() {
-		return idPedido;
-	}
-	public void setIdpedido(int idpedido) {
-		this.idPedido = idpedido;
 	}
 	public int getQuantidade() {
 		return quantidade;
@@ -70,10 +52,24 @@ public class Pedido {
 	public void setDtpedido(String dtpedido) {
 		this.dtpedido = dtpedido;
 	}
-	public Cliente getIdcliente() {
+	public Cliente getIdCliente() {
 		return idCliente;
 	}
-	public void setIdcliente(Cliente idcliente) {
-		this.idCliente = idcliente;
+	public void setIdCliente(Cliente idCliente) {
+		this.idCliente = idCliente;
 	}
+	public Entrega getIdEntrega() {
+		return idEntrega;
+	}
+	public void setIdEntrega(Entrega idEntrega) {
+		this.idEntrega = idEntrega;
+	}
+	public List<Itens> getIdItens() {
+		return idItens;
+	}
+	public void setIdItens(List<Itens> idItens) {
+		this.idItens = idItens;
+	}
+
+	
 }

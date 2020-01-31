@@ -4,6 +4,8 @@ use feiraoonline;
 desc produto;
 desc pedido;
 desc entrega;
+desc cliente;
+desc categoria;
 
 drop database feiraoonline;
 
