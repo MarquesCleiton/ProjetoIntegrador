@@ -1,6 +1,12 @@
 create database feiraoonline;
 use feiraoonline;
 
+desc produto;
+desc pedido;
+desc entrega;
+
+drop database feiraoonline;
+
 create table cliente (
 	idcliente	integer not null auto_increment,
 	nome		varchar (100),

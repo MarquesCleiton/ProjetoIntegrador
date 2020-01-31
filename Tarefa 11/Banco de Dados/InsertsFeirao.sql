@@ -1,4 +1,4 @@
--- INSERT CLIENTE    
+ -- INSERT CLIENTE    
 insert into cliente values (null, "João Vitor Soares Lima", "Rua Edson Mota n37B", "São Paulo", "São Paulo", "08460-465",
     "joaovitorsoareslima12@gmail.com", "1234567891@", "(11)9402-26032");
     
