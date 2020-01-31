@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "entrega")
 public class Entrega {
@@ -27,6 +29,7 @@ public class Entrega {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idEntrega")
 	private List<Pedido> idPedido;
+	@JsonIgnoreProperties("idEntrega")
 	
 	public void setIdPedido(List<Pedido> idPedido) {
 		this.idPedido = idPedido;

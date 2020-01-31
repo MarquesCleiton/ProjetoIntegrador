@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name="produto")
@@ -38,7 +40,9 @@ public class Produto {
 	private Categoria idCategoria;
 		
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idProduto")
+	@JsonIgnoreProperties("idProduto")
 	private List<Itens> itens;
+	
 	
 	
 	public int getIdProduto() {

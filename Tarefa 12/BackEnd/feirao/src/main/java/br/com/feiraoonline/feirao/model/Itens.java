@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="itens")
 public class Itens {
@@ -18,6 +20,7 @@ public class Itens {
 	private int idItens;
 	@ManyToOne
 	private Produto idProduto;
+	@JsonIgnoreProperties("idProduto")
 	@ManyToOne
 	private Pedido idPedido;
 	public int getIdItens() {

@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
@@ -40,7 +42,11 @@ public class Cliente {
 	private String telefone;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente")
+	@JsonIgnoreProperties("IdCliente")
 	private List<Pedido> pedido;
+	
+	@JsonIgnoreProperties("pedido")
+	
 	
 	public List<Pedido> getPedido() {
 		return pedido;

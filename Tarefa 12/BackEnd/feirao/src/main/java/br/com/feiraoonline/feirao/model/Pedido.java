@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="pedido")
 public class Pedido {
@@ -27,11 +29,13 @@ public class Pedido {
 	
 	@ManyToOne
 	private Cliente idCliente;
+	@JsonIgnoreProperties("idCliente")
 	@ManyToOne
 	private Entrega idEntrega;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
 	private List<Itens> idItens;
+	@JsonIgnoreProperties("idPedido")
 
 	public int getIdPedido() {
 		return idPedido;
