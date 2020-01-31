@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="categoria")
@@ -26,9 +25,8 @@ public class Categoria {
 	private String categoria;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCategoria")
-	@JsonIgnoreProperties("idCategoria")
 	private List<Produto> produto;
-	
+
 	public int getIdCategoria() {
 		return idCategoria;
 	}
@@ -40,5 +38,11 @@ public class Categoria {
 	}
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+	public List<Produto> getProduto() {
+		return produto;
+	}
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 }

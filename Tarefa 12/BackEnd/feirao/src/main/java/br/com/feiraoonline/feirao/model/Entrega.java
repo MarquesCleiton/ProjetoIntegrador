@@ -8,7 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.ManyToOne;
+=======
+>>>>>>> 078e79080b87bd776008e2d8190d27ab4ac4ff19
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,9 +25,14 @@ public class Entrega {
 	private int idEntrega;
 	@Column (name = "andamento")
 	private boolean andamento;
+<<<<<<< HEAD
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idEntrega")
 	private List <Pedido> idPedido;
+=======
+>>>>>>> 078e79080b87bd776008e2d8190d27ab4ac4ff19
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idEntrega")
+	private List<Pedido> idPedido;
 	
 	public void setIdPedido(List<Pedido> idPedido) {
 		this.idPedido = idPedido;
