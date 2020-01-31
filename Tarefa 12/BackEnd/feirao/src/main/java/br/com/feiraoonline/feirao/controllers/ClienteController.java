@@ -1,6 +1,6 @@
 package br.com.feiraoonline.feirao.controllers;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.feiraoonline.feirao.model.Cliente;
-import br.com.feiraoonline.feirao.services.ClienteService;
 import br.com.feiraoonline.feirao.services.IClienteService;
 
 @RestController
