@@ -1,11 +1,15 @@
 package br.com.feiraoonline.feirao.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,20 +18,43 @@ public class Pedido {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private int id;
+	@Column(name = "idpedido")
+	private int idPedido;
 	@Column(name = "quantidade")
 	private int quantidade;
 	@Column(name = "dtpedido")
 	private String dtpedido;
 	@ManyToOne
-	private Cliente idcliente;
+	private Cliente idCliente;
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "idPedido")
+	private List<Produto> idProduto;
+	@ManyToOne
+	private Entrega idEntrega;
 	
-	public int getId() {
-		return id;
+	
+	public int getIdPedido() {
+		return idPedido;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
+	public List<Produto> getIdProduto() {
+		return idProduto;
+	}
+	public void setIdProduto(List<Produto> idProduto) {
+		this.idProduto = idProduto;
+	}
+	public Entrega getIdEntrega() {
+		return idEntrega;
+	}
+	public void setIdEntrega(Entrega idEntrega) {
+		this.idEntrega = idEntrega;
+	}
+	public int getIdpedido() {
+		return idPedido;
+	}
+	public void setIdpedido(int idpedido) {
+		this.idPedido = idpedido;
 	}
 	public int getQuantidade() {
 		return quantidade;
@@ -42,9 +69,9 @@ public class Pedido {
 		this.dtpedido = dtpedido;
 	}
 	public Cliente getIdcliente() {
-		return idcliente;
+		return idCliente;
 	}
 	public void setIdcliente(Cliente idcliente) {
-		this.idcliente = idcliente;
+		this.idCliente = idcliente;
 	}
 }

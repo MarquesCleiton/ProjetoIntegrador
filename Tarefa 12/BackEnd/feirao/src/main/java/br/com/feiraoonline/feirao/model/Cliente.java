@@ -17,8 +17,8 @@ public class Cliente {
 	
 	@Id  //define que este atributo é a chave primaria da tabela
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //faz com que ele seja auto_increment
-	@Column(name="id") //caso necessario criar no banco esse sera o nome
-	private int id;
+	@Column(name="idcliente") //caso necessario criar no banco esse sera o nome
+	private int idCliente;
 	
 	@Column(name = "nome", length = 100)
 	private String nome;
@@ -36,24 +36,8 @@ public class Cliente {
 	private String senha;
 	@Column(name = "telefone", length = 15)
 	private String telefone;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idcliente")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente")
 	private List<Pedido> pedido;
-	
-	
-	
-	public Cliente(int id, String nome, String endereco, String cidade, String estado, String cep, String email,
-			String senha, String telefone) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.endereco = endereco;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.cep = cep;
-		this.email = email;
-		this.senha = senha;
-		this.telefone = telefone;
-	}
 	
 	public List<Pedido> getPedido() {
 		return pedido;
@@ -61,12 +45,14 @@ public class Cliente {
 	public void setPedido(List<Pedido> pedido) {
 		this.pedido = pedido;
 	}
-	public int getId() {
-		return id;
+	public int getIdcliente() {
+		return idCliente;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setIdcliente(int idcliente) {
+		this.idCliente = idcliente;
 	}
+
 	public String getNome() {
 		return nome;
 	}
