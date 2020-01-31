@@ -36,7 +36,7 @@ public class ItensController {
 				}
 				return ResponseEntity.notFound().build();
 		}
-
+		
 		// Read - esse lista todos os usuarios
 		@GetMapping("/itens/todos")
 		public  ResponseEntity<List<Itens>> buscarTodos() {
