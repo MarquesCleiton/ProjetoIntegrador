@@ -10,7 +10,7 @@
         <div class="col-md-12 aux">
             <p>Utilize o formulario abaixo para se cadastrar
             </p>
-        </div> 
+        </div>  
 
     </div>
     <div id="formCadastro"> 
@@ -52,14 +52,14 @@
                 <div class="col-md-4">
 
         
-                    <label for="Endereco">Endereço*</label>
+                    <label for="Endereco" class="required">Endereço</label>
                     <input type="text" class="form-control" id="Endereco" placeholder="Digite seu endereco por extenso" required
                         [(ngModel)]="endereco">
                     <div class="erro"></div>
                 </div>
 
                 <div class="col-md-4 ">
-                    <label for="validationDefault04">Estado</label>
+                    <label for="validationDefault04" class="required">Estado</label>
                     <select class="form-control" [(ngModel)] = "estado" placeholder="Escolha">
                             <option>Selecione</option>
                             <option>São Paulo</option>
@@ -97,14 +97,14 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="Cidade">Cidade*</label>
+                    <label for="Cidade" class="required">Cidade</label>
                     <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" required
                         [(ngModel)]="cidade" >
                     <div class="erro"></div>
                 </div>
 
                 <div class="col-md-4">
-                    <label for="Cep">CEP*</label>
+                    <label for="Cep" class="required">CEP</label>
                     <input type="text" class="form-control" id="cep" placeholder="Digite seu cep"
                         required [(ngModel)]="cep">
                     <div class="erro"></div>
@@ -118,7 +118,7 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="Senha">Senha*</label>
+                    <label for="Senha" class="required">Senha</label>
 
                     <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required
                         [(ngModel)]="senha" (keypress)="vs();" (keyup)="vs();">

@@ -9,7 +9,7 @@
 .required:after {
     content:"*"; 
     color: red; 
-} 
+}  
 
 h2{
     padding-top: 2%;
@@ -17,6 +17,6 @@ h2{
 
 #formCadastro{
     padding-top: 2%;
-    padding-left: 11.3%;
+    padding-left: 12%;
     padding-right: 12%;
 }

@@ -25,8 +25,9 @@
     </div>
 
     <div id="formContato">
+        
 
-        <div class="row">
+        <div class="row d-flex justify-content-center p-padrao">
             <div class="form-group col-md-4">
                 <label for="text" class="required">Nome</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
@@ -42,7 +43,7 @@
         </div>
 
         <div class="form-group">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-4">
                     <label for="E-mail" class="required">E-mail</label>
                     <input type="email" class="form-control" id="email" placeholder="feirao@gmail.com" required
@@ -63,7 +64,7 @@
         </div>
 
         <div class="form-group ">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-4">
                     <label for="input" class="required">Tipo de contato</label>
                     <select id="tipoReclamacao" class="form-control" required [(ngModel)]="tipoContato">
@@ -83,7 +84,7 @@
             </div>
         </div>
         <div class="form-group ">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
                     <label for="exampleFormControlTextarea1" class="required">Digite sua mensagem</label>
                     <textarea class="form-control" id="textarea" rows="3" required [(ngModel)]="mensagem"></textarea>
@@ -103,5 +104,6 @@
             </div>
             <div class="col-md-2"></div>
         </div>
-    </div>
+    
+</div>
 </div>
