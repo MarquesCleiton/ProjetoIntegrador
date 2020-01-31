@@ -1,5 +1,7 @@
 package br.com.feiraoonline.feirao.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +27,7 @@ public class Categoria {
 	
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "idCategoria")
 	@JsonIgnoreProperties("idCategoria")
-	private Produto produto;
+	private List<Produto> produto;
 	
 	public int getIdCategoria() {
 		return idCategoria;

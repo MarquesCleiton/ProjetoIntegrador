@@ -40,7 +40,6 @@ public class Produto {
 	@Column(name="telefone")
 	private String 	telefone;
 	
-	@Column(name="idcategoria")
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria idCategoria;
