@@ -44,6 +44,15 @@ public class Produto {
 	@JsonIgnoreProperties("produto")
 	private Categoria idCategoria;
 	
+	@ManyToOne
+	private Pedido idPedido;
+	
+	public Pedido getIdPedido() {
+		return idPedido;
+	}
+	public void setIdPedido(Pedido idPedido) {
+		this.idPedido = idPedido;
+	}
 	public int getIdCliente() {
 		return idCliente;
 	}
