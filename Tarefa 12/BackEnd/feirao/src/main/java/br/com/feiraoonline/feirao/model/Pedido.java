@@ -27,8 +27,6 @@ public class Pedido {
 	
 	@ManyToOne
 	private Cliente idCliente;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
-	private List<Produto> idProduto;
 	@ManyToOne
 	private Entrega idEntrega;
 	
