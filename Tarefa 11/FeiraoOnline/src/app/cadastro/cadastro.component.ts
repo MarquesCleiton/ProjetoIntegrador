@@ -28,7 +28,6 @@ export class CadastroComponent implements OnInit {
   }
 
   public verificar() {
-    console.log(this.telefone);
     this.msgNomeCompleto = this.verificaNomeCompleto(this.nomeCompleto);
     console.log(this.msgNomeCompleto);
     this.msgEmail = this.verificaEmail();

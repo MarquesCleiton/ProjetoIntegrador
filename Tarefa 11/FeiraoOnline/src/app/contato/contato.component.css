@@ -1,8 +1,7 @@
 #formContato
 {
-  padding-top: 2%;
+    padding-top: 2%;
   padding-left: 25%;
-  
   
 }
 
@@ -10,19 +9,12 @@
 {
     text-align: center;
 }
-
-.erro{
-    color: red; 
-    font-size: unset;
-} 
-
-.required:after {
-    content:"*"; 
-    color: red; 
+#linhaContato
+{
+    padding-top: 3%;
 }
 
-h2{
-    padding-top: 2%;
-} 
-
-
+.erro{
+    color: red;
+    font-size: unset;
+}

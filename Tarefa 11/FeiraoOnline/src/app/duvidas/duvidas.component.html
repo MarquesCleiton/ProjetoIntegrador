@@ -73,7 +73,7 @@
                             nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="card">
                     <div class="card-header" id="headingFour">
                         <h5 class="mb-0">
@@ -235,13 +235,13 @@
 
         <div class="row">
             <div class="form-group col-md-4">
-                <label for="text" class="required">Nome</label><br>
+                <label for="text">Nome*</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
                     [(ngModel)]="nome">
                 <div class="erro">{{msgNome}}</div>
             </div>
             <div class="form-group col-md-4">
-                <label for="text" class="required">Sobrenome</label>
+                <label for="text">Sobrenome*</label>
                 <input type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome" required
                     [(ngModel)]="sobrenome">
                 <div class="erro">{{msgSobreNome}}</div>
@@ -251,7 +251,7 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-8">
-                    <label for="E-mail" class="required">E-mail</label>
+                    <label for="E-mail">E-mail*</label>
                     <input type="email" class="form-control" id="email" placeholder="feirao@gmail.com" required
                         [(ngModel)]="email">
                     <div class="erro">{{msgEmail}}</div>
@@ -261,7 +261,7 @@
         <div class="form-group ">
             <div class="row">
                 <div class="col-md-8">
-                    <label for="exampleFormControlTextarea1" class="required">Digite sua mensagem</label>
+                    <label for="exampleFormControlTextarea1">Digite sua mensagem*</label>
                     <textarea class="form-control" id="textarea" rows="3" required [(ngModel)]="mensagem"></textarea>
                     <div class="erro">{{msgMensagem}}</div>
                 </div>
@@ -271,7 +271,7 @@
 
         <div class="row">
             <div class="col-md-2" >
-                <button type="submit" id="btnEnviarContato" class="btn btn-success"
+                <button type="submit" id="btnEnviarContato" class="btn btn-primary mt-3"
                     (click)='verificar()'>Enviar</button>
                 </div>
             <div class="col-md-8">
