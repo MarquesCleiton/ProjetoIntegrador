@@ -3,7 +3,6 @@ package br.com.feiraoonline.feirao.services;
 import java.util.List;
 
 import br.com.feiraoonline.feirao.model.Cliente;
-import br.com.feiraoonline.feirao.model.Produto;
 
 public interface IClienteService {
 	

@@ -2,6 +2,7 @@ package br.com.feiraoonline.feirao.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import br.com.feiraoonline.feirao.services.IItensService;
 @CrossOrigin("*")
 public class ItensController {
 	
+	@Autowired
 	private IItensService service;
 
 	// Create, metodo que vai ser invocado para criar/cadastrar um novo objeto

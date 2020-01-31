@@ -3,6 +3,7 @@ package br.com.feiraoonline.feirao.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ import br.com.feiraoonline.feirao.services.IClienteService;
 @CrossOrigin("*")
 public class ClienteController {
 
+	
+	@Autowired
 	private IClienteService service;
 
 	// Create, metodo que vai ser invocado para criar/cadastrar um novo objeto
@@ -39,11 +42,13 @@ public class ClienteController {
 	}
 
 	// Read - esse lista todos os usuarios
+	
 	@GetMapping("/cliente/todos")
-	public  ResponseEntity<List<Cliente>> buscarTodos() {
+	public ResponseEntity<List<Cliente>> mostrarTodos() {
+		
 		return ResponseEntity.ok(service.recuperaTodosCliente());
 	}
-
+	
 	// Update - esse atualiza os dados do cliente
 	@PutMapping ("/cliente/atualizar")
 	public ResponseEntity<Cliente> atualizaCliente(@RequestBody Cliente cliente) {

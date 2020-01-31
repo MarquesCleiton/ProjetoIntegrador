@@ -42,9 +42,8 @@ public class Cliente {
 	private String telefone;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente")
-	@JsonIgnoreProperties("IdCliente")
+	@JsonIgnoreProperties("idCategoria")
 	private List<Pedido> pedido;
-	
 	@JsonIgnoreProperties("pedido")
 	
 	

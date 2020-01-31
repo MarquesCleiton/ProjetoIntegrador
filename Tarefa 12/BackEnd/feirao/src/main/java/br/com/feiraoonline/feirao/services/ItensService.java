@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.feiraoonline.feirao.dao.ItensRepo;
+import br.com.feiraoonline.feirao.dao.PedidoRepo;
 import br.com.feiraoonline.feirao.model.Itens;
+import br.com.feiraoonline.feirao.model.Pedido;
 
 
 @Component

@@ -19,9 +19,10 @@ public class Itens {
 	@Column(name="iditens")
 	private int idItens;
 	@ManyToOne
-	private Produto idProduto;
 	@JsonIgnoreProperties("idProduto")
+	private Produto idProduto;
 	@ManyToOne
+	@JsonIgnoreProperties("idPedido")
 	private Pedido idPedido;
 	public int getIdItens() {
 		return idItens;

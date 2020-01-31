@@ -1,0 +1,75 @@
+Testes no Postman
+
+cadastros:
+Cliente 
+http://localhost:8080/cliente/novo
+{
+    "nome": "teste25",
+    "endereco": "rua 25",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "12345-678",
+    "email": "teste@teste",
+    "senha": "t3st3",
+    "telefone": "(11)11111-1111"
+}
+
+Produto:
+http://localhost:8080/produto/cadastrar
+{
+    "idProduto": 1,
+    "descricao": "teste2",
+    "titulo": "teste",
+    "linkFoto": "link",
+    "preco": "5"
+}
+
+pedido:
+http://localhost:8080/pedido/cadastrar
+{
+    "idPedido": 1,
+    "quantidade": 1,
+    "dtpedido": "10-10-2010"
+}
+
+categoria:
+http://localhost:8080/categoria/cadastrar
+{
+    "categoria": "legume"
+}
+
+
+Entrega:
+http://localhost:8080/entrega/cadastrar
+{
+    "andamento": false
+}
+
+Itens:
+http://localhost:8080/itens/novo
+{
+    "idProduto":2,
+    "idPedido":2
+}
+
+Exibir por id
+http://localhost:8080/cliente/{id}
+http://localhost:8080/produto/{id}
+http://localhost:8080/pedido/{id}
+http://localhost:8080/entrega/{id}
+http://localhost:8080/categoria/{id}
+http://localhost:8080/itens/{id}
+
+Exibir todos
+http://localhost:8080/cliente/todos
+http://localhost:8080/produto/todos
+http://localhost:8080/pedido/todos
+http://localhost:8080/entrega/todos
+http://localhost:8080/categoria/todos
+http://localhost:8080/itens/todos
+
+
+
+
+
+
