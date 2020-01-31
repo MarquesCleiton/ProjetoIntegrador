@@ -16,96 +16,81 @@ public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="idCliente")
-	private int 	idCliente;
+	@Column(name="idProduto")
+	private int 	idProduto;
 	
-	@Column(name="nome", length = 100)
-	private String nome;
+	@Column(name="descricao", length = 50)
+	private String 	descricao;
 	
-	@Column(name="endereco", length = 50)
-	private String 	endereco;
+	@Column(name="titulo", length = 50)
+	private String 	titulo;
 	
-	@Column(name="cidade", length = 50)
-	private String 	cidade;
+	@Column(name="linkFoto")
+	private String 	linkFoto;
 	
-	@Column(name="cep")
-	private String 	cep;
-	
-	@Column(name="email", length = 100)
-	private String 	email;
-	
-	@Column(name="senha")
-	private String 	senha;
-	
-	@Column(name="telefone")
-	private String 	telefone;
-	
+	@Column(name="preco", length = 100)
+	private String 	preco;
+		
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria idCategoria;
-	
+		
 	@ManyToOne
 	private Pedido idPedido;
-	
-	public Pedido getIdPedido() {
-		return idPedido;
+
+	public int getIdProduto() {
+		return idProduto;
 	}
-	public void setIdPedido(Pedido idPedido) {
-		this.idPedido = idPedido;
+
+	public void setIdProduto(int idProduto) {
+		this.idProduto = idProduto;
 	}
-	public int getIdCliente() {
-		return idCliente;
+
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	
-	public String getNome() {
-		return nome;
+
+	public String getTitulo() {
+		return titulo;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}		
-	public String getEndereco() {
-		return endereco;
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+
+	public String getLinkFoto() {
+		return linkFoto;
 	}
-	public String getCidade() {
-		return cidade;
+
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
 	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+
+	public String getPreco() {
+		return preco;
 	}
-	public String getCep() {
-		return cep;
+
+	public void setPreco(String preco) {
+		this.preco = preco;
 	}
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+
 	public Categoria getIdCategoria() {
 		return idCategoria;
 	}
+
 	public void setIdCategoria(Categoria idCategoria) {
 		this.idCategoria = idCategoria;
+	}
+
+	public Pedido getIdPedido() {
+		return idPedido;
+	}
+
+	public void setIdPedido(Pedido idPedido) {
+		this.idPedido = idPedido;
 	}
 }

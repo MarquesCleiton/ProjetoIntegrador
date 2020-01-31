@@ -24,13 +24,15 @@ public class Pedido {
 	private int quantidade;
 	@Column(name = "dtpedido")
 	private String dtpedido;
-	@ManyToOne
-	private Cliente idCliente;
-	@OneToMany (cascade = CascadeType.ALL, mappedBy = "idPedido")
-	private List<Produto> idProduto;
-	@ManyToOne
-	private Entrega idEntrega;
 	
+	@OneToMany (cascade = CascadeType.ALL, mappedBy = "idCliente")
+	private Cliente idCliente;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
+	private List<Produto> idProduto;
+	
+	@OneToMany	(cascade = CascadeType.ALL, mappedBy = "idEntrega")
+	private Entrega idEntrega;
 	
 	public int getIdPedido() {
 		return idPedido;
