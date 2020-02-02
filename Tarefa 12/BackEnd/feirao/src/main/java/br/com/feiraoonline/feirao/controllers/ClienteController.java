@@ -25,7 +25,7 @@ public class ClienteController {
 	private IClienteService service;
 
 	// Create, metodo que vai ser invocado para criar/cadastrar um novo objeto
-	@PostMapping("/cliente/novo")
+	@PostMapping("/cliente/cadastrar")
 	public ResponseEntity<Cliente> novoCliente(@RequestBody Cliente cliente) {
 		service.novoCliente(cliente);
 		return ResponseEntity.ok(cliente);
@@ -38,7 +38,7 @@ public class ClienteController {
 			if(c != null) {
 				return ResponseEntity.ok(c);
 			}
-			return ResponseEntity.notFound().build();
+			return ResponseEntity.status(404).build();
 	}
 
 	// Read - esse lista todos os usuarios

@@ -18,37 +18,37 @@ import br.com.feiraoonline.feirao.services.IItensService;
 @RestController
 @CrossOrigin("*")
 public class ItensController {
-	
+
 	@Autowired
 	private IItensService service;
 
 	// Create, metodo que vai ser invocado para criar/cadastrar um novo objeto
-		@PostMapping("/itens/novo")
-		public ResponseEntity<Itens> novoCliente(@RequestBody Itens itens) {
-			service.novoIten(itens);
-			return ResponseEntity.ok(itens);
-		}
+	@PostMapping("/itens/cadastrar")
+	public ResponseEntity<Itens> novoCliente(@RequestBody Itens itens) {
+		service.novoIten(itens);
+		return ResponseEntity.ok(itens);
+	}
 
-		// Read - esse busca um Cliente conforme seu id
-		@GetMapping("/itens/{id}")
-		public ResponseEntity<Itens> buscarClienteId(@PathVariable int id) {
-			Itens c = service.recuperarPorId(id);
-				if(c != null) {
-					return ResponseEntity.ok(c);
-				}
-				return ResponseEntity.notFound().build();
+	// Read - esse busca um Cliente conforme seu id
+	@GetMapping("/itens/{id}")
+	public ResponseEntity<Itens> buscarClienteId(@PathVariable int id) {
+		Itens c = service.recuperarPorId(id);
+		if (c != null) {
+			return ResponseEntity.ok(c);
 		}
-		
-		// Read - esse lista todos os usuarios
-		@GetMapping("/itens/todos")
-		public  ResponseEntity<List<Itens>> buscarTodos() {
-			return ResponseEntity.ok(service.recuperaTodosItens());
-		}
+		return ResponseEntity.status(404).build();
+	}
 
-		// Update - esse atualiza os dados do cliente
-		@PutMapping ("/itens/atualizar")
-		public ResponseEntity<Itens> atualizaCliente(@RequestBody Itens itens) {
-			service.atualizaItens(itens);
-			return ResponseEntity.ok(itens);
-		}
+	// Read - esse lista todos os usuarios
+	@GetMapping("/itens/todos")
+	public ResponseEntity<List<Itens>> buscarTodos() {
+		return ResponseEntity.ok(service.recuperaTodosItens());
+	}
+
+	// Update - esse atualiza os dados do cliente
+	@PutMapping("/itens/atualizar")
+	public ResponseEntity<Itens> atualizaCliente(@RequestBody Itens itens) {
+		service.atualizaItens(itens);
+		return ResponseEntity.ok(itens);
+	}
 }

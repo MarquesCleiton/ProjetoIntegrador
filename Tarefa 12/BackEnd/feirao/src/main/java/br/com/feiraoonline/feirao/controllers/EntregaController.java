@@ -33,7 +33,7 @@ public class EntregaController {
 		if(c != null) {
 			return ResponseEntity.ok(c);
 		}
-		return ResponseEntity.notFound().build();
+		return ResponseEntity.status(404).build();
 	}
 	
 	@PostMapping("/entrega/cadastrar")

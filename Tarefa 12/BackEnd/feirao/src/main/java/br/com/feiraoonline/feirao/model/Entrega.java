@@ -27,26 +27,33 @@ public class Entrega {
 	@Column (name = "andamento")
 	private boolean andamento;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idEntrega")
-	private List<Pedido> idPedido;
-	@JsonIgnoreProperties("idEntrega")
-	
-	public void setIdPedido(List<Pedido> idPedido) {
-		this.idPedido = idPedido;
-	}
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "entrega")
+	@JsonIgnoreProperties("entrega")
+	List<Pedido> pedido;
+
 	public int getIdEntrega() {
 		return idEntrega;
 	}
+
 	public void setIdEntrega(int idEntrega) {
 		this.idEntrega = idEntrega;
 	}
+
 	public boolean isAndamento() {
 		return andamento;
 	}
+
 	public void setAndamento(boolean andamento) {
 		this.andamento = andamento;
 	}
-	public List<Pedido> getIdPedido() {
-		return idPedido;
+
+	public List<Pedido> getPedido() {
+		return pedido;
 	}
+
+	public void setPedido(List<Pedido> pedido) {
+		this.pedido = pedido;
+	}
+	
+	
 }

@@ -13,17 +13,21 @@ public class ClienteService implements IClienteService {
 
 	@Autowired
 	private ClienteRepo repo;
-	
+
 	@Override
-	public List<Cliente> recuperaTodosCliente(){
+	public List<Cliente> recuperaTodosCliente() {
 		return (List<Cliente>) repo.findAll();
 	}
-	
+
 	@Override
-	public Cliente recuperarPorId(int id) {				
-		return repo.findById(id).get();
+	public Cliente recuperarPorId(int id) {
+		try {
+			return repo.findById(id).get();
+		} catch (Exception ex) {
+			return null;
+		}
 	}
-	
+
 	@Override
 	public void novoCliente(Cliente cliente) {
 		repo.save(cliente);
@@ -33,6 +37,5 @@ public class ClienteService implements IClienteService {
 	public void atualizaCliente(Cliente cliente) {
 		repo.save(cliente);
 	}
-	
-	
+
 }

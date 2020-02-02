@@ -10,27 +10,32 @@ import br.com.feiraoonline.feirao.model.Categoria;
 
 @Component
 public class CategoriaService implements ICategoriaService {
-	
+
 	@Autowired
 	private CategoriaRepo repo;
 
 	@Override
-	public List<Categoria> recuperaTodos() {				// aqui recupera todas as categorias
+	public List<Categoria> recuperaTodos() { // aqui recupera todas as categorias
 		return (List<Categoria>) repo.findAll();
 	}
 
 	@Override
-	public Categoria recuperarPorId(int id) {				// aqui recupera as categorias pelo ID da mesma
-		return repo.findById(id).get();
+	public Categoria recuperarPorId(int id) { // aqui recupera as categorias pelo ID da mesma
+		try {
+			return repo.findById(id).get();
+		} catch (Exception ex) {
+			return null;
+		}
 	}
 
 	@Override
-	public void novaCategoria(Categoria categoria) {		// aqui adiciona uma nova (caso a gnt adicione) categoria
+	public void novaCategoria(Categoria categoria) { // aqui adiciona uma nova (caso a gnt adicione) categoria
 		repo.save(categoria);
 	}
 
 	@Override
-	public void atualizaCategoria(Categoria categoria) {	// aqui atualiza uma categoria (caso a gnt altere) que foi adicionada
+	public void atualizaCategoria(Categoria categoria) { // aqui atualiza uma categoria (caso a gnt altere) que foi
+															// adicionada
 		repo.save(categoria);
 	}
 }

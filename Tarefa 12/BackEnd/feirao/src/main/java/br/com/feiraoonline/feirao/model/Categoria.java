@@ -26,26 +26,33 @@ public class Categoria {
 	@Column(name="categoria", length = 50)
 	private String categoria;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCategoria")
-	@JsonIgnoreProperties("idCategoria")
-	private List<Produto> produto;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
+	@JsonIgnoreProperties("categoria")
+	List<Produto> produto;
 
 	public int getIdCategoria() {
 		return idCategoria;
 	}
+
 	public void setIdCategoria(int idCategoria) {
 		this.idCategoria = idCategoria;
 	}
+
 	public String getCategoria() {
 		return categoria;
 	}
+
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
 	public List<Produto> getProduto() {
 		return produto;
 	}
+
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
+	
+	
 }

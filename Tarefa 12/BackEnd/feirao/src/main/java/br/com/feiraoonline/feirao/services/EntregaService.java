@@ -9,29 +9,33 @@ import br.com.feiraoonline.feirao.dao.EntregaRepo;
 import br.com.feiraoonline.feirao.model.Entrega;
 
 @Component
-public class EntregaService implements IEntregaService{
+public class EntregaService implements IEntregaService {
 
 	@Autowired
 	private EntregaRepo repo;
-	
+
 	@Override
-	public List<Entrega> recuperaTodasEntrega(){
+	public List<Entrega> recuperaTodasEntrega() {
 		return (List<Entrega>) repo.findAll();
-		}
-	
+	}
+
 	@Override
 	public Entrega recuperarPorId(int id) {
-		return repo.findById(id).get();
+		try {
+			return repo.findById(id).get();
+		} catch (Exception ex) {
+			return null;
+		}
 	}
-	
+
 	@Override
 	public void novaEntrega(Entrega entrega) {
 		repo.save(entrega);
 	}
-	
+
 	@Override
 	public void atualizaEntrega(Entrega entrega) {
 		repo.save(entrega);
 	}
-	
+
 }

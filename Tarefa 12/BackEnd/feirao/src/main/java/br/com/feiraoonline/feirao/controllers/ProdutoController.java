@@ -2,6 +2,8 @@ package br.com.feiraoonline.feirao.controllers;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,7 +32,8 @@ public class ProdutoController {
 	@GetMapping("/produto/{id}")
 	public ResponseEntity<Produto> mostrarPeloId(@PathVariable int id) {
 		Produto p = servico.recuperarPorId(id);
-		if(p != null) {
+			
+		if(p!=null) {
 			return ResponseEntity.ok(p);
 		}
 		return ResponseEntity.notFound().build();

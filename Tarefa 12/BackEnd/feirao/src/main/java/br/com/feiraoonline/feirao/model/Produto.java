@@ -1,4 +1,4 @@
-package br.com.feiraoonline.feirao.model;
+ package br.com.feiraoonline.feirao.model;
 
 import java.util.List;
 
@@ -35,58 +35,70 @@ public class Produto {
 	
 	@Column(name="preco", length = 100)
 	private String 	preco;
-		
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "produto")
+	@JsonIgnoreProperties("produto")
+	List<Itens> itens;
+	
 	@ManyToOne
-	private Categoria idCategoria;
-		
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idProduto")
-	@JsonIgnoreProperties("idProduto")
-	private List<Itens> itens;
-	
-	
-	
+	Categoria categoria;
+
 	public int getIdProduto() {
 		return idProduto;
 	}
+
 	public void setIdProduto(int idProduto) {
 		this.idProduto = idProduto;
 	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	public String getTitulo() {
 		return titulo;
 	}
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+
 	public String getLinkFoto() {
 		return linkFoto;
 	}
+
 	public void setLinkFoto(String linkFoto) {
 		this.linkFoto = linkFoto;
 	}
+
 	public String getPreco() {
 		return preco;
 	}
+
 	public void setPreco(String preco) {
 		this.preco = preco;
 	}
-	public Categoria getIdCategoria() {
-		return idCategoria;
-	}
-	public void setIdCategoria(Categoria idCategoria) {
-		this.idCategoria = idCategoria;
-	}
+
 	public List<Itens> getItens() {
 		return itens;
 	}
+
 	public void setItens(List<Itens> itens) {
 		this.itens = itens;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
 	
 	
 }

@@ -16,31 +16,38 @@ public class Itens {
 	
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
-	@Column(name="iditens")
 	private int idItens;
+	
 	@ManyToOne
-	@JsonIgnoreProperties("idProduto")
-	private Produto idProduto;
+	@JsonIgnoreProperties("itens")
+	Pedido pedido;
+	
 	@ManyToOne
-	@JsonIgnoreProperties("idPedido")
-	private Pedido idPedido;
+	@JsonIgnoreProperties("produto")
+	Produto produto;
+
 	public int getIdItens() {
 		return idItens;
 	}
+
 	public void setIdItens(int idItens) {
 		this.idItens = idItens;
 	}
-	public Produto getProduto() {
-		return idProduto;
-	}
-	public void setProduto(Produto produto) {
-		this.idProduto = produto;
-	}
+
 	public Pedido getPedido() {
-		return idPedido;
+		return pedido;
 	}
+
 	public void setPedido(Pedido pedido) {
-		this.idPedido = pedido;
+		this.pedido = pedido;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 	
 	

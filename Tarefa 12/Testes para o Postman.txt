@@ -1,0 +1,174 @@
+P.S.: *************************************************************************************
+
+Antes de testar, certifique que foi criado um novo banco de dados com o nome feiraoonline:
+create database feiraoonline;
+use feiraoonline;
+
+Após isso, pode executar o BackEnd no eclipse e testar as requisições abaixo 
+********************************************************************************************
+
+CADASTRO - POST ********************************************************
+
+Cliente: localhost:8080/cliente/cadastrar **************
+{
+    "nome": "Thiago",
+    "endereco": "Av. Gen. Ataliba Leonel, 245",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "12345-679",
+    "email": "Thiago@Thiago.com",
+    "senha": "Thiago2020",
+    "telefone": "(11)4002-8922"
+}
+********************************************************
+
+Categoria: localhost:8080/categoria/cadastrar **********
+{
+    "categoria": "fruta"
+}
+********************************************************
+
+Produto: localhost:8080/produto/cadastrar **************
+{
+	"titulo": "Banana",
+    "descricao": "ótimo para prevenir câimbra ",
+    "linkFoto": "linkBanana",
+    "preco": "2",
+    "categoria": {
+        "idCategoria": 1
+    }
+}
+*********************************************************
+
+Entrega: localhost:8080/entrega/cadastrar ***************
+{
+    "andamento": false
+}
+**********************************************************
+
+Pedido:  localhost:8080/pedido/cadastrar *****************
+{
+    "quantidade": 1,
+    "dtpedido": "31-02-2020",
+    "cliente": {
+        "idCliente": 1
+    },
+    "entrega": {
+        "idEntrega": 1
+    }
+}
+**********************************************************
+
+Itens: localhost:8080/itens/cadastrar ********************
+{
+    "pedido": {
+        "idPedido": 1
+    },
+    "produto": {
+        "idProduto": 1
+    }
+}
+***********************************************************
+
+***********************************************************************
+
+
+
+
+Atualizar - PUT *******************************************************
+
+Cliente: localhost:8080/cliente/atualizar **************
+{
+    "idCliente": 1,
+    "nome": "Isidro",
+    "endereco": "Av. Gen. Ataliba Leonel, 245",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "12345-679",
+    "email": "Isidro@Isidro.com",
+    "senha": "Isidro2020",
+    "telefone": "(11)4002-8922"
+}
+********************************************************
+
+Categoria: localhost:8080/categoria/atualizar **********
+{
+    "idCategoria": 1,
+    "categoria": "Legume"
+}
+********************************************************
+
+Produto: localhost:8080/produto/atualizar **************
+{
+    "idProduto": 1,
+    "titulo": "Cenoura",
+    "descricao": "ótimo para os olhos",
+    "linkFoto": "linkCenoura",
+    "preco": "3",
+    "categoria": {
+        "idCategoria": 1
+    }
+}
+*********************************************************
+
+Entrega: localhost:8080/entrega/atualizar ***************
+{
+    "idEntrega": 1,
+    "andamento": true
+}
+**********************************************************
+
+Pedido:  localhost:8080/pedido/atualizar *****************
+{
+    "idPedido": 1,
+    "quantidade": 5,
+    "dtpedido": "15-02-2020",
+    "cliente": {
+        "idCliente": 1
+    },
+    "entrega": {
+        "idEntrega": 1
+    }
+}
+**********************************************************
+
+Itens:   localhost:8080/itens/atualizar ******************
+{
+    "idItens": 1,
+    "pedido": {
+        "idPedido": 2
+    },
+    "produto": {
+        "idProduto": 2
+    }
+}
+***********************************************************
+************************************************************************
+
+
+Buscar pelo ID - GET ***************************************************
+
+localhost:8080/cliente/{id}
+localhost:8080/categoria/{id}
+localhost:8080/produto/{id}
+localhost:8080/entrega/{id}
+localhost:8080/pedido/{id}
+localhost:8080/itens/{id}
+
+******************************************************************
+
+
+
+Buscar todos cadastrados - GET *****************************************
+
+localhost:8080/cliente/todos
+localhost:8080/categoria/todos
+localhost:8080/produto/todos
+localhost:8080/entrega/todos
+localhost:8080/pedido/todos
+localhost:8080/itens/todos
+
+************************************************************************
+
+
+

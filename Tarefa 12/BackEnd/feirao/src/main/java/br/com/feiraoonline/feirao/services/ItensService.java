@@ -10,28 +10,31 @@ import br.com.feiraoonline.feirao.dao.PedidoRepo;
 import br.com.feiraoonline.feirao.model.Itens;
 import br.com.feiraoonline.feirao.model.Pedido;
 
-
 @Component
-public class ItensService implements IItensService{
+public class ItensService implements IItensService {
 
 	@Autowired
 	private ItensRepo repo;
-	
+
 	@Override
-	public List<Itens> recuperaTodosItens(){
+	public List<Itens> recuperaTodosItens() {
 		return (List<Itens>) repo.findAll();
-		}
-	
+	}
+
 	@Override
 	public Itens recuperarPorId(int id) {
-		return repo.findById(id).get();
+		try {
+			return repo.findById(id).get();
+		} catch (Exception ex) {
+			return null;
+		}
 	}
-	
+
 	@Override
 	public void novoIten(Itens itens) {
 		repo.save(itens);
 	}
-	
+
 	@Override
 	public void atualizaItens(Itens itens) {
 		repo.save(itens);

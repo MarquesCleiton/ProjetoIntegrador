@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,78 +38,90 @@ public class Cliente {
 	private String senha;
 	@Column(name = "telefone", length = 15)
 	private String telefone;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
+	@JsonIgnoreProperties("cliente")
+	List<Pedido> pedido;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente")
-	@JsonIgnoreProperties("idCategoria")
-	private List<Pedido> pedido;
-	@JsonIgnoreProperties("pedido")
-	
-	
-	public List<Pedido> getPedido() {
-		return pedido;
-	}
-	public void setPedido(List<Pedido> pedido) {
-		this.pedido = pedido;
-	}
-	public int getIdcliente() {
+	public int getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdcliente(int idcliente) {
-		this.idCliente = idcliente;
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
 	}
 
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getEndereco() {
 		return endereco;
 	}
+
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
 	public String getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
 	public String getEstado() {
 		return estado;
 	}
+
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
 	public String getCep() {
 		return cep;
 	}
+
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	public String getTelefone() {
 		return telefone;
 	}
+
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	
-	
-	
 
+	public List<Pedido> getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(List<Pedido> pedido) {
+		this.pedido = pedido;
+	}	
+	
+	
 }

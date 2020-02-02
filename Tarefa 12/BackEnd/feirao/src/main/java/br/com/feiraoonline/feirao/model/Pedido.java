@@ -28,51 +28,64 @@ public class Pedido {
 	private String dtpedido;
 	
 	@ManyToOne
-	private Cliente idCliente;
-	@JsonIgnoreProperties("idCliente")
-	@ManyToOne
-	private Entrega idEntrega;
+	@JsonIgnoreProperties("pedido")
+	Cliente cliente;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPedido")
-	private List<Itens> idItens;
-	@JsonIgnoreProperties("idPedido")
+	@ManyToOne
+	@JsonIgnoreProperties("pedido")
+	Entrega entrega;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido")
+	@JsonIgnoreProperties("pedido")
+	List<Itens> itens;
 
 	public int getIdPedido() {
 		return idPedido;
 	}
+
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
+
 	public int getQuantidade() {
 		return quantidade;
 	}
+
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+
 	public String getDtpedido() {
 		return dtpedido;
 	}
+
 	public void setDtpedido(String dtpedido) {
 		this.dtpedido = dtpedido;
 	}
-	public Cliente getIdCliente() {
-		return idCliente;
-	}
-	public void setIdCliente(Cliente idCliente) {
-		this.idCliente = idCliente;
-	}
-	public Entrega getIdEntrega() {
-		return idEntrega;
-	}
-	public void setIdEntrega(Entrega idEntrega) {
-		this.idEntrega = idEntrega;
-	}
-	public List<Itens> getIdItens() {
-		return idItens;
-	}
-	public void setIdItens(List<Itens> idItens) {
-		this.idItens = idItens;
+
+	public Cliente getCliente() {
+		return cliente;
 	}
 
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Entrega getEntrega() {
+		return entrega;
+	}
+
+	public void setEntrega(Entrega entrega) {
+		this.entrega = entrega;
+	}
+
+	public List<Itens> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<Itens> itens) {
+		this.itens = itens;
+	}
+	
 	
 }
