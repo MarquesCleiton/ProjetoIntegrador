@@ -28,13 +28,21 @@
                 <a class="nav-link active" [routerLink]="'/duvidas'">Duvidas</a>
             </li>
 
-            <li class="nav-item mx-3">
-                <a class="nav-link active" data-toggle="modal" data-target="#modal" [routerLink]="">Login</a>
+            <li *ngIf="cliente.nome == null" class="nav-item mx-3">
+                <a class="nav-link active" data-toggle="modal" data-target="#modal">Login</a>
             </li>
 
-            <li class="nav-item mx-2">
-                <a class="nav-link active">{{cliente.nome}}</a>
-            </li>
+            <li *ngIf ="cliente.nome !=null" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{cliente.nome}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Minha conta</a>
+                  <a class="dropdown-item" href="#">Minhas Compras</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Logout</a>
+                </div>
+              </li>
         </ul>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="menu" *ngIf="filtro == true">
             <li class="nav-item  mx-2">
