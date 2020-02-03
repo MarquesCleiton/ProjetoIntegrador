@@ -14,7 +14,10 @@ export class CadastroComponent implements OnInit {
   private email: string;
   private senha: string;
   private confirmaSenha: string;
-  private TesteSenha: boolean;
+  private endereco: string;
+  private cidade: string;
+  private cep:string;
+  private estado: string;
 
   private msgNomeCompleto: string;
   private msgTelefone: string;
@@ -28,9 +31,9 @@ export class CadastroComponent implements OnInit {
   }
 
   public verificar() {
-    console.log(this.telefone);
+    //console.log(this.telefone);
     this.msgNomeCompleto = this.verificaNomeCompleto(this.nomeCompleto);
-    console.log(this.msgNomeCompleto);
+    //console.log(this.msgNomeCompleto);
     this.msgEmail = this.verificaEmail();
     this.msgTelefone = this.verificaTelefone(this.telefone);
     this.msgSenha = this.verificaSenha(this.senha);
@@ -44,10 +47,15 @@ export class CadastroComponent implements OnInit {
 
       var usuario: Usuario;
       usuario = new Usuario();
+      usuario.idUsuario = null;
       usuario.nome = this.nomeCompleto;
       usuario.email = this.email;
       usuario.telefone = this.telefone;
       usuario.senha = this.senha;
+      usuario.cep = this.cep;
+      usuario.cidade = this.cidade;
+      usuario.endereco = this.endereco;
+      usuario.estado = this.estado;
 
       
       this.srv.insere(usuario).subscribe(
@@ -58,6 +66,10 @@ export class CadastroComponent implements OnInit {
           this.telefone = "";
           this.senha = "";
           this.confirmaSenha = "";
+          this.estado = "";
+          this.endereco = "";
+          this.cidade = "";
+          this.cep = "";
 
           this.msgNomeCompleto = "";
           this.msgTelefone = "";

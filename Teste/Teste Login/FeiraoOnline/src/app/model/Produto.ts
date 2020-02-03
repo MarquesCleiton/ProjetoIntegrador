@@ -1,3 +1,5 @@
+import { Categoria } from './Categoria';
+
 export class Produto {
     idProduto:number;
     titulo:string;
@@ -5,4 +7,5 @@ export class Produto {
     linkFoto:string;
     preco:number;
     qtdEstoque:number;
+    categoria_id_categoria: number;
 }

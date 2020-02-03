@@ -22,16 +22,24 @@ export class CadastroProdutosComponent implements OnInit {
   private preco:     number;
   private linkFoto:  string;
   private produto: Produto = new Produto();
+  private categoria_id_categoria: string;
 
 
   constructor(private srv: ProdutoService,private route: Router) { }
 
   ngOnInit() {
+    
   }
 
   public enviarProduto(){
-
-    this.produto.idProduto = this.id;
+    if(this.categoria_id_categoria == "Fruta"){
+      this.produto.categoria_id_categoria = 1;
+    }else if(this.categoria_id_categoria == "Verdura"){
+      this.produto.categoria_id_categoria = 2;
+    }else{
+      this.produto.categoria_id_categoria = 3;
+    }
+    this.produto.idProduto = null;
     this.produto.titulo = this.titulo;
     this.produto.detalhes = this.descricao;
     this.produto.linkFoto = this.linkFoto;
@@ -42,11 +50,11 @@ export class CadastroProdutosComponent implements OnInit {
       console.log(this.produto);
       alert("Cadastro realizado com sucesso!!!");
           this.titulo = "";
-          this.id = null;
           this.descricao = "";
           this.linkFoto = "";
           this.estoque = null;
           this.preco = null;
+          this.categoria_id_categoria = "";
     },
     err => {
        alert("Erro ao realizar o cadastro");

@@ -16,7 +16,7 @@ export class ProdutoService {
 
   public inseriProdutos(produto: Produto){
     console.log(produto);
-    return this.http.post("http://localhost:8080/produto/novo", produto);
+    return this.http.post("http://localhost:8080/produto/cadastrar", produto);
   }
 
   public exibirTodosProdutos(){

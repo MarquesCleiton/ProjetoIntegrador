@@ -33,6 +33,10 @@ export class MenuComponent implements OnInit {
   constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
+    this.filtro = true;
+    if(this.usuario.nome == "admin"){
+      this.filtro = true;
+    }
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;
