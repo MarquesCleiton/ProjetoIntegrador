@@ -1,0 +1,15 @@
+.aux{
+    text-align: center;
+}
+.required:after {
+    content:"*"; 
+    color: red; 
+}
+#formCadasProd{
+    padding-top: 2%;
+    padding-left: 11.3%;
+    padding-right: 12%;
+}
+h2{
+    padding-top: 2%;
+}
