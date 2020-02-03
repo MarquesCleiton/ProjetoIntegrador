@@ -5,9 +5,21 @@ background-color:rgb(211, 124, 36);
 
 }
 
-#masterCard{
-    width: 32px;
-    height: 20px;
+#visa{
+    width: 55%;
+    height: 40%;
+}
+#mastercard{
+    width: 60%;
+    height: 70%;
+}
+#elo{
+    width: 60%;
+    height: 60%;
+}
+#diners{
+    width: 70%;
+    height: 80%;
 }
 #formasPag{
     padding-top: 3%;
