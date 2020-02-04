@@ -1,16 +1,122 @@
-#alinhaoferas{
+#alinhaocards {
     margin-top: 3%;
     margin-left: 1px;
 }
 
-#alinhacomprados{
+#alinhacomprados {
     margin-top: 3%;
 }
 
-h3 {
+#titulooferta {
     margin-top: 3%;
+    margin-left: 1%;
 }
 
-#alinhacategoria{
+#titulomaiscomprados {
+    margin-top: 3%;
+    margin-left: 1px;
+}
+#titulocategoria {
+    margin-top: 3%;
+    margin-left: 1px;
+}
+
+
+#alinhacategoria {
+    margin-left: 15%;
+}
+
+#banana {
+    color: black;
+}
+#precobanana { 
+    color: red;
+    font-size: 13px;
+}
+#ofertabanana {
+    color: rgba(13, 160, 8, 0.986);
+
+}
+
+#precolaranja {
+    color: red;
+    font-size: 13px;
+}
+#ofertalaranja {
+    color: rgba(13, 160, 8, 0.986);
+}
+
+#tomate {
+    color: black;
+}
+#precotomate {
+    color: red;
+    font-size: 13px;
+}
+
+#ofertatomate {
+    color: rgba(13, 160, 8, 0.986);
+}
+
+#alface {
+    color: black;
+}
+
+#precoalface {
+    color: red;
+    font-size: 13px;
+}
+
+#ofertaalface {
+    color: rgba(13, 160, 8, 0.986);
+}
+
+#cenoura {
+    color: black;
+}
+#precocenoura{
+    color: rgba(13, 160, 8, 0.986);
+}
+
+
+#batata{
+    color: black;
+}
+#precobatata{
+   color: rgba(13, 160, 8, 0.986);
+}
+
+#beterraba{
+	color: black;
+}
+#precobeterraba {
+	color: rgba(13, 160, 8, 0.986);
+}
+
+#limaosiciliano {
+	color: black;
+}
+
+#precolimaosiciliano {
+	color: rgba(13, 160, 8, 0.986);
+}
+
+#categoriafruta {
+    text-align: center;
+}
+#categoriaverdura {
+    text-align: center;
+}
+#categorialegume {
+    text-align: center;
+}
+
+#botaocategoriafruta{
+    margin-left: 15%;
+}
+#botaocategoriaverdura{
+    margin-left: 15%;
+}
+#botaocategorialegume{
     margin-left: 15%;
 }
