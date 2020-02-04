@@ -1,30 +1,52 @@
+#formasPag{
+    padding-top: 3%;
+    margin-left: 2%;
+    text-align: center;
+    display: inline;
+}
+
+h4 {
+    color: black;
+}
+
+#aviso {
+    color: black;
+}
+
+#copyright {
+    color: black;
+}
 
 #footer
 {
-background-color:rgb(211, 124, 36);
+    background-color:rgb(211, 124, 36);
+}
+
+#visa {
+    width: 7%;
+    padding-top: 2%;
+    padding-right: 3%;
 
 }
 
-#visa{
-    width: 55%;
-    height: 40%;
+#masterCard{
+    width: 7%;
+    padding-top: 2%;
+    padding-right: 3%;;
 }
-#mastercard{
-    width: 60%;
-    height: 70%;
+
+#elo {
+    width: 7%;
+    padding-top: 2%;
+    padding-right: 2%;
 }
-#elo{
-    width: 60%;
-    height: 60%;
+
+#diners {
+    width: 7%;
+    padding-top: 2%;
+    padding-right: 2%;
 }
-#diners{
-    width: 70%;
-    height: 80%;
-}
-#formasPag{
-    padding-top: 3%;
-    margin-left: 2%; 
-}
+
 #pag{
     text-align: center;
 }
@@ -37,4 +59,4 @@ background-color:rgb(211, 124, 36);
 #mesa{
     background: rgb(141, 204, 40);
     height: 10px;
-} 
+}

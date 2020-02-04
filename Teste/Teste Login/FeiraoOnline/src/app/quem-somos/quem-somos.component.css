@@ -1,18 +1,20 @@
 #quemSomos {
     text-align: center;
-    padding-top: 10%;
-    background-image: url(../../assets/images/verduras.jpg);
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: white;
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
+    background-image: url(../../assets/images/Verduras1.jpg);
+    background-size: cover;
+
 }
+
 
 #img-circle {
     border-radius: 60%;
     margin: 11%;
 }
  
-.bio {
+.bio { 
     margin-top: 7%;
 }
 
@@ -79,7 +81,7 @@
     margin: 16px auto 0;
 }
 
-.teste{
+#tituloPrincipal{
     filter: blur(0px);
     -webkit-filter: blur(0px);
 }
