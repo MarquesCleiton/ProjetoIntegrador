@@ -8,8 +8,8 @@ import { UsuarioService } from '../service/usuario.service'
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-
-  private nomeCompleto: string;
+  private nome: string;
+  private sobrenome: string;
   private telefone: string;
   private email: string;
   private senha: string;
@@ -19,7 +19,8 @@ export class CadastroComponent implements OnInit {
   private cep:string;
   private estado: string;
 
-  private msgNomeCompleto: string;
+  private msgnome: string;
+  private msgsobrenome: string;
   private msgTelefone: string;
   private msgEmail: string;
   private msgSenha: string;
@@ -31,24 +32,25 @@ export class CadastroComponent implements OnInit {
   }
 
   public verificar() {
-    //console.log(this.telefone);
-    this.msgNomeCompleto = this.verificaNomeCompleto(this.nomeCompleto);
-    //console.log(this.msgNomeCompleto);
+    this.msgnome = this.verificaNome(this.nome);
+    this.msgsobrenome = this.verificaNome(this.sobrenome);
     this.msgEmail = this.verificaEmail();
     this.msgTelefone = this.verificaTelefone(this.telefone);
     this.msgSenha = this.verificaSenha(this.senha);
     this.verificaConfirmaSenha();
 
-    if (this.msgNomeCompleto == "" &&
-      this.msgEmail == "" &&
-      this.msgTelefone == "" &&
-      (this.msgSenha == "Senha Forte" || this.msgSenha == "Senha Fraca") &&
-      this.msgConfirmaSenha == "") {
+    if (this.msgnome          == "" &&
+        this.msgsobrenome     == "" &&
+        this.msgEmail         == "" &&
+        this.msgTelefone      == "" &&
+        (this.msgSenha        == "Senha Forte" || this.msgSenha == "Senha Fraca") &&
+        this.msgConfirmaSenha == "") {
 
       var usuario: Usuario;
       usuario = new Usuario();
       usuario.idUsuario = null;
-      usuario.nome = this.nomeCompleto;
+      usuario.nome = this.nome;
+      usuario.sobreNome = this.sobrenome;
       usuario.email = this.email;
       usuario.telefone = this.telefone;
       usuario.senha = this.senha;
@@ -61,20 +63,22 @@ export class CadastroComponent implements OnInit {
       this.srv.insere(usuario).subscribe(
         res => {
           alert("Cadastro realizado com sucesso!!!")
-          this.nomeCompleto = "";
-          this.email = "";
-          this.telefone = "";
-          this.senha = "";
-          this.confirmaSenha = "";
-          this.estado = "";
-          this.endereco = "";
-          this.cidade = "";
-          this.cep = "";
+          this.nome           = "";
+          this.sobrenome      = "";
+          this.email          = "";
+          this.telefone       = "";
+          this.senha          = "";
+          this.confirmaSenha  = "";
+          this.estado         = "";
+          this.endereco       = "";
+          this.cidade         = "";
+          this.cep            = "";
 
-          this.msgNomeCompleto = "";
-          this.msgTelefone = "";
-          this.msgNomeCompleto = "";
-          this.msgSenha = "";
+          this.msgnome          = "";
+          this.msgsobrenome     = "";
+          this.msgEmail         = "";
+          this.msgTelefone      = "";          
+          this.msgSenha         = "";
           this.msgConfirmaSenha = "";
         },
         err => {
@@ -86,13 +90,14 @@ export class CadastroComponent implements OnInit {
       this.verificanumero();
     }
   }
-
-  public verificaNomeCompleto(nome: string): string {
-    console.log("Nome: " + nome);
+  
+  public verificaNome(nome: string): string {
     var filtro: any = /^([a-zA-Zà-úÀ-Ú]|\s+)+$/;
     if (nome != null || nome == "") { // Verifica se nome é nulo
       if (nome.length >= 3) {
+
         if (!filtro.test(nome)) {
+          console.log("tem numero? : " + filtro.test(nome))
           return "Não pode haver números";
         } else {
           return "";
@@ -104,6 +109,7 @@ export class CadastroComponent implements OnInit {
       return "Não pode ser vazio";
     }
   }
+  
 
   public verificaEmail() {
     if (this.email != null) {

@@ -23,7 +23,7 @@
 
 
 #alinhacategoria {
-    margin-left: 15%;
+    margin-left: 5%;
 }
 
 #banana {
@@ -101,22 +101,12 @@
 	color: rgba(13, 160, 8, 0.986);
 }
 
-#categoriafruta {
-    text-align: center;
-}
-#categoriaverdura {
-    text-align: center;
-}
-#categorialegume {
-    text-align: center;
-}
-
 #botaocategoriafruta{
-    margin-left: 15%;
+    margin-left: 32%;
 }
 #botaocategoriaverdura{
-    margin-left: 15%;
+    margin-left: 28%;
 }
 #botaocategorialegume{
-    margin-left: 15%;
+    margin-left: 25%;
 }

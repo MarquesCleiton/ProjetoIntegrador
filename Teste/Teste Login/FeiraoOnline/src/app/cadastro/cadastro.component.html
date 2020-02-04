@@ -15,16 +15,21 @@
     </div>
     <div id="formCadastro"> 
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="form-group col-md-8">
-                <label for="text" class="required">Nome Completo</label><br>
+        <div class="row d-flex justify-content-center p-padrao">
+            <div class="form-group col-md-4">
+                <label for="text" class="required">Nome</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
-                    [(ngModel)]="nomeCompleto">
-                <div class="col-md-2"></div>
-                <div class="erro">{{msgNomeCompleto}}</div>
+                    [(ngModel)]="nome">
+                <div class="erro">{{msgnome}}</div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="text" class="required">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome" required
+                    [(ngModel)]="sobrenome">
+                <div class="erro">{{msgsobrenome}}</div>
             </div>
         </div>
+
         <div class="form-group">
             <div class="row">
                 <div class="col-md-2"></div>
@@ -53,7 +58,7 @@
 
         
                     <label for="Endereco" class="required">Endereço</label>
-                    <input type="text" class="form-control" id="Endereco" placeholder="Digite seu endereco por extenso" required
+                    <input type="text" class="form-control" id="Endereco" placeholder="Digite seu endereço completo" required
                         [(ngModel)]="endereco">
                     <div class="erro"></div>
                 </div>
@@ -105,7 +110,7 @@
 
                 <div class="col-md-4">
                     <label for="Cep" class="required">CEP</label>
-                    <input type="text" class="form-control" id="cep" placeholder="Digite seu cep"
+                    <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="8" class="form-control" id="cep" placeholder="00000000"
                         required [(ngModel)]="cep">
                     <div class="erro"></div>
                     <div class="col-md-2"></div>
