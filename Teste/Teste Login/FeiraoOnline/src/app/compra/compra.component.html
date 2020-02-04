@@ -41,7 +41,7 @@
                     Quantidade:
                 </div>
                 <div class="col-md-8">
-                    <input class="form-control" type="number" value="0" min="0" id="example-number-input">
+                    <input [(ngModel)] = "quantidade"; class="form-control" type="number" value="0" min="0" id="example-number-input">
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="col">
-                    <button type="button" class="btn btn-primary btn btn-outline-success btn-block">Adicionar ao carrinho</button>
+                    <button (click)="geraPedido"; type="button" class="btn btn-primary btn btn-outline-success btn-block">Adicionar ao carrinho</button>
                 </div>
             </div>
         </div>

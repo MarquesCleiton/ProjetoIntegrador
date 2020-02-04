@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.feiraoonline.feirao.model.Cliente;
 import br.com.feiraoonline.feirao.model.Pedido;
 import br.com.feiraoonline.feirao.services.IPedidoService;
 
@@ -45,6 +46,12 @@ public class PedidoController {
 	public ResponseEntity<Pedido> atualizarProduto(@RequestBody Pedido pedido) {
 		servico.atualizaPedido(pedido);
 		return ResponseEntity.ok(pedido);
+	}
+	
+	@PostMapping("/pedidos/meuspedidos")
+	public ResponseEntity<Pedido> meusPedidos(@RequestBody Cliente cliente){
+		Pedido pedido = servico
+		return ResponseEntity
 	}
 
 }

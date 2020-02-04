@@ -19,7 +19,8 @@ import { DuvidasComponent } from './duvidas/duvidas.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
-import { CompraComponent } from './compra/compra.component'
+import { CompraComponent } from './compra/compra.component';
+import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CompraComponent } from './compra/compra.component'
     CadastroProdutosComponent,
     ListagemProdutosComponent,
     EditarProdutoComponent,
-    CompraComponent
+    CompraComponent,
+    MeusPedidosComponent
   ],
   imports: [
     BrowserModule,
