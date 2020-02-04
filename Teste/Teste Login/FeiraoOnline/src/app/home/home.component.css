@@ -8,15 +8,18 @@
 }
 
 #titulooferta {
+    color: black;
     margin-top: 3%;
     margin-left: 1%;
 }
 
 #titulomaiscomprados {
+    color: black;
     margin-top: 3%;
     margin-left: 1px;
 }
 #titulocategoria {
+    color: black;
     margin-top: 3%;
     margin-left: 1px;
 }
