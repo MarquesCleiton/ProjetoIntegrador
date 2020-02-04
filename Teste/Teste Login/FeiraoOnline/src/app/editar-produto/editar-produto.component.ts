@@ -29,7 +29,7 @@ export class EditarProdutoComponent implements OnInit {
       this.linkFoto = this.produto.linkFoto;
       console.log(this.produto.linkFoto);
       this.titulo = this.produto.titulo;
-      this.descricao = this.produto.detalhes;
+      this.descricao = this.produto.descricao;
       this.preco = this.produto.preco;
       this.estoque = this.produto.qtdEstoque;
     },(err) => {
@@ -41,7 +41,7 @@ export class EditarProdutoComponent implements OnInit {
 
   public atualizarProduto(){
     
-    this.produto.detalhes = this.descricao;
+    this.produto.descricao = this.descricao;
     this.produto.idProduto = this.id;
     this.produto.titulo = this.titulo;
     this.produto.qtdEstoque = this.estoque;

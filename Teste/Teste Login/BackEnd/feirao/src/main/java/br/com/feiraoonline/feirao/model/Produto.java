@@ -41,6 +41,7 @@ public class Produto {
 	List<Itens> itens;
 	
 	@ManyToOne
+	@JsonIgnoreProperties("produto")
 	Categoria categoria;
 
 	public int getIdProduto() {

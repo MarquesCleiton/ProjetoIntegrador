@@ -33,9 +33,9 @@ export class MenuComponent implements OnInit {
   constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
-    this.filtro = true;
+    this.filtro = false;
     if(this.usuario.nome == "admin"){
-      this.filtro = true;
+      this.filtro = false;
     }
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
@@ -96,5 +96,12 @@ export class MenuComponent implements OnInit {
       )
     }
   */
+  }
+
+  public logout(){
+    localStorage.removeItem("MyToken");
+    this.usuario = null;
+    this.router.navigate(['/home']);
+    window.location.reload();
   }
 }

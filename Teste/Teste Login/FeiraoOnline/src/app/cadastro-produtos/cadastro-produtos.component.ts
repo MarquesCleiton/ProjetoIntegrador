@@ -5,7 +5,6 @@ import { ProdutoService } from '../service/produto.service';
 import { Usuario } from '../model/Usuario';
 import { Globals } from '../model/Global';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categoria } from '../model/Categoria';
 
 @Component({
   selector: 'app-cadastro-produtos',
