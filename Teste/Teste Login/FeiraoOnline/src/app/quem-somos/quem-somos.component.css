@@ -3,10 +3,10 @@
     padding-top: 10%;
     color: white;
     background-image: url(../../assets/images/Verduras1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover  ;
+    background-size: cover;
 
 }
+
 
 #img-circle {
     border-radius: 60%;
