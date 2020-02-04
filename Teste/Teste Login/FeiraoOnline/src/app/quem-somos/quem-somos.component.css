@@ -2,8 +2,9 @@
     text-align: center;
     padding-top: 10%;
     background-image: url(../../assets/images/verduras.jpg);
-
     color: white;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
 }
 
 #img-circle {
@@ -78,8 +79,7 @@
     margin: 16px auto 0;
 }
 
-.tm{
-   
-    
+.teste{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
 }
-
