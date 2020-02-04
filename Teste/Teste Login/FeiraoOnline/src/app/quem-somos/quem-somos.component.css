@@ -1,11 +1,11 @@
 #quemSomos {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: white;
     background-image: url(../../assets/images/Verduras1.jpg);
     background-repeat: no-repeat;
-    background-size: cover  ;
-
+    background-size: cover;
 }
 
 #img-circle {
@@ -80,7 +80,7 @@
     margin: 16px auto 0;
 }
 
-.teste{
+#tituloPrincipal{
     filter: blur(0px);
     -webkit-filter: blur(0px);
 }
