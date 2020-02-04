@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent implements OnInit {
-  private nome: string;
+  private nome:  string;
   private sobrenome: string;
   private email: string;
   private telefone: string;
@@ -26,7 +26,6 @@ export class ContatoComponent implements OnInit {
   ngOnInit() {
 
   }
-
   public verificar() {
     this.msgNome = this.verificaNome(this.nome);
     this.msgSobreNome = this.verificaNome(this.sobrenome);
@@ -70,7 +69,7 @@ export class ContatoComponent implements OnInit {
           return "";
         }
       } else {
-        return "digite pelo menos 3 letras";
+        return "Digite pelo menos 3 letras";
       }
     } else {
       return "Não pode ser vazio";
