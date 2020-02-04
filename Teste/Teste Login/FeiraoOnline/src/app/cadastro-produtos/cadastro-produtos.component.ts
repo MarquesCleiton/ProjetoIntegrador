@@ -5,6 +5,7 @@ import { ProdutoService } from '../service/produto.service';
 import { Usuario } from '../model/Usuario';
 import { Globals } from '../model/Global';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Categoria } from '../model/Categoria';
 
 @Component({
   selector: 'app-cadastro-produtos',
@@ -32,22 +33,24 @@ export class CadastroProdutosComponent implements OnInit {
   }
 
   public enviarProduto(){
+    
     if(this.categoria_id_categoria == "Fruta"){
-      this.produto.categoria_id_categoria = 1;
+      this.produto.categoria.idCategoria = 1;
     }else if(this.categoria_id_categoria == "Verdura"){
-      this.produto.categoria_id_categoria = 2;
+      this.produto.categoria.idCategoria = 2;
     }else{
-      this.produto.categoria_id_categoria = 3;
+      this.produto.categoria.idCategoria = 3;
     }
     this.produto.idProduto = null;
     this.produto.titulo = this.titulo;
-    this.produto.detalhes = this.descricao;
+    this.produto.descricao = this.descricao;
     this.produto.linkFoto = this.linkFoto;
     this.produto.qtdEstoque = this.estoque;
     this.produto.preco = this.preco;
-
+    
+    console.log(this.produto);
     this.srv.inseriProdutos(this.produto).subscribe(res =>{
-      console.log(this.produto);
+      console.log(res);
       alert("Cadastro realizado com sucesso!!!");
           this.titulo = "";
           this.descricao = "";
