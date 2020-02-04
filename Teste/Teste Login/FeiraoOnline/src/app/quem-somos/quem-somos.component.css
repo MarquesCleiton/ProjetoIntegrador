@@ -4,9 +4,15 @@
     padding-bottom: 5%;
     color: white;
     background-image: url(../../assets/images/Verduras1.jpg);
+<<<<<<< HEAD
+    background-size: cover;
+
+=======
     background-repeat: no-repeat;
     background-size: cover;
+>>>>>>> fafceb776e87fe27213b316de7b953ca03b858d9
 }
+
 
 #img-circle {
     border-radius: 60%;
