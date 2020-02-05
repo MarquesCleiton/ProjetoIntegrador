@@ -9,4 +9,6 @@ public interface IProdutoService {
 	public Produto recuperarPorId(int id);			//READ
 	public void novoProduto(Produto produto);		// CREATE
 	public void atualizaProduto(Produto produto);	//UPDATE
+	public void apagarProduto(int id);	//DELETE
+	
 }
