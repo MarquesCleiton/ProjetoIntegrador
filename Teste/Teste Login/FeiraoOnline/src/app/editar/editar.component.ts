@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StringifyOptions } from 'querystring';
 import { Cliente } from '../model/Cliente';
 
@@ -23,6 +23,7 @@ export class EditarComponent implements OnInit {
    estado: string;
    cep: string;
 
+   cliente: Cliente = new Cliente;
 
    TesteSenha: boolean;
 
@@ -35,10 +36,18 @@ export class EditarComponent implements OnInit {
    id:number;
   public user:Cliente = new Cliente();
 
-  constructor(private rota:ActivatedRoute, private srv: UsuarioService) { 
+  constructor(private rota:ActivatedRoute, private srv: UsuarioService, private validar: UsuarioService,private route: Router) { 
   }
 
   ngOnInit() {
+    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
+      this.cliente = res;
+      if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
+      this.route.navigate(['/home']);
+      }
+    },
+    (err) => {
+    })
     this.id = this.rota.snapshot.params["id"];
     console.log(this.id);
     this.srv.recuperaDetalhe(this.id).subscribe((res:Cliente)=>

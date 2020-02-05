@@ -24,13 +24,11 @@ export class CompraComponent implements OnInit {
   constructor(private rota:ActivatedRoute,private srv: ProdutoService, private srvUser:UsuarioService) { }
 
   ngOnInit() {
-    this.id = this.rota.snapshot.params["id"];
-    console.log(this.id);
-
+    this.id = this.rota.snapshot.params["idProduto"];
+;
     this.srv.listarProdutosId(this.id).subscribe(
       (res: Produto) => {
         this.prod = res;
-        console.log(this.prod);
       },
       (err) => {
         alert("deu ruim")

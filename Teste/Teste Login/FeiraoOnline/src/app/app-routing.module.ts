@@ -12,9 +12,9 @@ import { DuvidasComponent } from './duvidas/duvidas.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
-import { CompraComponent } from './compra/compra.component';
 import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 import { MinhacontaComponent } from './minhaconta/minhaconta.component';
+import { CompraComponent } from './compra/compra.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
@@ -30,9 +30,9 @@ const routes: Routes = [
   {path:'listagemprodutos', component: ListagemProdutosComponent},
   {path:'editarproduto/:id', component: EditarProdutoComponent},
   {path: 'duvidas', component: DuvidasComponent},
-  {path: 'produtos/compra/:id', component: CompraComponent},
   {path: 'meuspedidos', component: MeusPedidosComponent},
-  {path: 'minhaconta', component: MinhacontaComponent}
+  {path: 'minhaconta', component: MinhacontaComponent},
+  {path: 'compra/:idProduto', component: CompraComponent}
 ];
 
 @NgModule({
