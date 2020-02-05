@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../model/Usuario';
 import { UsuarioService } from '../service/usuario.service'
+import { Cliente } from '../model/Cliente';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,23 +9,21 @@ import { UsuarioService } from '../service/usuario.service'
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  private nome: string;
-  private sobrenome: string;
-  private telefone: string;
-  private email: string;
-  private senha: string;
-  private confirmaSenha: string;
-  private endereco: string;
-  private cidade: string;
-  private cep:string;
-  private estado: string;
+   nome: string;
+   telefone: string;
+   email: string;
+   senha: string;
+   confirmaSenha: string;
+   endereco: string;
+   cidade: string;
+   cep:string;
+   estado: string;
 
-  private msgnome: string;
-  private msgsobrenome: string;
-  private msgTelefone: string;
-  private msgEmail: string;
-  private msgSenha: string;
-  private msgConfirmaSenha: string;
+  msgnome: string;
+  msgTelefone: string;
+  msgEmail: string;
+  msgSenha: string;
+  msgConfirmaSenha: string;
 
   constructor(private srv: UsuarioService) { }
 
@@ -33,38 +32,34 @@ export class CadastroComponent implements OnInit {
 
   public verificar() {
     this.msgnome = this.verificaNome(this.nome);
-    this.msgsobrenome = this.verificaNome(this.sobrenome);
     this.msgEmail = this.verificaEmail();
     this.msgTelefone = this.verificaTelefone(this.telefone);
     this.msgSenha = this.verificaSenha(this.senha);
     this.verificaConfirmaSenha();
 
     if (this.msgnome          == "" &&
-        this.msgsobrenome     == "" &&
         this.msgEmail         == "" &&
         this.msgTelefone      == "" &&
         (this.msgSenha        == "Senha Forte" || this.msgSenha == "Senha Fraca") &&
         this.msgConfirmaSenha == "") {
 
-      var usuario: Usuario;
-      usuario = new Usuario();
-      usuario.idUsuario = null;
-      usuario.nome = this.nome;
-      usuario.sobreNome = this.sobrenome;
-      usuario.email = this.email;
-      usuario.telefone = this.telefone;
-      usuario.senha = this.senha;
-      usuario.cep = this.cep;
-      usuario.cidade = this.cidade;
-      usuario.endereco = this.endereco;
-      usuario.estado = this.estado;
+      var cliente: Cliente;
+      cliente = new Cliente();
+      cliente.idCliente = null;
+      cliente.nome = this.nome;
+      cliente.email = this.email;
+      cliente.telefone = this.telefone;
+      cliente.senha = this.senha;
+      cliente.cep = this.cep;
+      cliente.cidade = this.cidade;
+      cliente.endereco = this.endereco;
+      cliente.estado = this.estado;
 
       
-      this.srv.insere(usuario).subscribe(
+      this.srv.insere(cliente).subscribe(
         res => {
           alert("Cadastro realizado com sucesso!!!")
           this.nome           = "";
-          this.sobrenome      = "";
           this.email          = "";
           this.telefone       = "";
           this.senha          = "";
@@ -75,7 +70,6 @@ export class CadastroComponent implements OnInit {
           this.cep            = "";
 
           this.msgnome          = "";
-          this.msgsobrenome     = "";
           this.msgEmail         = "";
           this.msgTelefone      = "";          
           this.msgSenha         = "";

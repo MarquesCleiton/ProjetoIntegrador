@@ -1,6 +1,7 @@
 <table class="table">
     <thead>
       <tr>
+          <th scope="col" >ID</th>
         <th scope="col" >Nome</th>
         <th scope="col" >Telefone</th>
         <th scope="col" >E-mail</th>
@@ -9,12 +10,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let user of usuario'>
-        <th scope="row" >{{user.nome}}</th>
+      <tr *ngFor='let user of cliente'>
+
+        <th scope="row" >{{user.idCliente}}</th>
+        <td>{{user.nome}}</td>
         <td>{{user.telefone}}</td>
         <td>{{user.email}}</td>
         <td>{{user.senha}}</td>
-        <td><a [routerLink]="['/editar',user.idUsuario]"> <button type="button" class="btn btn-success">editar</button> </a></td>
+        <td><a [routerLink]="['/editar',user.idCliente]"> <button type="button" class="btn btn-success">editar</button> </a></td>
       </tr>
     </tbody>
   </table> 

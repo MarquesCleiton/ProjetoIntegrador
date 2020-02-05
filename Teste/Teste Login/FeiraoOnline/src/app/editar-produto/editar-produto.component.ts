@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
 import { ActivatedRoute } from '@angular/router';
+import { Categoria } from '../model/Categoria';
 
 @Component({
   selector: 'app-editar-produto',
@@ -10,12 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditarProdutoComponent implements OnInit {
 
-  private titulo:    string;
-  private linkFoto: string;
-  private id:        number;
-  private descricao: string;
-  private estoque  : number;
-  private preco    : number;
+   titulo:    string;
+   linkFoto: string;
+   id:        number;
+   descricao: string;
+   estoque  : number;
+   preco    : number;
+   categoria_id_categoria: string;
+   aux: number;
   public produto: Produto = new Produto();
 
   constructor(private rota:ActivatedRoute,private srv: ProdutoService) { }
@@ -31,7 +34,15 @@ export class EditarProdutoComponent implements OnInit {
       this.titulo = this.produto.titulo;
       this.descricao = this.produto.descricao;
       this.preco = this.produto.preco;
-      this.estoque = this.produto.qtdEstoque;
+      this.aux = this.produto.categoria.idCategoria;
+      if(this.aux == 1){
+        this.categoria_id_categoria = "Fruta";
+      }else if(this.aux == 2){
+        this.categoria_id_categoria = "Verdura"
+      }else{
+        this.categoria_id_categoria = "Legume"
+      }
+
     },(err) => {
 
       alert ("deu ruim");
@@ -44,7 +55,13 @@ export class EditarProdutoComponent implements OnInit {
     this.produto.descricao = this.descricao;
     this.produto.idProduto = this.id;
     this.produto.titulo = this.titulo;
-    this.produto.qtdEstoque = this.estoque;
+    if(this.categoria_id_categoria == "Fruta"){
+      this.produto.categoria.idCategoria = 1;
+    }else if(this.categoria_id_categoria == "Verdura"){
+      this.produto.categoria.idCategoria = 2;
+    }else{
+      this.produto.categoria.idCategoria = 3;
+    }
     this.produto.preco = this.preco;
     console.log(this.produto);
     this.srv.atualiza(this.produto).subscribe((res) => {

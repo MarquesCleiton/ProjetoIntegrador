@@ -16,17 +16,11 @@
     <div id="formCadastro"> 
 
         <div class="row d-flex justify-content-center p-padrao">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-8">
                 <label for="text" class="required">Nome</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
                     [(ngModel)]="nome">
                 <div class="erro">{{msgnome}}</div>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="text" class="required">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome" required
-                    [(ngModel)]="sobrenome">
-                <div class="erro">{{msgsobrenome}}</div>
             </div>
         </div>
 
@@ -115,9 +109,7 @@
                     <div class="erro"></div>
                     <div class="col-md-2"></div>
                 </div>
-
             </div>
-
         </div>
         <div class="form-group">
             <div class="row">

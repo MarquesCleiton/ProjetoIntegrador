@@ -1,3 +1,5 @@
+import { StringifyOptions } from 'querystring';
+
 export class Cliente{
     public idCliente:number;
     public nome:string;

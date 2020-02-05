@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
 import { ActivatedRoute } from '@angular/router';
+import { StringifyOptions } from 'querystring';
+import { Cliente } from '../model/Cliente';
 
 @Component({
   selector: 'app-editar',
@@ -10,21 +12,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditarComponent implements OnInit {
 
-  private nomeCompleto: string;
-  private telefone: string;
-  private email: string;
-  private senha: string;
-  private confirmaSenha: string;
-  private TesteSenha: boolean;
+   nome: string;
+   sobrenome: string;
+   telefone: string;
+   email: string;
+   senha: string;
+   confirmaSenha: string;
+   endereco: string;
+   cidade: string;
+   estado: string;
+   cep: string;
 
-  private msgNomeCompleto: string;
-  private msgTelefone: string;
-  private msgEmail: string;
-  private msgSenha: string;
-  private msgConfirmaSenha: string;
 
-  private id:number;
-  public user:Usuario = new Usuario();
+   TesteSenha: boolean;
+
+   msgNomeCompleto: string;
+   msgTelefone: string;
+   msgEmail: string;
+   msgSenha: string;
+   msgConfirmaSenha: string;
+
+   id:number;
+  public user:Cliente = new Cliente();
 
   constructor(private rota:ActivatedRoute, private srv: UsuarioService) { 
   }
@@ -32,10 +41,14 @@ export class EditarComponent implements OnInit {
   ngOnInit() {
     this.id = this.rota.snapshot.params["id"];
     console.log(this.id);
-    this.srv.recuperaDetalhe(this.id).subscribe((res:Usuario)=>
+    this.srv.recuperaDetalhe(this.id).subscribe((res:Cliente)=>
     {
       this.user = res;
-      this.nomeCompleto = this.user.nome;
+      this.nome = this.user.nome;
+      this.cep = this.user.cep;
+      this.cidade = this.user.cidade;
+      this.estado = this.user.estado;
+      this.endereco = this.user.endereco;
       this.telefone = this.user.telefone;
       this.email = this.user.email;
       this.senha = this.user.senha;
@@ -58,16 +71,20 @@ export class EditarComponent implements OnInit {
       this.msgSenha == "" &&
       this.msgConfirmaSenha == "") {
 
-      var usuario: Usuario;
-      usuario = new Usuario();
-      usuario.idUsuario = this.user.idUsuario;
-      usuario.nome = this.nomeCompleto;
-      usuario.email = this.email;
-      usuario.telefone = this.telefone;
-      usuario.senha = this.senha;
+      var cliente: Cliente;
+      cliente = new Cliente();
+      cliente.idCliente = this.user.idCliente;
+      cliente.nome = this.nome;
+      cliente.email = this.email;
+      cliente.telefone = this.telefone;
+      cliente.senha = this.senha;
+      cliente.cep = this.cep;
+      cliente.cidade = this.cidade;
+      cliente.endereco = this.endereco;
+      cliente.estado = this.estado;
 
-      console.log(usuario);
-      this.srv.atualiza(usuario).subscribe(
+  
+      this.srv.atualiza(cliente).subscribe(
         (res) => {
           alert("Atualizado com sucesso!!!")
         },

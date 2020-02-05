@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
+import { Cliente } from '../model/Cliente';
 
 @Component({
   selector: 'app-listagem',
@@ -9,12 +10,12 @@ import { Usuario } from '../model/Usuario';
 })
 export class ListagemComponent implements OnInit {
 
-  public usuario: Usuario[];
+  public cliente: Cliente[];
   constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
-    this.srv.exibirTodos().subscribe((res: Usuario[]) =>{
-      this.usuario = res;
+    this.srv.exibirTodos().subscribe((res: Cliente[]) =>{
+      this.cliente = res;
     })
   }
 

@@ -10,25 +10,24 @@ export class UsuarioService {
 
   public constructor(private http: HttpClient) { }
 
-  public insere(usuario: Usuario){
-    return this.http.post("http://localhost:8080/cliente/cadastrar", usuario);
+  public insere(cliente: Cliente){
+    return this.http.post("http://localhost:8080/cliente/cadastrar", cliente);
   }
 
   public exibirTodos(){
-    return this.http.get("http://localhost:8088/cliente/todos");
+    return this.http.get("http://localhost:8080/cliente/todos");
   }
 
   public recuperaDetalhe(id:number){
-    return this.http.get("http://localhost:8088/cliente/"+id);
+    return this.http.get("http://localhost:8080/cliente/"+id);
   }
 
-  public atualiza(usuario:Usuario){
-    console.log(usuario);
-    return this.http.put("http://localhost:8088/cliente/atualizar", usuario);
+  public atualiza(cliente:Cliente){
+    return this.http.put("http://localhost:8080/cliente/atualizar", cliente);
   }
 
-  public login(usuario: Usuario){
-    return this.http.post("http://localhost:8080/login", usuario);
+  public login(cliente:Cliente){
+    return this.http.post("http://localhost:8080/login", cliente);
   }
 
   autenticar(cliente: Cliente) {

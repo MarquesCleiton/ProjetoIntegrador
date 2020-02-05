@@ -21,23 +21,7 @@
                 <input type="text" class="form-control" id="nome" placeholder="Digite o titulo do produto" required
                     [(ngModel)]="titulo">
             </div>
-            <div class="col-md-4">
-                <label for="number" class="required" >Estoque</label>
-                <input type="number"  class="form-control" id="Estoque" maxlength="5"
-                   required [(ngModel)]="estoque">
-                <div class="col-md-2"></div>
-            </div>
-            
-        </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-4">
-                    <label for="text" class="required">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" placeholder="produto hiper, mega, blasster doce" required
-                        [(ngModel)]="descricao">
-                </div>
-                <div class="col-md-4 ">
+            <div class="col-md-4 ">
                     <label for="validationDefault04" class="required">Categoria</label>
                     <select class="form-control" [(ngModel)] = "categoria_id_categoria" placeholder="Escolha">
                             <option>Fruta</option>
@@ -47,6 +31,16 @@
                           </select>
                   </div>
                 
+            
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <label for="text" class="required">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" placeholder="produto hiper, mega, blasster doce" required
+                        [(ngModel)]="descricao">
+                </div>
             </div>
         </div>
         <div class="form-group">

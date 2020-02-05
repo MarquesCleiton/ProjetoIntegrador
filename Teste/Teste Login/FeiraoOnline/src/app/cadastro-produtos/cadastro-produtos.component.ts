@@ -14,11 +14,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CadastroProdutosComponent implements OnInit {
 
-  private usuario: Usuario;
   private titulo:    string;
   private id:        number;
   private descricao: string;
-  private estoque:   number;
   private preco:     number;
   private linkFoto:  string;
   private produto: Produto = new Produto();
@@ -44,7 +42,6 @@ export class CadastroProdutosComponent implements OnInit {
     this.produto.titulo = this.titulo;
     this.produto.descricao = this.descricao;
     this.produto.linkFoto = this.linkFoto;
-    this.produto.qtdEstoque = this.estoque;
     this.produto.preco = this.preco;
     
     console.log(this.produto);
@@ -54,7 +51,6 @@ export class CadastroProdutosComponent implements OnInit {
           this.titulo = "";
           this.descricao = "";
           this.linkFoto = "";
-          this.estoque = null;
           this.preco = null;
           this.categoria_id_categoria = "";
     },

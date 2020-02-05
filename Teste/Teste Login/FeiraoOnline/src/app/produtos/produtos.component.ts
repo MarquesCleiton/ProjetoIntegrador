@@ -14,6 +14,7 @@ export class ProdutosComponent implements OnInit {
 
   public listaDeProdutos: Produto[];
   public listaUnica: Produto;
+  
 
   constructor(private prod: ProdutoService) { }
 

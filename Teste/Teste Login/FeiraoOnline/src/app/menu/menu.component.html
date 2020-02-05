@@ -62,17 +62,22 @@
                 <a class="nav-link active" [routerLink]="'/cadastro'">Cadastro</a>
             </li>
             <li class="nav-item mx-2">
-                <a class="nav-link active" [routerLink]="'/listagem'">Listagem</a>
-            </li>
-            <li class="nav-item mx-2">
                 <a class="nav-link active" [routerLink]="'/duvidas'">Dúvidas</a>
             </li>
-            <li class="nav-item mx-2">
-                <a class="nav-link active" [routerLink]="'/cadastroprodutos'">Cadastro Produtos</a>
-            </li>
-            <li class="nav-item mx-2">
-                <a class="nav-link active" [routerLink]="'/listagemprodutos'">Listagem Produtos</a>
-            </li>
+            <li *ngIf ="cliente.nome !=null" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{cliente.nome}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Minha conta</a>
+                  <a class="dropdown-item" [routerLink]="'/cadastroprodutos'">Cadastro Produtos</a>
+                  <a class="dropdown-item" [routerLink]="'/listagemprodutos'">Listagem Produtos</a>
+                  <a class="dropdown-item" [routerLink]="'/listagem'">Listagem Clientes</a>
+                  <a class="dropdown-item" [routerLink]="'/meuspedidos'">Minhas Compras</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" (click) = "logout();">Logout</a>
+                </div>
+              </li>
         </ul>
     </div>
 </nav>

@@ -48,10 +48,10 @@ public class PedidoController {
 		return ResponseEntity.ok(pedido);
 	}
 	
-	@PostMapping("/pedidos/meuspedidos")
+	/*@PostMapping("/pedidos/meuspedidos")
 	public ResponseEntity<Pedido> meusPedidos(@RequestBody Cliente cliente){
 		Pedido pedido = servico
 		return ResponseEntity
-	}
+	}*/
 
 }

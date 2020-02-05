@@ -1,5 +1,4 @@
 import { Cliente } from './Cliente';
-import { createInterface } from 'readline';
 
 export class Pedido{
     idPedido: number;
