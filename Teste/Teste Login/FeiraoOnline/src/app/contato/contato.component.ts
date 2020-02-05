@@ -1,27 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { Contato } from '../model/Contato';
+import { ContatoService } from '../service/contato.service';
 @Component({
   selector: 'app-contato',
   templateUrl: './contato.component.html',
   styleUrls: ['./contato.component.css']
 })
 export class ContatoComponent implements OnInit {
-  private nome:  string;
-  private sobrenome: string;
-  private email: string;
-  private telefone: string;
-  private tipoContato: string;
-  private assunto: string;
-  private mensagem: string;
+   nome:  string;
+   sobrenome: string;
+   email: string;
+   telefone: string;
+   tipoContato: string;
+   assunto: string;
+   mensagem: string;
+  contato: Contato = new Contato();
+   msgNome: string;
+   msgSobreNome: string;
+   msgTel: string;
+   msgTipoContato: string;
+   msgEmail: string;
+   msgAssunto: string;
+   msgMensagem: String;
 
-  private msgNome: string;
-  private msgSobreNome: string;
-  private msgTel: string;
-  private msgTipoContato: string;
-  private msgEmail: string;
-  private msgAssunto: string;
-  private msgMensagem: String;
-
-  constructor() { }
+  constructor(private srv: ContatoService) { }
 
   ngOnInit() {
 
@@ -43,6 +45,7 @@ export class ContatoComponent implements OnInit {
         this.msgEmail       == "" &&
         this.msgMensagem    == "") 
       {
+        this.enviaremail();
       alert("Sua mensagem foi enviada com sucesso !!!")
       this.nome        = "";
       this.sobrenome   = "";
@@ -55,6 +58,26 @@ export class ContatoComponent implements OnInit {
       alert("Por favor, preencha os campos destacados")
       this.verificanumero();
     }
+  }
+
+  public enviaremail(){
+    console.log("chamou enviar mail");
+    
+    this.contato.assunto = this.assunto;
+    this.contato.email = this.email;
+    this.contato.mensagem = this.mensagem;
+    this.contato.nome = this.nome;
+    this.contato.sobrenome = this.sobrenome;
+    this.contato.telefone =  this.telefone;
+    this.contato.tipoContato = this.tipoContato;
+    console.log(this.contato);
+
+    this.srv.enviarEmail(this.contato).subscribe(res => {
+      alert("email enviado com sucesso");
+    },
+    err=> {
+      alert("erro ao enviar email");
+    })
   }
 
   public verificaNome(nome: string): string {
@@ -155,4 +178,3 @@ export class ContatoComponent implements OnInit {
     }
   }
 }
-
