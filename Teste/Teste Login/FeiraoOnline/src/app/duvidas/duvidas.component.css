@@ -9,7 +9,7 @@
     margin-bottom: 20%;
 }
 #cards{
-    text-align: center;
+    text-align: center; 
 }
 #formDuvidas{ 
     padding-top: 2%;
@@ -19,4 +19,16 @@
 .required:after {
     content:"*"; 
     color: red; 
+}
+
+.btn-accordion {
+    background-color: transparent;
+    color:#5cc085;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none;
+}
+.collapsed {
+    color: #353b43;
 }
