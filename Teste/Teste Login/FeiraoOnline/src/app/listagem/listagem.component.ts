@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
-import { Cliente } from '../model/Cliente';
-import { Router } from '@angular/router';
-
+import { Usuario } from '../model/Usuario';
 
 @Component({
   selector: 'app-listagem',
@@ -11,26 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ListagemComponent implements OnInit {
 
-  public cliente: Cliente[];
-  
-  clienteseg: Cliente = new Cliente;
-
-  constructor(private srv: UsuarioService,private route: Router, private validar: UsuarioService) { }
+  public usuario: Usuario[];
+  constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
-
-    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
-      this.clienteseg = res;
-      if(this.clienteseg.email != "feiraoonlinecontato@gmail.com"){
-      this.route.navigate(['/home']);
-      }
-    },
-    (err) => {
-    })
-
-   
-    this.srv.exibirTodos().subscribe((res: Cliente[]) =>{
-      this.cliente = res;
+    this.srv.exibirTodos().subscribe((res: Usuario[]) =>{
+      this.usuario = res;
     })
   }
 

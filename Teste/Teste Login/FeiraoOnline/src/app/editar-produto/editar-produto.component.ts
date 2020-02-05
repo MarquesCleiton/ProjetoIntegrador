@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UsuarioService } from '../service/usuario.service';
-import { Cliente } from '../model/Cliente';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-editar-produto',
@@ -12,32 +10,17 @@ import { Cliente } from '../model/Cliente';
 })
 export class EditarProdutoComponent implements OnInit {
 
-   titulo:    string;
-   linkFoto: string;
-   id:        number;
-   descricao: string;
-   estoque  : number;
-   preco    : number;
-   categoria_id_categoria: string;
-   aux: number;
-   cliente: Cliente = new Cliente;
-
+  private titulo:    string;
+  private linkFoto: string;
+  private id:        number;
+  private descricao: string;
+  private estoque  : number;
+  private preco    : number;
   public produto: Produto = new Produto();
 
-  constructor(private rota:ActivatedRoute,private srv: ProdutoService, private validar: UsuarioService,private route: Router
-    ) { }
+  constructor(private rota:ActivatedRoute,private srv: ProdutoService) { }
 
   ngOnInit() {
-    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
-      this.cliente = res;
-      if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
-      this.route.navigate(['/home']);
-      }
-    },
-    (err) => {
-      alert("sem sucesso");
-    })
-
     this.id = this.rota.snapshot.params["id"];
     console.log(this.id);
     this.srv.listarProdutosId(this.id).subscribe((res: Produto) =>
@@ -48,15 +31,7 @@ export class EditarProdutoComponent implements OnInit {
       this.titulo = this.produto.titulo;
       this.descricao = this.produto.descricao;
       this.preco = this.produto.preco;
-      this.aux = this.produto.categoria.idCategoria;
-      if(this.aux == 1){
-        this.categoria_id_categoria = "Fruta";
-      }else if(this.aux == 2){
-        this.categoria_id_categoria = "Verdura"
-      }else{
-        this.categoria_id_categoria = "Legume"
-      }
-
+      this.estoque = this.produto.qtdEstoque;
     },(err) => {
 
       alert ("deu ruim");
@@ -69,13 +44,7 @@ export class EditarProdutoComponent implements OnInit {
     this.produto.descricao = this.descricao;
     this.produto.idProduto = this.id;
     this.produto.titulo = this.titulo;
-    if(this.categoria_id_categoria == "Fruta"){
-      this.produto.categoria.idCategoria = 1;
-    }else if(this.categoria_id_categoria == "Verdura"){
-      this.produto.categoria.idCategoria = 2;
-    }else{
-      this.produto.categoria.idCategoria = 3;
-    }
+    this.produto.qtdEstoque = this.estoque;
     this.produto.preco = this.preco;
     console.log(this.produto);
     this.srv.atualiza(this.produto).subscribe((res) => {

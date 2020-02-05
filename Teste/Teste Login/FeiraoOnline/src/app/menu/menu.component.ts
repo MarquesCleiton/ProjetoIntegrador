@@ -33,13 +33,13 @@ export class MenuComponent implements OnInit {
   constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
-  
+    this.filtro = false;
+    if(this.usuario.nome == "admin"){
+      this.filtro = false;
+    }
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;
-        if(this.cliente.email == "feiraoonlinecontato@gmail.com"){
-          this.filtro = true;
-        }
           console.log("USER INFO...");
           console.log(res);
       },
@@ -54,9 +54,6 @@ export class MenuComponent implements OnInit {
     this.cliente.senha = this.senha;
     this.srv.autenticar(this.cliente).subscribe(
       (res: MyToken)=>{
-        if(this.cliente.email == "feiraoonlinecontato@gmail.com"){
-          this.filtro = true;
-        }
         // se deu certo        
         // armazeno o token no LocalStorage
         localStorage.setItem("MyToken",res.strToken);
