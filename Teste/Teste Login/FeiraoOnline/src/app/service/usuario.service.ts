@@ -19,7 +19,7 @@ export class UsuarioService {
   }
 
   public recuperaDetalhe(id:number){
-    return this.http.get("http://localhost:8088/cliente/"+id);
+    return this.http.get("http://localhost:8080/cliente/"+id);
   }
 
   public atualiza(usuario:Usuario){
