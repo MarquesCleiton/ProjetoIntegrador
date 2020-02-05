@@ -38,4 +38,9 @@ public class ProdutoService implements IProdutoService {
 	public void atualizaProduto(Produto produto) { // aqui atualiza um produto que foi adicionado
 		repo.save(produto);
 	}
+	
+	@Override
+	public void apagarProduto(int id) {
+		repo.deleteById(id);
+	}
 }
