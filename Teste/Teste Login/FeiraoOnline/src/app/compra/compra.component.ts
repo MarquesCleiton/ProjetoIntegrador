@@ -17,7 +17,7 @@ export class CompraComponent implements OnInit {
   private id: number;
   prod: Produto = new Produto();
   pedido: Pedido = new Pedido();
-  item: Itens = new Itens();
+  item:Itens = new Itens();
   quantidade: number;
   cliente: Cliente = new Cliente();
 
@@ -25,7 +25,6 @@ export class CompraComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.rota.snapshot.params["idProduto"];
-;
     this.srv.listarProdutosId(this.id).subscribe(
       (res: Produto) => {
         this.prod = res;
@@ -37,8 +36,7 @@ export class CompraComponent implements OnInit {
   }
 
   public geraPedido(){
-    this.pedido.idPedido = null;
-    this.pedido.dtPedido = "04/02/2020"
+    this.pedido.dtPedido = "05/02/2020"
     this.pedido.quantidade = this.quantidade;
     this.srvUser.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
