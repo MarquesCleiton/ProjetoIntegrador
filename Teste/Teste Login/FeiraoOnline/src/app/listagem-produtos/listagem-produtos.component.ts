@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service';
+import { Cliente } from '../model/Cliente';
 
 @Component({
   selector: 'app-listagem-produtos',
@@ -11,12 +13,25 @@ import { ActivatedRoute } from '@angular/router';
 export class ListagemProdutosComponent implements OnInit {
 
   private produto: Produto[];
+  
+cliente: Cliente = new Cliente;
 
 
 
-  constructor(private srv: ProdutoService,private rota: ActivatedRoute) { }
+  constructor(private srv: ProdutoService,private rota: ActivatedRoute, private route: Router, 
+    private validar: UsuarioService
+       ) { }
 
   ngOnInit() {
+
+    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
+      this.cliente = res;
+      if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
+      this.route.navigate(['/home']);
+      }
+    },
+    (err) => {
+    })
 
     this.srv.exibirTodosProdutos().subscribe((res: Produto[])=>{
       this.produto = res;

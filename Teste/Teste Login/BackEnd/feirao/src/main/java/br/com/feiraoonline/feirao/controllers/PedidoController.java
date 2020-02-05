@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.feiraoonline.feirao.model.Cliente;
 import br.com.feiraoonline.feirao.model.Pedido;
 import br.com.feiraoonline.feirao.services.IPedidoService;
 
