@@ -1,0 +1,148 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-md-12 aux">
+            <h2>
+                <strong>Seja bem-vindo Cadastre-se</strong>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 aux">
+            <p>Utilize o formulario abaixo para se cadastrar
+            </p>
+        </div>  
+
+    </div>
+    <div id="formCadastro"> 
+
+        <div class="row d-flex justify-content-center p-padrao">
+            <div class="form-group col-md-8">
+                <label for="text" class="required">Nome</label><br>
+                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
+                    [(ngModel)]="nome">
+                <div class="erro">{{msgnome}}</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <label for="E-mail" class="required">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="feirao@gmail.com" required
+                        [(ngModel)]="email">
+                    <div class="erro">{{msgEmail}}</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="inputFone" class="control-label" class="required">Telefone</label>
+                    <input type="tel" class="form-control phone-ddd-mask" id="telefone" maxlength="15"
+                        placeholder="(65) 91811-5159" name="contact[telephone]" id="telefone_contato" required
+                        [(ngModel)]="telefone" (keypress)="formataTelefone($event);" (keyup)="verificanumero();"
+                        restrict-input="^[0-9-]*$">
+                    <div class="erro">{{msgTelefone}}</div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+
+        
+                    <label for="Endereco" class="required">Endereço</label>
+                    <input type="text" class="form-control" id="Endereco" placeholder="Digite seu endereço completo" required
+                        [(ngModel)]="endereco">
+                    <div class="erro"></div>
+                </div>
+
+                <div class="col-md-4 ">
+                    <label for="validationDefault04" class="required">Estado</label>
+                    <select class="form-control" [(ngModel)] = "estado" placeholder="Escolha">
+                            <option>Selecione</option>
+                            <option>São Paulo</option>
+                            <option>Acre</option>
+                            <option>Alagoas</option>
+                            <option>Amapa</option>
+                            <option>Amazonas</option>
+                            <option>Bahia</option>
+                            <option>Ceara</option>
+                            <option>Distrito Federal</option>
+                            <option>Esperito Santo</option>
+                            <option>Goiás</option>
+                            <option>Maranhão</option>
+                            <option>Mato Grosso</option>
+                            <option>Mato Grosso do Sul</option>
+                            <option>Minas Gerais</option>
+                            <option>Pará</option>
+                            <option>Paraíba</option>
+                            <option>Paraná</option>
+                            <option>Pernambuco</option>
+                            <option>Piauí </option>
+                            <option>Rio de Janeiro</option>
+                            <option>Rio Grande do Norte</option>
+                            <option>Rio Grande do Sul </option>
+                            <option>Rondônia</option>
+                            <option>Roraima</option>
+                            <option>Santa Catarina </option>
+                            <option>Sergipe</option>
+                            <option>Tocantins</option>
+                          </select>
+                  </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <label for="Cidade" class="required">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" required
+                        [(ngModel)]="cidade" >
+                    <div class="erro"></div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="Cep" class="required">CEP</label>
+                    <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="8" class="form-control" id="cep" placeholder="00000000"
+                        required [(ngModel)]="cep">
+                    <div class="erro"></div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <label for="Senha" class="required">Senha</label>
+
+                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required
+                        [(ngModel)]="senha" (keypress)="vs();" (keyup)="vs();">
+                    <div class="erro">{{msgSenha}}</div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <label for="Senha" class="required">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="telefone" placeholder="Digite sua senha"
+                        id="senhaDois" required [(ngModel)]="confirmaSenha" (keypress)="verificaConfirmaSenha()"
+                        (keyup)="verificaConfirmaSenha()">
+                    <div class="erro">{{msgConfirmaSenha}}</div>
+                    <div class="col-md-2"></div>
+                </div>
+
+            </div> 
+
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <button type="submit" id="btnEnviarContato" class="btn btn-success"
+                    (click)='verificar();'>Enviar</button>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+</div> 
