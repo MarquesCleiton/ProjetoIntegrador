@@ -20,7 +20,8 @@ import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos
 import { ListagemProdutosComponent } from './listagem-produtos/listagem-produtos.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { CompraComponent } from './compra/compra.component';
-import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component'
+import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
+import { MinhacontaComponent } from './minhaconta/minhaconta.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component'
     ListagemProdutosComponent,
     EditarProdutoComponent,
     CompraComponent,
-    MeusPedidosComponent
+    MeusPedidosComponent,
+    MinhacontaComponent
   ],
   imports: [
     BrowserModule,
