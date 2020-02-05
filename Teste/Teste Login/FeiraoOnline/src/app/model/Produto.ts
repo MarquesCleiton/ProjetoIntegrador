@@ -6,5 +6,6 @@ export class Produto {
     descricao:string;
     linkFoto:string;
     preco:number;
+    qtdEstoque:number;
     categoria: Categoria = new Categoria();
 }

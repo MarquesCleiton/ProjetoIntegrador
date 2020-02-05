@@ -19,11 +19,11 @@
           <img class="card-img-top" src={{_prod.linkFoto}} alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{_prod.titulo}}</h5>
-            <p class="card-text">{{_prod.descricao}}</p>
+            <p class="card-text">{{_prod.detalhes}}</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Preco: </strong>{{_prod.preco}}</li>
-            <li class="list-group-item"><p  *ngIf = "_prod.categoria.idCategoria == 1"> <strong>Categoria: </strong> Fruta</p> <p  *ngIf = "_prod.categoria.idCategoria == 2"> <strong>Categoria: </strong> Verdura</p> <p  *ngIf = "_prod.categoria.idCategoria == 3"> <strong>Categoria: </strong> Legume</p> </li>
+            <li class="list-group-item"><strong>Estoque: </strong>{{_prod.qtdEstoque}}</li>
             <li class="list-group-item"><strong>Id do Produto: </strong>{{_prod.idProduto}}</li>
           </ul>
           <div class="card-body">

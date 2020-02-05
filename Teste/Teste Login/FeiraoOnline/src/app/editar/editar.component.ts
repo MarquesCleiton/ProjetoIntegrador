@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
-import { ActivatedRoute, Router } from '@angular/router';
-import { StringifyOptions } from 'querystring';
-import { Cliente } from '../model/Cliente';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-editar',
@@ -12,56 +10,32 @@ import { Cliente } from '../model/Cliente';
 })
 export class EditarComponent implements OnInit {
 
-   nome: string;
-   sobrenome: string;
-   telefone: string;
-   email: string;
-   senha: string;
-   confirmaSenha: string;
-   endereco: string;
-   cidade: string;
-   estado: string;
-   cep: string;
-   cliente: Cliente = new Cliente();
+  private nomeCompleto: string;
+  private telefone: string;
+  private email: string;
+  private senha: string;
+  private confirmaSenha: string;
+  private TesteSenha: boolean;
 
+  private msgNomeCompleto: string;
+  private msgTelefone: string;
+  private msgEmail: string;
+  private msgSenha: string;
+  private msgConfirmaSenha: string;
 
-   TesteSenha: boolean;
+  private id:number;
+  public user:Usuario = new Usuario();
 
-   msgNomeCompleto: string;
-   msgTelefone: string;
-   msgEmail: string;
-   msgSenha: string;
-   msgConfirmaSenha: string;
-   clienteseg: Cliente = new Cliente;
-   
-
-   id:number;
-  public user:Cliente = new Cliente();
-
-  constructor(private rota:ActivatedRoute, private srv: UsuarioService, private route: Router, private validar: UsuarioService) { 
+  constructor(private rota:ActivatedRoute, private srv: UsuarioService) { 
   }
 
   ngOnInit() {
-    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
-      this.cliente = res;
-      if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
-      this.route.navigate(['/home']);
-      }
-    },
-    (err) => {
-      alert("sem sucesso");
-    })
-
     this.id = this.rota.snapshot.params["id"];
     console.log(this.id);
-    this.srv.recuperaDetalhe(this.id).subscribe((res:Cliente)=>
+    this.srv.recuperaDetalhe(this.id).subscribe((res:Usuario)=>
     {
       this.user = res;
-      this.nome = this.user.nome;
-      this.cep = this.user.cep;
-      this.cidade = this.user.cidade;
-      this.estado = this.user.estado;
-      this.endereco = this.user.endereco;
+      this.nomeCompleto = this.user.nome;
       this.telefone = this.user.telefone;
       this.email = this.user.email;
       this.senha = this.user.senha;
@@ -84,20 +58,16 @@ export class EditarComponent implements OnInit {
       this.msgSenha == "" &&
       this.msgConfirmaSenha == "") {
 
-      var cliente: Cliente;
-      cliente = new Cliente();
-      cliente.idCliente = this.user.idCliente;
-      cliente.nome = this.nome;
-      cliente.email = this.email;
-      cliente.telefone = this.telefone;
-      cliente.senha = this.senha;
-      cliente.cep = this.cep;
-      cliente.cidade = this.cidade;
-      cliente.endereco = this.endereco;
-      cliente.estado = this.estado;
+      var usuario: Usuario;
+      usuario = new Usuario();
+      usuario.idUsuario = this.user.idUsuario;
+      usuario.nome = this.nomeCompleto;
+      usuario.email = this.email;
+      usuario.telefone = this.telefone;
+      usuario.senha = this.senha;
 
-  
-      this.srv.atualiza(cliente).subscribe(
+      console.log(usuario);
+      this.srv.atualiza(usuario).subscribe(
         (res) => {
           alert("Atualizado com sucesso!!!")
         },

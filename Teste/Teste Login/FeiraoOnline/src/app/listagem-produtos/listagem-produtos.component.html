@@ -4,6 +4,7 @@
         <th scope="col" >Id</th>
         <th scope="col" >Titulo</th>
         <th scope="col" >Descrição</th>
+        <th scope="col" >Estoque</th>
         <th scope="col" >Preço</th>
         <th scope="col" >Editar</th>
         <th scope="col" >Apagar</th>
@@ -14,7 +15,8 @@
       <tr *ngFor='let p of produto'>
         <th scope="row" >{{p.idProduto}}</th>
         <td>{{p.titulo}}</td>
-        <td>{{p.descricao}}</td>
+        <td>{{p.detalhes}}</td>
+        <td>{{p.qtdEstoque}}</td>
         <td>{{p.preco}}</td>
         <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success">Editar</button> </a></td>
         <td><a (click) = "apagar(p.idProduto,p.titulo,p.detalhes,p.categoria.idCategoria,p.preco);"> <button type="button" class="btn btn-success">Apagar</button> </a></td>
