@@ -1,11 +1,13 @@
 #alinhacardsofertas {
     margin-top: 3%;
     margin-left: 2px;
+    justify-content: center;
 }
 
 #alinhacardscomprados {
     margin-top: 3%;
     margin-left: 2px;
+    justify-content: center;
 }
 
 #alinhacategoria {
@@ -15,13 +17,13 @@
 #titulooferta {
     color: black;
     margin-top: 3%;
-    margin-left: 1%;
+    margin-left: 9%;
 }
 
 #titulomaiscomprados {
     color: black;
     margin-top: 3%;
-    margin-left: 1%;
+    margin-left: 9%;
 }
 #titulocategoria {
     color: black;
