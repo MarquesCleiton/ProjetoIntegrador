@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
-import { ActivatedRoute } from '@angular/router';
-import { Categoria } from '../model/Categoria';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service';
+import { Cliente } from '../model/Cliente';
 
 @Component({
   selector: 'app-editar-produto',
@@ -19,11 +20,24 @@ export class EditarProdutoComponent implements OnInit {
    preco    : number;
    categoria_id_categoria: string;
    aux: number;
+   cliente: Cliente = new Cliente;
+
   public produto: Produto = new Produto();
 
-  constructor(private rota:ActivatedRoute,private srv: ProdutoService) { }
+  constructor(private rota:ActivatedRoute,private srv: ProdutoService, private validar: UsuarioService,private route: Router
+    ) { }
 
   ngOnInit() {
+    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
+      this.cliente = res;
+      if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
+      this.route.navigate(['/home']);
+      }
+    },
+    (err) => {
+      alert("sem sucesso");
+    })
+
     this.id = this.rota.snapshot.params["id"];
     console.log(this.id);
     this.srv.listarProdutosId(this.id).subscribe((res: Produto) =>

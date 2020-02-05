@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../model/Produto';
-import { HttpClient } from '@angular/common/http';
 import { ProdutoService } from '../service/produto.service';
-import { Usuario } from '../model/Usuario';
 import { Globals } from '../model/Global';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service';
+import { Cliente } from '../model/Cliente';
+
 
 @Component({
   selector: 'app-cadastro-produtos',
@@ -14,20 +15,34 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CadastroProdutosComponent implements OnInit {
 
-  private titulo:    string;
-  private id:        number;
-  private descricao: string;
-  private preco:     number;
-  private linkFoto:  string;
-  private produto: Produto = new Produto();
-  private categoria_id_categoria: string;
+   titulo:    string;
+   descricao: string;
+   preco:     number;
+   linkFoto:  string;
+   produto: Produto = new Produto();
+   categoria_id_categoria: string;
+   aux: string;
+   cliente: Cliente = new Cliente;
+   
+
+  
 
 
-  constructor(private srv: ProdutoService,private route: Router) { }
+  constructor(private srv: ProdutoService,private validar:UsuarioService,private rota:ActivatedRoute, private route: Router) { }
 
   ngOnInit() {
+    this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
+      this.cliente = res;
+      if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
+      this.route.navigate(['/home']);
+      }
+    },
+    (err) => {
+    })
+    console.log(this.cliente);
     
   }
+  
 
   public enviarProduto(){
     
