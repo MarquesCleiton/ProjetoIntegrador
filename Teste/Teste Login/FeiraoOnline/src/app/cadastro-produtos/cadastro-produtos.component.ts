@@ -27,9 +27,10 @@ export class CadastroProdutosComponent implements OnInit {
 
 
   constructor(private srv: ProdutoService,private route: Router,
-    private validar: UsuarioService) { }
+    private validar: UsuarioService,) { }
 
   ngOnInit() {
+    
     this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
       this.cliente = res;
       if(this.cliente.email != "feiraoonlinecontato@gmail.com"){
@@ -37,6 +38,7 @@ export class CadastroProdutosComponent implements OnInit {
       }
     },
     (err) => {
+      this.route.navigate(['/home']);
     })
   }
 

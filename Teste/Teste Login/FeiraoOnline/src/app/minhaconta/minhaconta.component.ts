@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Cliente } from '../model/Cliente';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-minhaconta',
@@ -8,17 +9,19 @@ import { Cliente } from '../model/Cliente';
   styleUrls: ['./minhaconta.component.css']
 })
 export class MinhacontaComponent implements OnInit {
-  private nome: string;
-  private sobrenome: string;
-  private telefone: string;
-  private email: string;
-  private confirmaSenha: string;
-  private endereco: string;
-  private cidade: string;
-  private cep:string;
-  private estado: string;
-  private cliente:Cliente = new Cliente();
-  constructor(private srv: UsuarioService) { }
+   nome: string;
+   telefone: string;
+   email: string;
+   confirmaSenha: string;
+   endereco: string;
+   cidade: string;
+   cep:string;
+   estado: string;
+   senha: string;
+   senhaNova: string;
+   cliente:Cliente = new Cliente();
+   msgSenha: string;
+  constructor(private srv: UsuarioService, private rota: Router) { }
 
   ngOnInit() {
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
@@ -33,6 +36,42 @@ export class MinhacontaComponent implements OnInit {
     );
   }
 
+  public atualizarCliente(){
+    if(this.senha != this.cliente.senha){
+      this.msgSenha = "senha incorreta"
+      console.log(this.senhaNova);
+    }else{
+      this.cliente.nome = this.nome;
+      this.cliente.cep = this.cep;
+      this.cliente.cidade = this.cidade;
+      this.cliente.email = this.email;
+      this.cliente.endereco = this.endereco;
+      this.cliente.estado = this.estado;
+      this.cliente.senha = this.senhaNova;
+      this.cliente.telefone = this.telefone;
+      this.cliente.idCliente = this.cliente.idCliente;
+
+      this.srv.atualiza(this.cliente).subscribe(
+        res => {
+          alert("Atualizado com sucesso");
+          this.rota.navigate(['/produtos']);
+          this.nome = "";
+          this.cep = "";
+          this.cidade = "";
+          this.email = "";
+          this.endereco = "";
+          this.estado = "";
+          this.senhaNova = "";
+          this.telefone = "";
+            },
+        err => {
+          alert("Erro ao atualizar");
+        }
+      )
+    }
+
+  }
+
   public buscarInfoCliente(){
     this.srv.recuperaDetalhe(this.cliente.idCliente).subscribe(
       (res:Cliente)=>
@@ -40,7 +79,6 @@ export class MinhacontaComponent implements OnInit {
       this.cliente = res;
       console.log(this.cliente);
       this.nome = this.cliente.nome;
-      this.sobrenome = this.cliente.nome;
       this.email = this.cliente.email;
       this.telefone = this.cliente.telefone;
       this.endereco = this.cliente.endereco;

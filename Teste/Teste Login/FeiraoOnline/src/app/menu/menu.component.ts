@@ -23,10 +23,12 @@ import { Cliente } from '../model/Cliente';
 export class MenuComponent implements OnInit {
 
   barraPesquisa: string;
-  private email: string;
-  private senha: string;
-  private filtro: boolean = false;
-  private usuario: Usuario = new Usuario();
+   email: string;
+   senha: string;
+   filtro: boolean = false;
+   usuario: Usuario = new Usuario();
+   logado: boolean;
+
   cliente:Cliente = new Cliente();
   //@ViewChild('fechar', { static: false }) close;
 
@@ -34,18 +36,19 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   
+
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;
         if(this.cliente.email == "feiraoonlinecontato@gmail.com"){
-          this.filtro = true;
+          this.filtro = true
         }
           console.log(res);
       },
       (err) => {
-        console.log("ERRO!!!");
       }
     );
+    console.log(this.logado);
   }
 
   public enviar() {

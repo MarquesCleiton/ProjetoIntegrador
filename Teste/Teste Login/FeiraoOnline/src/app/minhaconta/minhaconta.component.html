@@ -115,13 +115,13 @@
 
                     <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required
                         [(ngModel)]="senha" (keypress)="vs();" (keyup)="vs();">
-                    <!-- <div class="erro">{{msgSenha}}</div> -->
+                    <div class="erro">{{msgSenha}}</div>
                 </div>
 
                 <div class="col-md-4">
                     <label for="Senha" class="required">Confirmar Senha</label>
                     <input type="password" class="form-control" id="telefone" placeholder="Digite sua senha"
-                        id="senhaDois" required [(ngModel)]="confirmaSenha" (keypress)="verificaConfirmaSenha()"
+                        id="senhaDois" required [(ngModel)]="senhaNova" (keypress)="verificaConfirmaSenha()"
                         (keyup)="verificaConfirmaSenha()">
                     <!-- <div class="erro">{{msgConfirmaSenha}}</div> -->
                     <div class="col-md-2"></div>
@@ -134,7 +134,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <button type="submit" id="btnEnviarContato" class="btn btn-success"
-                    (click)='verificar();'>ATUALIZAR DADOS</button>
+                    (click)='atualizarCliente();'>ATUALIZAR DADOS</button>
             </div>
             <div class="col-md-2"></div>
         </div>
