@@ -1,23 +1,29 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col" >Id Produto</th>
-        <th scope="col" >Titulo</th>
+        <th scope="col" >Id Pedido</th>
+        <th scope="col" >Título</th>
+        <th scope="col" >Detalhes</th>
         <th scope="col" >Quantidade</th>
-        <th scope="col" >Preço </th>
+        <th scope="col" >Preço Unitário</th>
+        <th scope="col" >Total</th>
+        <th scope="col" >Editar</th>
         <th scope="col" >Apagar</th>
         
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let p of produto'>
-        <th scope="row" >{{p.idProduto}}</th>
-        <td>{{p.titulo}}</td>
-        <td>{{p.detalhes}}</td>
-        <td>{{p.qtdEstoque}}</td>
-        <td>{{p.preco}}</td>
+      <tr *ngFor='let p of this.cliente.pedido'>
+        <th scope="row" >{{p.idPedido}}</th>
+        <td><div *ngIf="p.itens[0].produto != null">{{p.itens[0].produto.titulo}}</div></td>
+        <td><div *ngIf="p.itens[0].produto != null">{{p.itens[0].produto.descricao}}</div></td>
+        <td><div *ngIf="p.itens[0].produto != null">{{p.quantidade}}</div></td>
+        <td><div *ngIf="p.itens[0].produto != null">{{p.itens[0].produto.preco}}</div></td>
+        <td><div *ngIf="p.itens[0].produto != null">{{calcula(p.quantidade,p.itens[0].produto.preco)}}</div></td>
         <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success">Editar</button> </a></td>
         <td><a (click) = "apagar(p.idProduto,p.titulo,p.detalhes,p.qtdEstoque,p.preco);"> <button type="button" class="btn btn-success">Apagar</button> </a></td>
+        <div *ngIf="p.itens[0].produto != null">{{cont(calcula(p.quantidade,p.itens[0].produto.preco))}}</div>
       </tr>
+      {{contador}}
     </tbody>
   </table>

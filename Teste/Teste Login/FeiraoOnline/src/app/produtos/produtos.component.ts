@@ -16,7 +16,7 @@ export class ProdutosComponent implements OnInit {
   public listaUnica: Produto;
   
 
-  constructor(private prod: ProdutoService) { }
+  constructor(private prod: ProdutoService) {}
 
   ngOnInit() {
     window.scroll(0,0);

@@ -71,7 +71,6 @@ export class MinhacontaComponent implements OnInit {
     }
 
   }
-
   public buscarInfoCliente(){
     this.srv.recuperaDetalhe(this.cliente.idCliente).subscribe(
       (res:Cliente)=>
