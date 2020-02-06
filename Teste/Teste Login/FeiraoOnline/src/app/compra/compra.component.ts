@@ -14,7 +14,7 @@ import { PedidoService } from '../service/pedido.service';
   styleUrls: ['./compra.component.css']
 })
 export class CompraComponent implements OnInit {
-
+  
   private id: number;
   prod: Produto = new Produto();
   pedido: Pedido = new Pedido();
@@ -27,7 +27,6 @@ export class CompraComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.rota.snapshot.params["idProduto"];
-
     this.srvUser.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;
@@ -35,26 +34,26 @@ export class CompraComponent implements OnInit {
       (err) => {
       }
     );
-
+    
     this.srv.listarProdutosId(this.id).subscribe(
       (res: Produto) => {
         this.prod = res;
       },
       (err) => {
-        alert("NÃO FOI POSSÍVEL ENCONTRAR O PRODUTO")
+        console.log("Não foi possível buscar o produto");
       }
     )
   }
   public geraPedido(){
     this.pedido.quantidade = 5;
-    
-    //this.pedido.cliente.idCliente = 1;
-    console.log(this.pedido);
+    this.pedido.cliente = this.cliente;
+    this.item.produto.idProduto = this.prod.idProduto;
+    this.pedido.itens.push(this.item); 
     this.psrv.inseriProdutos(this.pedido).subscribe(res =>{
-      alert( "FOI!" );
+      alert("Produto Comprado com sucesso!!!");
     },
     err => {
-       alert( "NÃO FOI" );
+       alert("Não foi possivel efetuar a compra");
     });
   }
 }

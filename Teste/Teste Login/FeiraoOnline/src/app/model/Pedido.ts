@@ -5,6 +5,6 @@ export class Pedido{
     idpedido: number;    
     quantidade: number;
     dtpedido: string;
-    // cliente: Cliente = new Cliente();
-    // itens:Itens[];
+    cliente: Cliente = new Cliente();
+    itens:Array<Itens> = new Array();
 }
