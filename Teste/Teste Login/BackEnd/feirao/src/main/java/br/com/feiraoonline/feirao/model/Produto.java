@@ -1,15 +1,13 @@
  package br.com.feiraoonline.feirao.model;
 
-import java.util.List;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -36,9 +34,9 @@ public class Produto {
 	@Column(name="preco", length = 100)
 	private String 	preco;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "produto")
+	/*@OneToMany(cascade = CascadeType.ALL, mappedBy = "produto")
 	@JsonIgnoreProperties("produto")
-	List<Itens> itens;
+	List<Itens> itens;*/
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -84,13 +82,13 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public List<Itens> getItens() {
-		return itens;
-	}
-
-	public void setItens(List<Itens> itens) {
-		this.itens = itens;
-	}
+//	public List<Itens> getItens() {
+//		return itens;
+//	}
+//
+//	public void setItens(List<Itens> itens) {
+//		this.itens = itens;
+//	}
 
 	public Categoria getCategoria() {
 		return categoria;
