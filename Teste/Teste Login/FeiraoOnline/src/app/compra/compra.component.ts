@@ -26,6 +26,7 @@ export class CompraComponent implements OnInit {
     private psrv:PedidoService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.id = this.rota.snapshot.params["idProduto"];
     this.srvUser.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {

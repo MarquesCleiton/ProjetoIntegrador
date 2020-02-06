@@ -5,12 +5,17 @@
 #titulo{
     text-align: center;
     font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
 
+#subtitulo{
+    color: black;
 }
 
 #titulo1{
     text-align: center;
     margin-top: 3%; 
+    color: black;
     
 }
 #imagem{ 

@@ -13,6 +13,7 @@ export class MeusPedidosComponent implements OnInit {
   
   constructor(private srv: UsuarioService) { }
   ngOnInit() {
+    window.scroll(0,0);
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;

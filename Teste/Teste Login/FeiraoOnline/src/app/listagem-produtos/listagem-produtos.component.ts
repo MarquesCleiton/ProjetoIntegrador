@@ -23,7 +23,7 @@ cliente: Cliente = new Cliente;
        ) { }
 
   ngOnInit() {
-
+    window.scroll(0,0);
     this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
       this.cliente = res;
       if(this.cliente.email != "feiraoonlinecontato@gmail.com"){

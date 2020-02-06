@@ -15,7 +15,7 @@
                 </h2>
             </div>
         </div>
-        <div class="row" id="linhaContato" id="titulo">
+        <div class="row" id="linhaContato" id="subtitulo">
             <div class="col-md-12">
                 <p>Utilize o formulario abaixo para entrar em contato conosco, enviar depoimento, criticas e sugestões:
                 </p>
@@ -28,13 +28,13 @@
 
         <div class="row d-flex justify-content-center p-padrao">
             <div class="form-group col-md-4">
-                <label for="text" class="required">Nome</label><br>
+                <label for="text" class="required dados">Nome</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
                     [(ngModel)]="nome">
                 <div class="erro">{{msgNome}}</div>
             </div>
             <div class="form-group col-md-4">
-                <label for="text" class="required">Sobrenome</label>
+                <label for="text" class="required dados">Sobrenome</label>
                 <input type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome" required
                     [(ngModel)]="sobrenome">
                 <div class="erro">{{msgSobreNome}}</div>
@@ -44,14 +44,14 @@
         <div class="form-group">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-4">
-                    <label for="E-mail" class="required">E-mail</label>
+                    <label for="E-mail" class="required dados">E-mail</label>
                     <input type="email" class="form-control" id="email" placeholder="feirao@gmail.com" required
                         [(ngModel)]="email">
                     <div class="erro">{{msgEmail}}</div>
                 </div>
 
                 <div class="col-md-4">
-                    <label for="inputFone" class="control-label" class="required">Telefone</label>
+                    <label for="inputFone" class="control-label" class="required dados">Telefone</label>
                     <input type="tel" class="form-control phone-ddd-mask" id="telefone" maxlength="15"
                         placeholder="(65) 91811-5159" name="contact[telephone]" id="telefone_contato" required
                         [(ngModel)]="telefone" (keypress) = "formataTelefone($event);" (keyup) = "verificanumero();" restrict-input="^[0-9-]*$">
@@ -65,17 +65,17 @@
         <div class="form-group ">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-4">
-                    <label for="input" class="required">Tipo de contato</label>
+                    <label for="input" class="required dados">Tipo de contato</label>
                     <select id="tipoReclamacao" class="form-control" required [(ngModel)]="tipoContato">
                         <option>Sugestões</option>
                         <option>Elogios</option>
-                        <option>Duvidas</option>
+                        <option>Dúvidas</option>
                         <option>Reclamações</option>
                     </select>
                     <div class="erro">{{msgTipoContato}}</div>
                 </div>
                 <div class="col-md-4">
-                    <label for="input" required class="required">Assunto</label>
+                    <label for="input" required class="required dados">Assunto</label>
                     <input type="text" id="assunto" class="form-control" placeholder="Assunto da mensagem"
                         [(ngModel)]="assunto">
                     <div class="erro">{{msgAssunto}}</div>
@@ -85,7 +85,7 @@
         <div class="form-group ">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
-                    <label for="exampleFormControlTextarea1" class="required">Digite sua mensagem</label>
+                    <label for="exampleFormControlTextarea1" class="required dados">Digite sua mensagem</label>
                     <textarea class="form-control" id="textarea" rows="3" required [(ngModel)]="mensagem"></textarea>
                     <div class="erro">{{msgMensagem}}</div>
                 </div>

@@ -30,6 +30,7 @@ export class CadastroProdutosComponent implements OnInit {
     private validar: UsuarioService,) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     
     this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
       this.cliente = res;
