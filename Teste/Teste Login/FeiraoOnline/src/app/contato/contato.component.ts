@@ -26,6 +26,7 @@ export class ContatoComponent implements OnInit {
   constructor(private srv: ContatoService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
 
   }
   public verificar() {
