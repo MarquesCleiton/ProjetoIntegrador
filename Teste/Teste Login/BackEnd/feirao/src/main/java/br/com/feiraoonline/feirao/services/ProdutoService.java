@@ -28,6 +28,7 @@ public class ProdutoService implements IProdutoService {
 		}
 	}
 
+
 	@Override
 	public void novoProduto(Produto produto) { // aqui adiciona um novo produto
 		repo.save(produto);

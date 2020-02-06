@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import br.com.feiraoonline.feirao.model.Pedido;
 
 public interface PedidoRepo extends CrudRepository <Pedido, Integer> {
-	public Pedido findByCliente(int cliente);
+   public Pedido findByCliente(int cliente);
 
 }

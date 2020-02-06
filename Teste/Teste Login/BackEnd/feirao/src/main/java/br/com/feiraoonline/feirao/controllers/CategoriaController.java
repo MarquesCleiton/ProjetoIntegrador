@@ -27,6 +27,16 @@ public class CategoriaController {
 		return ResponseEntity.ok(servico.recuperaTodos());
 	}
 	
+	@GetMapping("/categoria/listagem/{id}")
+	public ResponseEntity<Categoria> buscarPelaCategoria(@PathVariable int id) {
+		Categoria c = servico.recuperarPorId(id);
+		if(c != null) {
+			return ResponseEntity.ok(c);
+		}
+		return ResponseEntity.status(404).build();
+	}
+
+	
 	@GetMapping("/categoria/{id}")
 	public ResponseEntity<Categoria> mostrarPeloId(@PathVariable int id) {
 		Categoria c = servico.recuperarPorId(id);

@@ -27,6 +27,11 @@ public class ProdutoController {
 		return ResponseEntity.ok(servico.recuperaTodos());
 	}
 	
+//	@GetMapping("/produto/categoria")
+//	public ResponseEntity<List<Produto>> bCategoria(@PathVariable int categoria_id_categoria) {
+//		return ResponseEntity.ok(servico.buscaPorCategoria(categoria_id_categoria));
+//	}
+	
 	@GetMapping("/produto/{id}")
 	public ResponseEntity<Produto> mostrarPeloId(@PathVariable int id) {
 		Produto p = servico.recuperarPorId(id);

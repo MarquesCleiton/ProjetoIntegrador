@@ -34,4 +34,10 @@ export class ProdutoService {
     alert("chamoou apagar")
     return this.http.delete("http://localhost:8080/produto/apagar/"+ idProduto);
   }
+
+  buuscaPorCategoria(id: number){
+    return this.http.get("http://localhost:8080/categoria/listagem/"+id);
+  }
+
+  
 }

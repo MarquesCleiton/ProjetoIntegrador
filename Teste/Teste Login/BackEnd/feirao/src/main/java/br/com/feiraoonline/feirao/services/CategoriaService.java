@@ -28,6 +28,10 @@ public class CategoriaService implements ICategoriaService {
 		}
 	}
 
+	@Override 
+	public Categoria buscarPorCategoria(int id){
+		return repo.findAllByidCategoria(id);
+	}
 	@Override
 	public void novaCategoria(Categoria categoria) { // aqui adiciona uma nova (caso a gnt adicione) categoria
 		repo.save(categoria);
