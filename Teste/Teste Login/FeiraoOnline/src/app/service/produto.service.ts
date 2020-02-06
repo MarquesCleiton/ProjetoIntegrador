@@ -19,6 +19,11 @@ export class ProdutoService {
     return this.http.post("http://localhost:8080/produto/cadastrar", produto);
   }
 
+  public buscaPorPalavra(titulo: string){
+    return this.http.get("http://localhost:8080//buscar/palavra/"+titulo)
+  }
+
+  
   public exibirTodosProdutos(){
     console.log("chegooou exibir")
     return this.http.get("http://localhost:8080/produto/todos");

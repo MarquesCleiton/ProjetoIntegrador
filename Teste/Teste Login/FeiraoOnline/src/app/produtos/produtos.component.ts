@@ -9,11 +9,11 @@ import { Produto } from '../model/Produto';
 })
 export class ProdutosComponent implements OnInit {
 
-  public idProduto: number;
   public isLista: boolean = true;
 
   public listaDeProdutos: Produto[];
-  public listaUnica: Produto;
+  produto: Array<Produto> = new Array();
+  titulo: string;
   
 
   constructor(private prod: ProdutoService) {}
@@ -25,17 +25,17 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
-  pesquisarId() {
-    this.isLista = false;
-    if (this.idProduto != null) {
-      this.prod.listarProdutosId(this.idProduto).subscribe((res: Produto) => {
-        this.listaUnica = res;
-      })
-    }else{
-      this.listaUnica = null;
+  PesquisarPorPalavra() {
+    this.isLista =false;
+    if (this.titulo != null) {
+      this.prod.buscaPorPalavra(this.titulo).subscribe((res: Produto[]) => {
+        this.produto = res; 
+       console.log(this.produto); })
+     }else{
+       alert("cheg")
+      this.produto = null;
+     }
     }
-    console.log(this.listaUnica);
-  }
   
   mostrarTudo() {
     this.isLista = true;

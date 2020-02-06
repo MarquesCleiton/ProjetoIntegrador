@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="form-inline row alinhapesquisa">
+      <div class="botao">
+        <input class="form-control" type="text" placeholder="Pesquisar Produto" aria-label="Pesquisar Id"
+          [(ngModel)]="titulo" [ngModelOptions]="{standalone: true}">
+          
+        <button class="btn btn-outline-success " (click)="PesquisarPorPalavra();" type="number">Pesquisar</button>
+  
+        <button class="btn btn-outline-success " (click)="mostrarTudo();" type="number">Mostrar
+          Tudo</button>
+      </div>
+    </div>
+  </div>
+  
+    <div *ngIf="busca == true">
+      <div class="row d-flex justify-content-center">
+        <div *ngFor="let produto of categoria.produto card" >
+          <div  class="card mx-3 mt-4" style="width: 12rem;">
+            <img class="card-img-top" src="{{produto.linkFoto}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" id="banana"><strong>{{produto.titulo}}</strong></h5>
+                <p class="card-text" id="precobanana"><s><strong>De: 7,49</strong></s></p>
+                <div id="ofertabanana">
+                    <p><strong>Por: R$ {{produto.preco}}</strong></p>
+                </div>
+                <p><a [routerLink]="['/compra', produto.idProduto]" class="btn btn-success">Comprar</a></p>
+            </div>
+        </div>
+          <!-- <div class="card mx-2 mb-3" style="width: 12rem;">
+            <img class="card-img-top" src={{_prod.linkFoto}} alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{_prod.titulo}}</h5>
+              <p class="card-text">{{_prod.descricao}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Preco: </strong>{{_prod.preco}}</li>
+              <li class="list-group-item"><p  *ngIf = "_prod.categoria.idCategoria == 1"> <strong>Categoria: </strong> Fruta</p> <p  *ngIf = "_prod.categoria.idCategoria == 2"> <strong>Categoria: </strong> Verdura</p> <p  *ngIf = "_prod.categoria.idCategoria == 3"> <strong>Categoria: </strong> Legume</p> </li>
+              <li class="list-group-item"><strong>Id do Produto: </strong>{{_prod.idProduto}}</li>
+            </ul>
+            <div class="card-body">
+              <a [routerLink]="['/produtos/compra', _prod.idProduto]" class="card-link">Comprar</a>
+            </div>
+          </div> -->
+        </div>
+  
+      </div>
+    </div>
+  
+    <div *ngIf="busca == false">
+            <div class="row d-flex justify-content-center">
+              <div *ngFor="let produto of produto card" >
+                <div  class="card mx-3 mt-4" style="width: 12rem;">
+                  <img class="card-img-top" src="{{produto.linkFoto}}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title" id="banana"><strong>{{produto.titulo}}</strong></h5>
+                      <p class="card-text" id="precobanana"><s><strong>De: 7,49</strong></s></p>
+                      <div id="ofertabanana">
+                          <p><strong>Por: R$ {{produto.preco}}</strong></p>
+                      </div>
+                      <p><a [routerLink]="['/compra', produto.idProduto]" class="btn btn-success">Comprar</a></p>
+                  </div>
+                </div>
+                <!-- <div *ngIf="produto == null ||listaDeProdutos == null">
+                        <h3>Não foi possivel encontar o produto</h3>
+                      </div> -->
+    </div>
+  

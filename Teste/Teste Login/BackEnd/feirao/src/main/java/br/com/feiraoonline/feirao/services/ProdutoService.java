@@ -18,6 +18,11 @@ public class ProdutoService implements IProdutoService {
 	public List<Produto> recuperaTodos() { // aqui recupera todos os produtos
 		return (List<Produto>) repo.findAll();
 	}
+	
+	@Override
+	public List<Produto> buscarPorPalavra(String titulo){
+		return (List<Produto>) repo.findByTituloContains(titulo);
+	}
 
 	@Override
 	public Produto recuperarPorId(int id) { // aqui recupera os produtos pelo ID do mesmo

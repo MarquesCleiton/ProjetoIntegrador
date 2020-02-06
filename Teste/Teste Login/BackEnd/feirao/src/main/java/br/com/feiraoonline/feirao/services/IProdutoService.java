@@ -10,5 +10,6 @@ public interface IProdutoService {
 	public void novoProduto(Produto produto);		// CREATE
 	public void atualizaProduto(Produto produto);	//UPDATE
 	public void apagarProduto(int id);	//DELETE
+	public List<Produto> buscarPorPalavra(String titulo);
 	
 }

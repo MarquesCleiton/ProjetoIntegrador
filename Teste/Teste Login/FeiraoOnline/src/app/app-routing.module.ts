@@ -15,6 +15,7 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
 import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 import { MinhacontaComponent } from './minhaconta/minhaconta.component';
 import { CompraComponent } from './compra/compra.component';
+import { ProdutosCategoriaComponent } from './produtos-categoria/produtos-categoria.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'duvidas', component: DuvidasComponent},
   {path: 'meuspedidos', component: MeusPedidosComponent},
   {path: 'minhaconta', component: MinhacontaComponent},
+  {path: 'produtoscategoria/:id', component: ProdutosCategoriaComponent},
   {path: 'compra/:idProduto', component: CompraComponent}
 ];
 
