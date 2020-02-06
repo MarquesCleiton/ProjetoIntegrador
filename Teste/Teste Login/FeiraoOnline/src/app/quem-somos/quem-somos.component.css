@@ -11,7 +11,7 @@
 }
 
 #quemSomos {
-    text-align: center;
+    text-align: center; 
     padding-top: 5%;
     padding-bottom: 5%;
     color: white;
@@ -29,6 +29,7 @@
  
 .bio { 
     margin-top: 7%;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #titulo {
@@ -98,3 +99,17 @@
     filter: blur(0px);
     -webkit-filter: blur(0px);
 }
+
+.h2{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#tituloPrincipal{
+    font-family: 'Titillium Web', sans-serif; 
+ }
+
+ .h1 {
+    font-family: 'Titillium Web', sans-serif; 
+ }
+
+ 

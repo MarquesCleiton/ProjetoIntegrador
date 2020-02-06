@@ -5,11 +5,13 @@
 #titulo{
     text-align: center;
     font-family: 'Titillium Web', sans-serif;
+
 }
 
 #titulo1{
     text-align: center;
-    margin-top: 7%;
+    margin-top: 3%; 
+    
 }
 #imagem{ 
     text-align:center;
@@ -23,12 +25,6 @@
     text-align: left; 
     
     
-}
-
-
-.required:after {
-    content:"*"; 
-    color: red; 
 }
 
 .btn-accordion {
@@ -61,7 +57,5 @@
     left: 50%;
     margin-left: -13px;
 }
-
-
 
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Nunito+Sans|Raleway|Titillium+Web&display=swap');
+
 .aux{
     text-align: center;
 }
@@ -12,4 +14,10 @@
 }
 h2{
     padding-top: 2%;
+    font-family: 'Titillium Web', sans-serif;
 } 
+
+p{
+    font-family: 'Titillium Web', sans-serif;
+}
+
