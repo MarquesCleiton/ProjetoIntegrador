@@ -17,6 +17,7 @@ clienteseg: Cliente = new Cliente;
   constructor(private srv: UsuarioService, private route: Router, private validar: UsuarioService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.validar.buscarInfo(localStorage.getItem("MyToken")).subscribe((res: Cliente) => {
       this.clienteseg = res;
       if(this.clienteseg.email != "feiraoonlinecontato@gmail.com"){
