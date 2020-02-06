@@ -1,4 +1,4 @@
-import { StringifyOptions } from 'querystring';
+import { Pedido } from './pedido';
 
 export class Cliente{
     public idCliente:number;
@@ -10,4 +10,5 @@ export class Cliente{
     public email:string;
     public senha:string;
     public telefone:string;
+    public pedido:Array<Pedido> = new Array();
 }

@@ -19,6 +19,7 @@ export class ProdutosComponent implements OnInit {
   constructor(private prod: ProdutoService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.prod.exibirTodosProdutos().subscribe((res: Produto[]) => {
       this.listaDeProdutos = res;
     })
