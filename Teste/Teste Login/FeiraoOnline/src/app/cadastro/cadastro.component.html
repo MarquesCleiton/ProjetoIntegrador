@@ -17,7 +17,7 @@
 
         <div class="row d-flex justify-content-center p-padrao">
             <div class="form-group col-md-8">
-                <label for="text" class="required">Nome</label><br>
+                <label for="text" class="required dados">Nome</label><br>
                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required
                     [(ngModel)]="nome">
                 <div class="erro">{{msgnome}}</div>
@@ -28,14 +28,14 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="E-mail" class="required">E-mail</label>
+                    <label for="E-mail" class="required dados">E-mail</label>
                     <input type="email" class="form-control" id="email" placeholder="feirao@gmail.com" required
                         [(ngModel)]="email">
                     <div class="erro">{{msgEmail}}</div>
                 </div>
 
                 <div class="col-md-4">
-                    <label for="inputFone" class="control-label" class="required">Telefone</label>
+                    <label for="inputFone" class="control-label" class="required dados">Telefone</label>
                     <input type="tel" class="form-control phone-ddd-mask" id="telefone" maxlength="15"
                         placeholder="(65) 91811-5159" name="contact[telephone]" id="telefone_contato" required
                         [(ngModel)]="telefone" (keypress)="formataTelefone($event);" (keyup)="verificanumero();"
@@ -51,7 +51,7 @@
                 <div class="col-md-4">
 
         
-                    <label for="Endereco" class="required">Endereço</label>
+                    <label for="Endereco" class="required dados">Endereço</label>
                     <input type="text" class="form-control" id="Endereco" placeholder="Digite seu endereço completo" required
                         [(ngModel)]="endereco">
                     <div class="erro"></div>
@@ -96,14 +96,14 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="Cidade" class="required">Cidade</label>
+                    <label for="Cidade" class="required dados">Cidade</label>
                     <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" required
                         [(ngModel)]="cidade" >
                     <div class="erro"></div>
                 </div>
 
                 <div class="col-md-4">
-                    <label for="Cep" class="required">CEP</label>
+                    <label for="Cep" class="required dados">CEP</label>
                     <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="8" class="form-control" id="cep" placeholder="00000000"
                         required [(ngModel)]="cep">
                     <div class="erro"></div>
@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <label for="Senha" class="required">Senha</label>
+                    <label for="Senha" class="required dados">Senha</label>
 
                     <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required
                         [(ngModel)]="senha" (keypress)="vs();" (keyup)="vs();">
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <label for="Senha" class="required">Confirmar Senha</label>
+                    <label for="Senha" class="required dados">Confirmar Senha</label>
                     <input type="password" class="form-control" id="telefone" placeholder="Digite sua senha"
                         id="senhaDois" required [(ngModel)]="confirmaSenha" (keypress)="verificaConfirmaSenha()"
                         (keyup)="verificaConfirmaSenha()">

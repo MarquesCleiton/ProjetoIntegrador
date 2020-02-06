@@ -3,6 +3,13 @@
 #titulo{
     text-align: center;
     font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
+#subtitulo {
+    color: black;
+}
+.dados {
+    color: black;
 }
 
 #formContato

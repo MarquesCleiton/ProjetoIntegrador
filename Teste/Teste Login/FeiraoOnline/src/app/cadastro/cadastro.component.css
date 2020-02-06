@@ -5,13 +5,18 @@
 #titulo{
     text-align: center;
     font-family: 'Titillium Web', sans-serif;
+    color: black;
 }
 
 
 .aux{
     text-align: center;
+    color: black;
 } 
 
+.dados {
+    color: black;
+}
 .erro{
     color: red;
 }
