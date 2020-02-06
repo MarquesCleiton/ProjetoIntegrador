@@ -28,6 +28,7 @@ export class CadastroComponent implements OnInit {
   constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
+    window.scroll(0,0);
   }
 
   public verificar() {
