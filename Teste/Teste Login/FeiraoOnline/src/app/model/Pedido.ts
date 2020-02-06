@@ -2,8 +2,9 @@ import { Cliente } from './Cliente';
 import { Itens } from './Itens';
 
 export class Pedido{
-    idPedido: number;
-    dtPedido: string;
+    idpedido: number;    
     quantidade: number;
-    cliente_idcliente: Cliente = new Cliente();
+    dtpedido: string;
+    // cliente: Cliente = new Cliente();
+    // itens:Itens[];
 }

@@ -41,15 +41,15 @@ export class CompraComponent implements OnInit {
         this.prod = res;
       },
       (err) => {
-        alert("deu ruim")
+        alert("NÃO FOI POSSÍVEL ENCONTRAR O PRODUTO")
       }
     )
   }
   public geraPedido(){
-
-    //this.pedido.dtPedido = "05/02/2020";
-    this.pedido.quantidade = this.quantidade;
-    this.pedido.cliente_idcliente = this.cliente;
+    this.pedido.quantidade = 5;
+    
+    //this.pedido.cliente.idCliente = 1;
+    console.log(this.pedido);
     this.psrv.inseriProdutos(this.pedido).subscribe(res =>{
       alert( "FOI!" );
     },

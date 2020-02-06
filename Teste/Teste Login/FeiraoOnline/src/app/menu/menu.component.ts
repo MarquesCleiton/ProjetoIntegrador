@@ -40,7 +40,6 @@ export class MenuComponent implements OnInit {
         if(this.cliente.email == "feiraoonlinecontato@gmail.com"){
           this.filtro = true;
         }
-          console.log("USER INFO...");
           console.log(res);
       },
       (err) => {

@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import br.com.feiraoonline.feirao.dao.ItensRepo;
 import br.com.feiraoonline.feirao.dao.PedidoRepo;
+import br.com.feiraoonline.feirao.model.Itens;
 import br.com.feiraoonline.feirao.model.Pedido;
 
 @Component
@@ -13,6 +15,9 @@ public class PedidoService implements IPedidoService {
 
 	@Autowired
 	private PedidoRepo repo;
+	
+	@Autowired
+	private ItensRepo itensRepo;
 
 	@Override
 	public List<Pedido> recuperaTodosPedidos() {
@@ -30,6 +35,11 @@ public class PedidoService implements IPedidoService {
 
 	@Override
 	public void novoPedido(Pedido pedido) {
+		repo.save(pedido);
+		for (Itens item: pedido.getItens()) {
+			item.setPedido(pedido);
+			itensRepo.save(item);
+		}
 		repo.save(pedido);
 	}
 
