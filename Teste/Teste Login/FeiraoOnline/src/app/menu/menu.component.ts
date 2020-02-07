@@ -79,7 +79,7 @@ export class MenuComponent implements OnInit {
 
       },
       (err)=>{
-        alert("FAIL!!!")
+        alert("Não foi possivel logar!!!")
       }
     );
     /*
