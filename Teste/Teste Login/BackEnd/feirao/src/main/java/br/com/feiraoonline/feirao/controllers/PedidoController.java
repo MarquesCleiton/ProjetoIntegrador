@@ -56,4 +56,12 @@ public class PedidoController {
 		Pedido p = servico.recuperarPorId(id);
 		return ResponseEntity.ok(p);
 	}
+	
+
+	@DeleteMapping("/pedido/concluircompra")
+	public ResponseEntity<Pedido> concluircompra() {
+		servico.concluirCompra();
+		Pedido p = new Pedido();
+		return ResponseEntity.ok(p);
+	}
 }

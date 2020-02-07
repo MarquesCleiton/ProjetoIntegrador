@@ -18,4 +18,7 @@ export class PedidoService {
     return this.http.delete("http://localhost:8080/pedido/apagar/"+ id);
   }
 
+  public concluirCompra(){
+    return this.http.delete("http://localhost:8080/pedido/concluircompra");
+  }
 }

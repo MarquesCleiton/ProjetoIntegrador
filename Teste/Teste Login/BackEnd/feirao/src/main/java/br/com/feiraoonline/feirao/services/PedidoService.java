@@ -52,5 +52,10 @@ public class PedidoService implements IPedidoService {
 	public void apagarPedido(int id) {
 		repo.deleteById(id);
 	}
+	
+	@Override
+	public void concluirCompra() {
+		repo.deleteAll();
+	}
 
 }

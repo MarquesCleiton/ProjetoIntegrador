@@ -15,6 +15,7 @@ export class MeusPedidosComponent implements OnInit {
 
   ptotal:number = 0;
   qtdPedidos = 0;
+  aux = 0;
   
   constructor(private srv: UsuarioService, private user: PedidoService) { }
   ngOnInit() {
@@ -45,6 +46,17 @@ export class MeusPedidosComponent implements OnInit {
       },
     (err) => {
       alert("sem sucesso no delete")
+    })
+  }
+
+  public concluirCompra(){
+    this.user.concluirCompra().subscribe(res => {
+     
+      alert("Parabens compra efetuada com sucesso");
+      window.location.reload();
+    }, 
+    err => {
+      alert("compra não efetuada");
     })
   }
 

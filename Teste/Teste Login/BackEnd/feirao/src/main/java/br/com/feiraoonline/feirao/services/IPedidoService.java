@@ -11,5 +11,7 @@ public interface IPedidoService {
 	public void novoPedido(Pedido pedido);		// CREATE
 	public void atualizaPedido(Pedido pedido);	//UPDATE
 	public void apagarPedido(int id);	//DELETE
+	public void concluirCompra();
+	
 
 }
