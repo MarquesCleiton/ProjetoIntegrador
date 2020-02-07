@@ -10,5 +10,6 @@ public interface IPedidoService {
 	public Pedido recuperarPorId(int id);			//READ
 	public void novoPedido(Pedido pedido);		// CREATE
 	public void atualizaPedido(Pedido pedido);	//UPDATE
+	public void apagarPedido(int id);	//DELETE
 
 }

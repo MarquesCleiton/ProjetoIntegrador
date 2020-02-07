@@ -22,7 +22,7 @@
         <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.preco}}</div></td>
         <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{calcula(p.quantidade,p.itens[0].produto.preco)}}</div></td>
         <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success"><i class="fa fa-pencil-square" aria-hidden="true"></i></button> </a></td>
-        <td><a (click) = "apagar(p.idProduto,p.titulo,p.detalhes,p.qtdEstoque,p.preco);"> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </a></td>
+        <td><a (click) = "apagarPedido(p.idPedido);"> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </a></td>
          <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{cont(calcula(p.quantidade, p.itens[0].produto.preco))}}</div>
       </tr>
       

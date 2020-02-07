@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   
-
+    this.logado = false;
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;
@@ -48,14 +48,17 @@ export class MenuComponent implements OnInit {
       (err) => {
       }
     );
-    console.log(this.logado);
   }
+  public fechar(){
+    $('#fechar').click();
+  };
 
   public enviar() {
     this.cliente.email = this.email;
     this.cliente.senha = this.senha;
     this.srv.autenticar(this.cliente).subscribe(
       (res: MyToken)=>{
+        this.router.navigate(['/produtos']);
         if(this.cliente.email == "feiraoonlinecontato@gmail.com"){
           this.filtro = true;
         }
@@ -67,6 +70,9 @@ export class MenuComponent implements OnInit {
         this.email = "";
         this.senha = "";
         window.location.reload();
+        this.logado = true;
+       
+
       },
       (err)=>{
         alert("FAIL!!!")

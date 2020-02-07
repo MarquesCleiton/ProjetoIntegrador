@@ -21,7 +21,7 @@
                 <a class="nav-link active" [routerLink]="'/contato'">Contato</a>
             </li>
             <li class="nav-item mx-3">
-                <a  class="nav-link active" [routerLink]="'/cadastro'">Cadastro</a>
+                <a  *ngIf= "logado == false" class="nav-link active" [routerLink]="'/cadastro'">Cadastro</a>
             </li>
 
             <li class="nav-item mx-3">
@@ -30,7 +30,7 @@
 
           
             <li *ngIf="cliente.nome == null" class="nav-item mx-3">
-                <a class="nav-link active" data-toggle="modal" data-target="#modal">Login</a>
+                <a class="nav-link active" data-toggle="modal"  [routerLink]="'#modal'" data-target="#modal">Login</a>
             </li>
 
             <li *ngIf ="cliente.nome !=null" class="nav-item dropdown">
@@ -57,9 +57,6 @@
             </li>
             <li class="nav-item mx-2">
                 <a class="nav-link active" [routerLink]="'/contato'">Contato</a>
-            </li>
-            <li class="nav-item mx-2">
-                <a class="nav-link active" [routerLink]="'/cadastro'">Cadastro</a>
             </li>
             <li class="nav-item mx-2">
                 <a class="nav-link active" [routerLink]="'/duvidas'">Dúvidas</a>
@@ -107,7 +104,7 @@
                 <button id="fechar" type="button" class="btn btn-default" data-dismiss="modal">
                     Fechar <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default" x>
+                <button type="button" (click)='fechar();' [routerLink]="'/cadastro'" class="btn btn-default" x>
                     Cadastre-se
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>

@@ -37,11 +37,24 @@ export class MinhacontaComponent implements OnInit {
     );
   }
 
+ 
+  public buscarInfoCliente(){
+    this.srv.recuperaDetalhe(this.cliente.idCliente).subscribe(
+      (res:Cliente)=>
+    {
+      this.cliente = res;
+      console.log(this.cliente);
+      this.nome = this.cliente.nome;
+      this.email = this.cliente.email;
+      this.telefone = this.cliente.telefone;
+      this.endereco = this.cliente.endereco;
+      this.estado = this.cliente.estado;
+      this.cidade = this.cliente.cidade;
+      this.cep = this.cliente.cep;
+    });
+  }
   public atualizarCliente(){
-    if(this.senha != this.cliente.senha){
-      this.msgSenha = "senha incorreta"
-      console.log(this.senhaNova);
-    }else{
+    if(this.senha == this.cliente.senha){
       this.cliente.nome = this.nome;
       this.cliente.cep = this.cep;
       this.cliente.cidade = this.cidade;
@@ -51,6 +64,24 @@ export class MinhacontaComponent implements OnInit {
       this.cliente.senha = this.senhaNova;
       this.cliente.telefone = this.telefone;
       this.cliente.idCliente = this.cliente.idCliente;
+    }else{
+      console.log(this.senhaNova);
+      if(this.senha == null || this.senha == ""){
+        this.cliente.nome = this.nome;
+        this.cliente.cep = this.cep;
+        this.cliente.cidade = this.cidade;
+        this.cliente.email = this.email;
+        this.cliente.endereco = this.endereco;
+        this.cliente.estado = this.estado;
+        this.cliente.senha = this.cliente.senha;
+        this.cliente.telefone = this.telefone;
+        this.cliente.idCliente = this.cliente.idCliente;
+      }else{
+        this.msgSenha = "senha incorreta"
+      }
+      
+   
+    }
 
       this.srv.atualiza(this.cliente).subscribe(
         res => {
@@ -72,19 +103,4 @@ export class MinhacontaComponent implements OnInit {
     }
 
   }
-  public buscarInfoCliente(){
-    this.srv.recuperaDetalhe(this.cliente.idCliente).subscribe(
-      (res:Cliente)=>
-    {
-      this.cliente = res;
-      console.log(this.cliente);
-      this.nome = this.cliente.nome;
-      this.email = this.cliente.email;
-      this.telefone = this.cliente.telefone;
-      this.endereco = this.cliente.endereco;
-      this.estado = this.cliente.estado;
-      this.cidade = this.cliente.cidade;
-      this.cep = this.cliente.cep;
-    });
-  }
-}
+
