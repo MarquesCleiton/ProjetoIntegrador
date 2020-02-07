@@ -12,6 +12,9 @@ export class MeusPedidosComponent implements OnInit {
   cliente:Cliente = new Cliente();
   contador:number = 0;
   id: number;
+
+  ptotal:number = 0;
+  qtdPedidos = 0;
   
   constructor(private srv: UsuarioService, private user: PedidoService) { }
   ngOnInit() {
@@ -35,13 +38,6 @@ export class MeusPedidosComponent implements OnInit {
       console.log(res);
     });
   }
-  calcula(quantidade:number, preco:number):number{
-    return quantidade*preco;
-  }
-
-  cont(total:number){
-    this.contador +=total;
-  }
 
   public apagarPedido(id: number){
     this.user.apagarPedido(id).subscribe((res: string) => {
@@ -50,5 +46,21 @@ export class MeusPedidosComponent implements OnInit {
     (err) => {
       alert("sem sucesso no delete")
     })
+  }
+
+  calcula(quantidade:number, preco:number):number{
+    return quantidade*preco;
+  }
+
+  cont(total:number){
+    this.ptotal +=total;
+  }
+
+  ajustaPreco(preco:number):number{
+    return preco;
+  }
+
+  contPedidos(){
+    this.qtdPedidos +=1;
   }
 }

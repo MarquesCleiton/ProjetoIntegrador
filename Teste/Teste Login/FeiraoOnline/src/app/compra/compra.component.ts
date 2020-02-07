@@ -19,7 +19,7 @@ export class CompraComponent implements OnInit {
   prod: Produto = new Produto();
   pedido: Pedido = new Pedido();
   item:Itens = new Itens();
-  quantidade: number;
+  quantidade: number = 1;
   cliente: Cliente = new Cliente();
 
   constructor(private rota:ActivatedRoute,private srv: ProdutoService, private srvUser:UsuarioService,
@@ -45,16 +45,20 @@ export class CompraComponent implements OnInit {
       }
     )
   }
-  public geraPedido(){
-    this.pedido.quantidade = 5;
-    this.pedido.cliente = this.cliente;
-    this.item.produto.idProduto = this.prod.idProduto;
-    this.pedido.itens.push(this.item); 
-    this.psrv.inseriProdutos(this.pedido).subscribe(res =>{
-      alert("Produto Comprado com sucesso!!!");
-    },
-    err => {
-       alert("Não foi possivel efetuar a compra");
-    });
+  public adicionarCarrinho() {
+    if (this.quantidade >= 1) {
+      this.pedido.quantidade = this.quantidade;
+      this.pedido.cliente = this.cliente;
+      this.item.produto.idProduto = this.prod.idProduto;
+      this.pedido.itens.push(this.item);
+      this.psrv.inseriProdutos(this.pedido).subscribe(res => {
+        alert("Produto adicionado ao carrinho");
+      },
+        err => {
+          alert("Não foi possivel efetuar a compra");
+        });
+    }else{
+      alert("Digite uma quantidade válida!")
+    }
   }
 }

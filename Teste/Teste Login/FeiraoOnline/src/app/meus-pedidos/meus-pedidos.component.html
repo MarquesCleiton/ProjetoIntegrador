@@ -1,40 +1,55 @@
-
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" >Id Pedido</th>
-        <th scope="col" >Título</th>
-        <th scope="col" >Detalhes</th>
-        <th scope="col" >Quantidade</th>
-        <th scope="col" >Preço Unitário</th>
-        <th scope="col" >Total</th>
-        <th scope="col" >Editar</th> 
-        <th scope="col" >Apagar</th> 
-      </tr>
-      
-    </thead>
-    <tbody>
-      <tr *ngFor='let p of this.cliente.pedido'>
-        <th scope="row" >{{p.idPedido}}</th>
-        <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.titulo}}</div></td>
-        <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.descricao}}</div></td>
-        <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.quantidade}}</div></td>
-        <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.preco}}</div></td>
-        <td><div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{calcula(p.quantidade,p.itens[0].produto.preco)}}</div></td>
-        <td><a [routerLink]="['/editarproduto', p.idProduto]"> <button type="button" class="btn btn-success"><i class="fa fa-pencil-square" aria-hidden="true"></i></button> </a></td>
-        <td><a (click) = "apagarPedido(p.idPedido);"> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </a></td>
-         <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{cont(calcula(p.quantidade, p.itens[0].produto.preco))}}</div>
-      </tr>
-      
-      <tr>
-        <th scope="row" ></th>
-        <td></td>
-        <td></td>
-        <td><i class="fa fa-shopping-cart" aria-hidden="true"></i> 0</td>
-        <td></td>
-        <td colspan="3"><i class="fa fa-money" aria-hidden="true"></i> R${{contador}}</td>
-      </tr>
+  <thead>
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Detalhes</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Preço Unitário</th>
+      <th scope="col">Total</th>
+      <th scope="col">Apagar</th>
 
-    </tbody>
-  </table>
+    </tr>
 
+  </thead>
+  <tbody>
+    <tr *ngFor='let p of this.cliente.pedido'>
+      <th scope="row">
+        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.titulo}}</div>
+      </th>
+      <td>
+        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.descricao}}</div>
+      </td>
+      <td>
+        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.quantidade}}</div>
+      </td>
+      <td>
+        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.preco}}</div>
+      </td>
+      <td>
+        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">
+          {{calcula(p.quantidade,p.itens[0].produto.preco)}}</div>
+      </td>
+      <td><a (click)="apagarPedido(p.idPedido);"> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button> </a></td>
+      <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">
+        {{cont(calcula(p.quantidade, p.itens[0].produto.preco))}} {{contPedidos()}}</div>
+    </tr>
+
+
+    <tr>
+      <th scope="row">TOTAL</th>
+      <td></td>
+      <td></td>
+      <td>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>{{qtdPedidos}}
+      </td>
+      <td>
+        <i class="fa fa-money" aria-hidden="true"></i> {{(ptotal)|currency}} </td>
+      <td>
+        <button type="button" class="btn btn-success">Confirmar<i class="fa" aria-hidden="true"></i></button>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
