@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Nunito+Sans|Raleway|Titillium+Web&display=swap');
+
+
+
+#titulo{
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
+
+#subtitulo{
+    color: black; 
+}
+
+#titulo1{
+    text-align: center;
+    margin-top: 3%; 
+    color: black;
+    
+}
+#imagem{ 
+    text-align:center;
+    margin-top: 20%;
+}
+#accordion{
+    margin-bottom: 20%;
+    
+}
+#cards{
+    text-align: left; 
+    
+    
+}
+
+.btn-accordion {
+    background-color: transparent;
+    color: green ;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none;
+}
+.collapsed {
+    color: #353b43;
+}
+
+.accordion .fa{
+    margin-right: 0.9rem;
+}
+
+.titulo-traco:after {
+    content: '';
+    width: 26px;
+    height: 4px;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    background-color: green;
+}
+
+.titulo-traco.text-center:after {
+    left: 50%;
+    margin-left: -13px;
+}
+
+

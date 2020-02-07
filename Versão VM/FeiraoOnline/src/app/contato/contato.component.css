@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Nunito+Sans|Raleway|Titillium+Web&display=swap');
+
+#titulo{
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
+#subtitulo {
+    color: black;
+}
+.dados {
+    color: black;
+}
+
+#formContato
+{
+    padding-top: 2%;
+    padding-left: 11.3%;
+    padding-right: 12%;
+}
+
+#faleConosco 
+{
+    text-align: center;
+} 
+
+.erro{
+    color: red; 
+    font-size: unset;
+} 
+
+.required:after {
+    content:"*"; 
+    color: red; 
+}
+
+h2{
+    padding-top: 2%;
+} 
+
+
+
