@@ -47,5 +47,10 @@ public class PedidoService implements IPedidoService {
 	public void atualizaPedido(Pedido pedido) {
 		repo.save(pedido);
 	}
+	
+	@Override 
+	public void apagarPedido(int id) {
+		repo.deleteById(id);
+	}
 
 }

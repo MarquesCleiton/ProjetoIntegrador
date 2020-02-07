@@ -13,4 +13,9 @@ export class PedidoService {
     return this.http.post("http://localhost:8080/pedido/cadastrar", pedido);
   }
 
+  
+  public apagarPedido(id: number){
+    return this.http.delete("http://localhost:8080/pedido/apagar/"+ id);
+  }
+
 }

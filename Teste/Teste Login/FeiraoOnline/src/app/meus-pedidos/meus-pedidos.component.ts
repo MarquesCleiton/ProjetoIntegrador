@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../model/Cliente';
 import { UsuarioService } from '../service/usuario.service';
+import { PedidoService } from '../service/pedido.service';
 
 @Component({
   selector: 'app-meus-pedidos',
@@ -10,8 +11,9 @@ import { UsuarioService } from '../service/usuario.service';
 export class MeusPedidosComponent implements OnInit {
   cliente:Cliente = new Cliente();
   contador:number = 0;
+  id: number;
   
-  constructor(private srv: UsuarioService) { }
+  constructor(private srv: UsuarioService, private user: PedidoService) { }
   ngOnInit() {
     window.scroll(0,0);
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
@@ -39,5 +41,14 @@ export class MeusPedidosComponent implements OnInit {
 
   cont(total:number){
     this.contador +=total;
+  }
+
+  public apagarPedido(id: number){
+    this.user.apagarPedido(id).subscribe((res: string) => {
+      window.location.reload();
+      },
+    (err) => {
+      alert("sem sucesso no delete")
+    })
   }
 }

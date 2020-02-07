@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.feiraoonline.feirao.model.Pedido;
+import br.com.feiraoonline.feirao.model.Produto;
 import br.com.feiraoonline.feirao.services.IPedidoService;
 
 @RestController
@@ -47,10 +49,11 @@ public class PedidoController {
 		return ResponseEntity.ok(pedido);
 	}
 	
-	/*@PostMapping("/pedidos/meuspedidos")
-	public ResponseEntity<Pedido> meusPedidos(@RequestBody Cliente cliente){
-		Pedido pedido = servico
-		return ResponseEntity
-	}*/
 
+	@DeleteMapping("/pedido/apagar/{id}")
+	public ResponseEntity<Pedido> apagar(@PathVariable int id) {
+		servico.apagarPedido(id);
+		Pedido p = servico.recuperarPorId(id);
+		return ResponseEntity.ok(p);
+	}
 }
