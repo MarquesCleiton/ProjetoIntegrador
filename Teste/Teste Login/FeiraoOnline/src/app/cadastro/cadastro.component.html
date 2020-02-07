@@ -54,13 +54,12 @@
                     <label for="Endereco" class="required dados">Endereço</label>
                     <input type="text" class="form-control" id="Endereco" placeholder="Digite seu endereço completo" required
                         [(ngModel)]="endereco">
-                    <div class="erro"></div>
+                    <div class="erro">{{msgEndereco}}</div>
                 </div>
 
                 <div class="col-md-4 ">
                     <label for="validationDefault04" class="required">Estado</label>
                     <select class="form-control" [(ngModel)] = "estado" placeholder="Escolha">
-                            <option>Selecione</option>
                             <option>São Paulo</option>
                             <option>Acre</option>
                             <option>Alagoas</option>
@@ -89,9 +88,11 @@
                             <option>Sergipe</option>
                             <option>Tocantins</option>
                           </select>
+                          <div class="erro">{{msgEstado}}</div>
                   </div>
             </div>
         </div>
+
         <div class="form-group">
             <div class="row">
                 <div class="col-md-2"></div>
@@ -99,14 +100,14 @@
                     <label for="Cidade" class="required dados">Cidade</label>
                     <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade" required
                         [(ngModel)]="cidade" >
-                    <div class="erro"></div>
+                    <div class="erro">{{msgCidade}}</div>
                 </div>
 
                 <div class="col-md-4">
                     <label for="Cep" class="required dados">CEP</label>
-                    <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="8" class="form-control" id="cep" placeholder="00000000"
-                        required [(ngModel)]="cep">
-                    <div class="erro"></div>
+                    <input type="text" name="cep" maxlength="9" class="form-control" id="cep" placeholder="12345-678"
+                         [(ngModel)]="cep" (keypress)="formataCep();" (keyup)="verificanumeroCep();">
+                    <div class="erro">{{msgCep}}</div>
                     <div class="col-md-2"></div>
                 </div>
             </div>
