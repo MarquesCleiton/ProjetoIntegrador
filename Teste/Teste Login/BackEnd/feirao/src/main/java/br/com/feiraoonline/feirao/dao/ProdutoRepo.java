@@ -9,4 +9,5 @@ import br.com.feiraoonline.feirao.model.Produto;
 
 public interface ProdutoRepo extends CrudRepository<Produto, Integer> {
 	public List<Produto> findByTituloContains(String titulo);
+	public List<Produto> findByOrderByIdProdutoDesc();
 	}

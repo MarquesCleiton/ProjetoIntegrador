@@ -11,5 +11,5 @@ public interface IProdutoService {
 	public void atualizaProduto(Produto produto);	//UPDATE
 	public void apagarProduto(int id);	//DELETE
 	public List<Produto> buscarPorPalavra(String titulo);
-	
+	public List<Produto> ultimosAdicionados();
 }

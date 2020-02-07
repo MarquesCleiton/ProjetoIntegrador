@@ -60,4 +60,9 @@ public class ProdutoController {
 		Produto p = servico.recuperarPorId(id);
 		return ResponseEntity.ok(p);
 	}
+	
+	@GetMapping("/buscar/reversa")
+	public ResponseEntity<List<Produto>> buscaReversa(){
+		return ResponseEntity.ok(servico.ultimosAdicionados());
+	}
 }

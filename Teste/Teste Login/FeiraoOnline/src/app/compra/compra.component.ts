@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../model/Produto';
 import { Pedido } from '../model/pedido';
@@ -23,7 +23,7 @@ export class CompraComponent implements OnInit {
   cliente: Cliente = new Cliente();
 
   constructor(private rota:ActivatedRoute,private srv: ProdutoService, private srvUser:UsuarioService,
-    private psrv:PedidoService) { }
+    private psrv:PedidoService, private user: Router) { }
 
   ngOnInit() {
     window.scroll(0,0);
@@ -53,6 +53,7 @@ export class CompraComponent implements OnInit {
       this.pedido.itens.push(this.item);
       this.psrv.inseriProdutos(this.pedido).subscribe(res => {
         alert("Produto adicionado ao carrinho");
+        this.user.navigate(['/produtos']);
       },
         err => {
           alert("Não foi possivel efetuar a compra");

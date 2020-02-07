@@ -3,6 +3,7 @@ package br.com.feiraoonline.feirao.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import br.com.feiraoonline.feirao.dao.ProdutoRepo;
@@ -49,4 +50,11 @@ public class ProdutoService implements IProdutoService {
 	public void apagarProduto(int id) {
 		repo.deleteById(id);
 	}
+	
+	@Override
+	public List<Produto> ultimosAdicionados(){
+		return (List<Produto>) repo.findByOrderByIdProdutoDesc();
+	}
+	
+	
 }

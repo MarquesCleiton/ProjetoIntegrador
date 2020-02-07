@@ -74,7 +74,7 @@ export class ContatoComponent implements OnInit {
     console.log(this.contato);
 
     this.srv.enviarEmail(this.contato).subscribe(res => {
-      alert("email enviado com sucesso");
+    
     },
     err=> {
       alert("erro ao enviar email");

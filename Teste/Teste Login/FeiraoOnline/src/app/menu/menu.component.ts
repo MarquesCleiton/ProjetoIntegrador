@@ -35,8 +35,12 @@ export class MenuComponent implements OnInit {
   constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
+  if(localStorage.getItem("MyToken") != null){
   
+    this.logado = true;
+  }else{
     this.logado = false;
+  }
     this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
         this.cliente = res;

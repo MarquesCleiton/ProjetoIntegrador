@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutoService } from '../service/produto.service';
+import { Produto } from '../model/Produto';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,33 @@ export class HomeComponent implements OnInit {
   idFruta:   number;
   idVerdura: number;
   idLegume:  number;
+  idProduto: number;
+  produto: Array<Produto>;
+  listaProduto: Array<Produto>;
 
-  constructor() { }
+  constructor(private srv: ProdutoService) { }
 
 
   ngOnInit() {
+
+    this.srv.buscaReversa().subscribe((res: Produto[]) => {
+      this.produto = res;
+      var i:number;
+      this.listaProduto = new Array();
+      this.produto = new Array();
+      for(i = 0; i < 5; i ++){
+        if(res[i] != null){
+          this.listaProduto[i] = new Produto();
+          this.listaProduto[i] = res[i];
+        }
+      }
+      console.log(this.produto);
+      console.log(this.listaProduto);
+    }, 
+    err =>{
+
+    })
+    
 
     this.idFruta = 1;
     this.idVerdura = 2;

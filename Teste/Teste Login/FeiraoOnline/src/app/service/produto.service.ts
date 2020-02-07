@@ -35,14 +35,17 @@ export class ProdutoService {
   }
 
   public apagar(idProduto: number){
-  alert(idProduto)
-    alert("chamoou apagar")
     return this.http.delete("http://localhost:8080/produto/apagar/"+ idProduto);
   }
 
   buuscaPorCategoria(id: number){
     return this.http.get("http://localhost:8080/categoria/listagem/"+id);
   }
+
+  buscaReversa(){
+    return this.http.get("http://localhost:8080//buscar/reversa");
+  }
+
 
   
 }
