@@ -110,14 +110,14 @@ export class ContatoComponent implements OnInit {
         }
       }
     } else {
-      return "digite seu número";
+      return "Digite seu número";
     }
     return "";
   }
 
   public verificaTipoContato(): string {
     if (this.tipoContato == null || this.tipoContato == "") {
-      return "escolha uma das opções";
+      return "Escolha uma das opções";
     }
     return "";
   }
