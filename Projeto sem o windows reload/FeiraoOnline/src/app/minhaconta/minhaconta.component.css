@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Nunito+Sans|Raleway|Titillium+Web&display=swap');
+
+.aux{
+    text-align: center;
+} 
+
+#formMinhaConta{
+    padding-top: 2%;
+    padding-left: 11.3%;
+    padding-right: 12%;
+}
+
+.required:after {
+    content:"*"; 
+    color: red; 
+}
+
+h2{
+    padding-top: 2%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p{
+    font-family: 'Titillium Web', sans-serif;
+}

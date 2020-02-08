@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Nunito+Sans|Raleway|Titillium+Web&display=swap');
+
+#apresentacao {
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
+
+#titulo{
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+}
+
+#quemSomos {
+    text-align: center; 
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    background-image: url(../../assets/images/Verduras1.jpg);
+    background-size: cover;
+} 
+
+
+#img-circle {
+    border-radius: 60%;
+    margin: 11%;
+}
+ 
+.bio { 
+    margin-top: 7%;
+    font-family: 'Titillium Web', sans-serif;
+    color: black;
+    
+}
+
+
+#titulo {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+#nossoTime {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    color: black;
+}
+
+#parallax {
+    margin-top: 7%;
+    background-image: url(../../assets/images/fundoPassando.jfif);
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hoverzoom .retina {
+    position: absolute;
+    margin: 10%;
+    bottom: 0;
+    top: 0,5%;
+    left: 1,1%;
+    width: 195px;
+    height: 195px;
+    opacity: 0;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    border-radius: 60%;
+    text-align: center;
+    padding: 65px;
+    -webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+    transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+}
+
+.hoverzoom:hover .retina {
+    opacity: 1;
+    box-shadow: inset 0 0 100px 25px rgba(0, 0, 0, .5);
+}
+
+.hoverzoom .retina p {
+    color: #fff;
+}
+
+.hoverzoom .retina a {
+    display: block;
+    /*width: 90px;*/
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px;
+    left: 20%;
+    margin: 16px auto 0;
+}
+
+#tituloPrincipal{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.h2{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#tituloPrincipal{
+    font-family: 'Titillium Web', sans-serif; 
+ }
+
+ .h1 {
+    font-family: 'Titillium Web', sans-serif; 
+ }
+
+ 

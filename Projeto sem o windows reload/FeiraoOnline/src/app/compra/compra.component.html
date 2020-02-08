@@ -1,0 +1,57 @@
+<div class="mt-3">
+
+    <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4">
+            <div class="py-3">
+                <img src="{{prod.linkFoto}}" width="100%">
+            </div>       
+        </div>
+
+        <div class="col-md-4">
+            <div class="row text-center">
+                <div class="col">
+                    <h2>{{prod.titulo}}</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h3>R$ {{prod.preco}}</h3>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col">
+                    <p  *ngIf = "prod.categoria.idCategoria == 1"> <strong>Categoria: </strong> Fruta</p> <p   *ngIf = "prod.categoria.idCategoria == 2"> <strong>Categoria: </strong> Verdura</p> <p  *ngIf = "prod.categoria.idCategoria == 3"> <strong>Categoria: </strong> Legume</p>
+                </div>
+            </div>
+
+            <div class="row mb-3 mt-8">
+                <div class="col">
+                    <p><strong>Detalhes: </strong>{{prod.descricao}}</p>
+                   
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mt-2">
+                    Quantidade:
+                </div>
+                <div class="col-md-8">
+                  <input [(ngModel)] = "quantidade" class="form-control" type="number" value="0" min="0" id="example-number-input">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="botaocomprar">
+                     <button (click)="adicionarCarrinho();" type="button" class="btn btn-primary btn btn-outline-success btn-block">Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

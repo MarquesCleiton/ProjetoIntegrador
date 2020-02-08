@@ -1,0 +1,111 @@
+#alinhacardsofertas {
+    margin-top: 2%;
+    justify-content: center;
+}
+#alinhacardsadicionados {
+    margin-top: 2%;
+    justify-content: center;
+}
+#alinhacategoria {
+    margin-top: 1%;
+    margin-left: 2px;
+}
+
+ 
+#titulooferta {
+    color: black;
+    padding: 4px;
+    background: rgb(1, 59, 1);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#tituloadicionados {
+    color: black;
+    padding: 4px;
+    background: rgb(1, 59, 1);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#titulocategoria {
+    color: black;
+    padding: 4px;
+    background: rgb(1, 59, 1);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.botaocomprar {
+    margin-left: 21%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.de {
+    color: red;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.por {
+    color: rgba(13, 160, 8, 0.986);
+    text-align: center;
+    padding-top: 1%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.preco{
+    color: rgba(13, 160, 8, 0.986);
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+}
+.nomeproduto{
+    color: black;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#botaocategoriafruta{
+    margin-left: 38%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#botaocategoriaverdura{
+    margin-left: 35%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#botaocategorialegume{
+    margin-left: 35%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+}
+
+
+#carrossel1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.1em 0.1em black;
+}
+#subtitulo1{
+    text-shadow: 0.1em 0.1em black;
+    padding-bottom: 4%;
+}
+#carrossel2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.1em 0.1em black;
+}
+#subtitulo2{
+    text-shadow: 0.1em 0.1em black;
+    padding-bottom: 4%;
+}
+#carrossel3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.1em 0.1em black;
+}
+#subtitulo3 {
+    text-shadow: 0.1em 0.1em black;
+    padding-bottom: 4%;
+}
+.h {
+    height: 450px;
+}
