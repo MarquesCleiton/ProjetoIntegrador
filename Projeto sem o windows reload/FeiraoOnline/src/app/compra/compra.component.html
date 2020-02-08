@@ -25,7 +25,9 @@
 
             <div class="row mt-1">
                 <div class="col">
-                    <p  *ngIf = "prod.categoria.idCategoria == 1"> <strong>Categoria: </strong> Fruta</p> <p   *ngIf = "prod.categoria.idCategoria == 2"> <strong>Categoria: </strong> Verdura</p> <p  *ngIf = "prod.categoria.idCategoria == 3"> <strong>Categoria: </strong> Legume</p>
+                    <p  *ngIf = "d.categoria.idCategoria == 1"> <strong>Categoria: </strong> Fruta</p> 
+                    <p   *ngIf = "d.categoria.idCategoria == 2"> <strong>Categoria: </strong> Verdura</p> 
+                    <p  *ngIf = "d.categoria.idCategoria == 3"> <strong>Categoria: </strong> Legume</p>
                 </div>
             </div>
 
@@ -41,7 +43,7 @@
                     Quantidade:
                 </div>
                 <div class="col-md-8">
-                  <input [(ngModel)] = "quantidade" class="form-control" type="number" value="0" min="0" id="example-number-input">
+                  <input [(ngModel)]="quant" class="form-control" type="number" value=0 min=0 id="example-number-input">
                 </div>
             </div>
 

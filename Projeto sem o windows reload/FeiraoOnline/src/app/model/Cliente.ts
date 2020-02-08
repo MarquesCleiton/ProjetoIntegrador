@@ -1,4 +1,5 @@
-import { Pedido } from './pedido';
+import { Pedido } from './Pedido';
+
 
 export class Cliente{
     public idCliente:number;
