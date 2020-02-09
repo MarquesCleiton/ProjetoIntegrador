@@ -14,7 +14,7 @@
 <div *ngIf="isLista == true">
   <div class="row d-flex justify-content-center">
 
-    <div *ngFor="let _prod of listaDeProdutos card">
+    <div *ngFor="let _prod of produto card">
       <div class="card mx-3 mt-4" style="width: 12rem;">
         <img class="card-img-top" src="{{_prod.linkFoto}}" alt="Card image cap">
         <div class="card-body">
@@ -47,7 +47,6 @@
 </div>
 
 
-
 <div *ngIf="isLista == false">
   <div class="row d-flex justify-content-center">
     <div *ngFor="let _prod of produto card">
@@ -62,7 +61,8 @@
           <p><a [routerLink]="['/compra', _prod.idProduto]" class="btn btn-success">Comprar</a></p>
         </div>
       </div>
-      <div *ngIf="produto == null ||listaDeProdutos == null">
-        <h3>Não foi possivel encontar o produto</h3>
-      </div>
     </div>
+  </div>
+</div>
+
+<h3 *ngIf="produto == null">Não foi possível encontar o produto</h3>

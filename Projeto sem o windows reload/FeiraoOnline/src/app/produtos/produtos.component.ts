@@ -11,7 +11,6 @@ export class ProdutosComponent implements OnInit {
 
   public isLista: boolean = true;
 
-  public listaDeProdutos: Produto[];
   produto: Array<Produto> = new Array();
   titulo: string;
   
@@ -21,7 +20,7 @@ export class ProdutosComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0);
     this.prod.exibirTodosProdutos().subscribe((res: Produto[]) => {
-      this.listaDeProdutos = res;
+      this.produto = res;
     })
   }
 
@@ -30,7 +29,14 @@ export class ProdutosComponent implements OnInit {
     if (this.titulo != null) {
       this.prod.buscaPorPalavra(this.titulo).subscribe((res: Produto[]) => {
         this.produto = res; 
-       console.log(this.produto); });
+        console.log(res);
+        if(res.length == 0){
+          this.produto = null;
+        }
+      }, err =>{
+        this.produto = null;
+        alert("TESTE")
+      });
      }else{
       this.produto = null;
      }
@@ -39,7 +45,9 @@ export class ProdutosComponent implements OnInit {
   mostrarTudo() {
     this.isLista = true;
     this.prod.exibirTodosProdutos().subscribe((res: Produto[]) => {
-      this.listaDeProdutos = res;
+      this.produto = res;
+    }, erro =>{
+      this.produto = null;
     })
   }
 }

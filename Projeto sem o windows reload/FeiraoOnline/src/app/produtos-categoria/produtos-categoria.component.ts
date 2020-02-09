@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Categoria } from '../model/Categoria';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AlertPromise, Alert } from 'selenium-webdriver';
 import { Produto } from '../model/Produto';
 
 @Component({
@@ -20,7 +19,7 @@ export class ProdutosCategoriaComponent implements OnInit {
   constructor(private srv: ProdutoService, private rota: ActivatedRoute) { }
 
   ngOnInit() {
-    
+    window.scroll(0,0);
     this.id = this.rota.snapshot.params["id"];
     console.log(this.id);
 this.srv.buuscaPorCategoria(this.id).subscribe((res:Categoria)=>{
@@ -37,7 +36,14 @@ this.srv.buuscaPorCategoria(this.id).subscribe((res:Categoria)=>{
     if (this.titulo != null) {
       this.srv.buscaPorPalavra(this.titulo).subscribe((res: Produto[]) => {
         this.produto = res; 
-       console.log(this.produto); })
+       if(res.length == 0){
+         this.produto == null;
+         alert("TESTE2");
+       }
+      }, err =>{
+        this.produto == null;
+        alert("TESTE");
+      })
      }else{
       this.produto = null;
      }
@@ -47,7 +53,9 @@ this.srv.buuscaPorCategoria(this.id).subscribe((res:Categoria)=>{
       this.busca = true;
       this.srv.buuscaPorCategoria(this.id).subscribe((res: Produto[]) => {
         this.produto = res;
-      })
+      }, erro =>{
+        this.produto = null;
+      });
     }
 }
 

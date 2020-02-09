@@ -19,9 +19,9 @@ export class CompraComponent implements OnInit {
   prod: Produto = new Produto();
   pedido: Pedido = new Pedido();
   item:Itens = new Itens();
-  quant: number;
+  quant: number = 1;
   
-  cliente: Cliente = new Cliente();
+  cliente: Cliente;
 
   constructor(private rota:ActivatedRoute,private srv: ProdutoService, private srvUser:UsuarioService,
     private psrv:PedidoService, private user: Router) { }
@@ -31,6 +31,7 @@ export class CompraComponent implements OnInit {
     this.id = this.rota.snapshot.params["idProduto"];
     this.srvUser.buscarInfo(localStorage.getItem("MyToken")).subscribe(
       (res: Cliente) => {
+        this.cliente = new Cliente();
         this.cliente = res;
       },
       (err) => {
@@ -47,9 +48,8 @@ export class CompraComponent implements OnInit {
     )
   }
   public adicionarCarrinho() {
-    this.srvUser.buscarInfo(localStorage.getItem("MyToken")).subscribe((res:Cliente) => {
-      this.cliente = res;
-      console.log(this.quant);
+    console.log(this.cliente);
+    if(this.cliente != null){
       if (this.quant >= 1) {
         this.pedido.quantidade = this.quant;
         this.pedido.cliente = this.cliente;
@@ -65,10 +65,10 @@ export class CompraComponent implements OnInit {
       }else{
         alert("Digite uma quantidade válida!")
       }
-      }, err => {
-        alert("Por favor faça o login ou cadastre-se");
-      });
-    
+    }else{
+      alert("Faça o login para finalizar a compra")
+    }
+
   }
   
 }

@@ -62,18 +62,16 @@ export class MeusPedidosComponent implements OnInit {
   }
 
   calcula(quantidade:number, preco:number):number{
-    return quantidade*preco;
+    return quantidade * preco;
   }
 
   cont(total:number){
     this.ptotal +=total;
   }
 
-  ajustaPreco(preco:number):number{
-    return preco;
-  }
-
   contPedidos(){
     this.qtdPedidos +=1;
+    console.log(this.qtdPedidos)
+
   }
 }

@@ -12,27 +12,29 @@
 
   </thead>
   <tbody>
-    <tr *ngFor='let p of this.cliente.pedido'>
-      <th scope="row">
-        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.titulo}}</div>
+    <tr *ngFor='let p of this.cliente.pedido'> 
+      <th scope="row" *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">
+        {{p.itens[0].produto.titulo}}
       </th>
       <td>
-        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.itens[0].produto.descricao}}</div>
+       {{p.itens[0].produto.descricao}}
       </td>
       <td>
-        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">{{p.quantidade}}</div>
+        {{p.quantidade}}
       </td>
       <td>
-        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">R{{(p.itens[0].produto.preco)|currency}}</div>
+        R{{(p.itens[0].produto.preco)|currency}}
       </td>
       <td>
-        <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">
-          R{{(calcula(p.quantidade,p.itens[0].produto.preco))|currency}}</div>
+        {{calcula(p.quantidade, p.itens[0].produto.preco)|currency}}
       </td>
-      <td><a (click)="apagarPedido(p.idPedido);"> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"
-              aria-hidden="true"></i></button> </a></td>
-      <div *ngIf="(p.itens[0] != null) && (p.itens[0].produto != null)">
-        {{cont(calcula(p.quantidade, p.itens[0].produto.preco))}} {{contPedidos()}}</div>
+      <td>
+        <a (click)="apagarPedido(p.idPedido);"> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"
+              aria-hidden="true"></i></button> 
+        </a>
+      </td>
+        {{cont(calcula(p.quantidade, p.itens[0].produto.preco))}} 
+        {{contPedidos()}}
     </tr>
 
 
@@ -40,13 +42,17 @@
       <th scope="row">TOTAL</th>
       <td></td>
       <td>
-          <i class="fa fa-shopping-cart" aria-hidden="true"> </i> {{qtdPedidos}}
+        <div class="row">
+          <i class="fa fa-shopping-cart" aria-hidden="true"> {{qtdPedidos}}</i>
+        </div>
+          
       </td>
       <td>
        
       </td>
       <td>
-        <i class="fa fa-money" aria-hidden="true"></i> R{{(ptotal)|currency}} </td>
+        <i class="fa fa-money" aria-hidden="true"></i> R{{ptotal|currency}} 
+      </td>
       <td>
         <button type="button" (click) = "concluirCompra();"class="btn btn-success">Confirmar<i class="fa" aria-hidden="true"></i></button>
       </td>

@@ -1,15 +1,3 @@
-.table {
-    margin-left: auto;
-	margin-right: auto;
-	
+.teste{
+    background: #000;
 }
-
-.meus-pedidos {
-    margin-top: 50px;
-    justify-content: center;
-    margin-bottom: 80px;
-}
-
-.contador {
-    text-align: right;
-} 

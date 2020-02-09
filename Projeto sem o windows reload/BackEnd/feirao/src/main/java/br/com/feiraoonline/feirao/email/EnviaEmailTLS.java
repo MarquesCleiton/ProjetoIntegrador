@@ -14,8 +14,7 @@ public class EnviaEmailTLS {
 		 	Mensagem t = new Mensagem();
 		 	t = msg;
 		 	
-		 	System.out.println(t.getEmail());
-		 	
+		 	System.out.println(t.getEmail());	 	
 		 	
 	        final String username = "feiraoonlinecontato@gmail.com";
 	        final String password = "bspsmnxtkwvsyulb";
