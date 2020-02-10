@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
 
   aleatorio(){
 
-    var max:number = this.produtos.length - 1;
+    var max:number = this.produtos.length;
     var p1:number = Math.floor((Math.random() * (max)) + 0);
     var p2:number;
     var p3:number;

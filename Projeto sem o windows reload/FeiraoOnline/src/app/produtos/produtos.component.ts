@@ -34,7 +34,6 @@ export class ProdutosComponent implements OnInit {
         }
       }, err =>{
         this.produto = null;
-        alert("TESTE")
       });
      }else{
       this.produto = null;
