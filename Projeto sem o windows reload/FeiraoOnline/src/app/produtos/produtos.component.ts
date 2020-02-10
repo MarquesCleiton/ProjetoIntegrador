@@ -10,7 +10,6 @@ import { Produto } from '../model/Produto';
 export class ProdutosComponent implements OnInit {
 
   public isLista: boolean = true;
-
   produto: Array<Produto> = new Array();
   titulo: string;
   

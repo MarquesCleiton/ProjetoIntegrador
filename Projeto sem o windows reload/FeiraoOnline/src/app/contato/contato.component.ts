@@ -14,7 +14,7 @@ export class ContatoComponent implements OnInit {
    tipoContato: string;
    assunto: string;
    mensagem: string;
-  contato: Contato = new Contato();
+   contato: Contato = new Contato();
    msgNome: string;
    msgSobreNome: string;
    msgTel: string;

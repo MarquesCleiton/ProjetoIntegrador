@@ -8,10 +8,12 @@ import { Produto } from '../model/Produto';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   idFruta:   number;
   idVerdura: number;
   idLegume:  number; 
   idProduto: number;
+
   produtos:Array<Produto>;
   listaProduto: Array<Produto>;
   princProdutos: Array<Produto>;
@@ -20,12 +22,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
+
     this.srv.buscaReversa().subscribe((res: Produto[]) => {
+
       var i:number;
       this.listaProduto = new Array();
       this.princProdutos = new Array();
       this.produtos = new Array();
       this.produtos = res;
+
       for(i = 0; i < 5; i ++){
         this.listaProduto[i] = new Produto();
         this.princProdutos[i] = new Produto();
@@ -33,6 +38,7 @@ export class HomeComponent implements OnInit {
           this.listaProduto[i] = res[i];
         }
       }
+
       console.log(this.listaProduto);
       this.aleatorio();
       console.log(this.princProdutos);
@@ -56,6 +62,7 @@ export class HomeComponent implements OnInit {
 
     console.log("Tamanho: "+ max);
     console.log("1: "+p1);
+    
     do{
       p2 = Math.floor((Math.random() * (max)) + 0);
       console.log("2: "+p2);
