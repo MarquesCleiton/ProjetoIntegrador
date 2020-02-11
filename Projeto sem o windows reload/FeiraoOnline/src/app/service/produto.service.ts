@@ -11,39 +11,39 @@ export class ProdutoService {
 
 
   public listarProdutosId(idProduto: number){
-    return this.http.get("http://localhost:8080/produto/"+idProduto);
+    return this.http.get("http://31.220.48.238:8080/produto/"+idProduto);
   }
 
   public inseriProdutos(produto: Produto){
     console.log(produto);
-    return this.http.post("http://localhost:8080/produto/cadastrar", produto);
+    return this.http.post("http://31.220.48.238:8080/produto/cadastrar", produto);
   }
 
   public buscaPorPalavra(titulo: string){
-    return this.http.get("http://localhost:8080//buscar/palavra/"+titulo)
+    return this.http.get("http://31.220.48.238:8080//buscar/palavra/"+titulo)
   }
 
   
   public exibirTodosProdutos(){
     console.log("chegooou exibir")
-    return this.http.get("http://localhost:8080/produto/todos");
+    return this.http.get("http://31.220.48.238:8080/produto/todos");
   }
 
   public atualiza(produto:Produto){
     console.log(produto);
-    return this.http.put("http://localhost:8080/produto/atualizar", produto);
+    return this.http.put("http://31.220.48.238:8080/produto/atualizar", produto);
   }
 
   public apagar(idProduto: number){
-    return this.http.delete("http://localhost:8080/produto/apagar/"+ idProduto);
+    return this.http.delete("http://31.220.48.238:8080/produto/apagar/"+ idProduto);
   }
 
   buuscaPorCategoria(id: number){
-    return this.http.get("http://localhost:8080/categoria/listagem/"+id);
+    return this.http.get("http://31.220.48.238:8080/categoria/listagem/"+id);
   }
 
   buscaReversa(){
-    return this.http.get("http://localhost:8080//buscar/reversa");
+    return this.http.get("http://31.220.48.238:8080//buscar/reversa");
   }
 
 
